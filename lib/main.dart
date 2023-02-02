@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
         ),
+        debugShowCheckedModeBanner: false,
         home: MyHomePage(),
       ),
     );
@@ -87,8 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     label: Text('Favorites'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.apple),
-                    label: Text('Nah'))
+                      icon: Icon(Icons.apple), label: Text('Nah'))
                 ],
                 selectedIndex: selectedIndex,
                 onDestinationSelected: (value) {
