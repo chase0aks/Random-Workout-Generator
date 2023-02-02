@@ -1,6 +1,6 @@
-# app_project
+# Random.Exercise
 
-A new Flutter project.
+A workout generating app
 
 ## Getting Started
 
