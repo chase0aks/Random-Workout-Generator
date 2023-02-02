@@ -63,6 +63,9 @@ class _MyHomePageState extends State<MyHomePage> {
       case 1:
         page = FavoritesPage();
         break;
+      case 2:
+        page = NahPage();
+        break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
@@ -83,6 +86,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     icon: Icon(Icons.favorite),
                     label: Text('Favorites'),
                   ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.apple),
+                    label: Text('Nah'))
                 ],
                 selectedIndex: selectedIndex,
                 onDestinationSelected: (value) {
@@ -179,6 +185,34 @@ class BigCard extends StatelessWidget {
 }
 
 class FavoritesPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var appState = context.watch<MyAppState>();
+
+    if (appState.favorites.isEmpty) {
+      return Center(
+        child: Text('No favorites yet.'),
+      );
+    }
+
+    return ListView(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(20),
+          child: Text('You have '
+              '${appState.favorites.length} favorites:'),
+        ),
+        for (var pair in appState.favorites)
+          ListTile(
+            leading: Icon(Icons.favorite),
+            title: Text(pair.asLowerCase),
+          ),
+      ],
+    );
+  }
+}
+
+class NahPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
