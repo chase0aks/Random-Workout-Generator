@@ -16,6 +16,38 @@ class ExerciseData {
   });
 }
 
+final List<String> availableEquipment = [
+  'Ab Wheel',
+  'Barbell',
+  'Bosu',
+  'Cable',
+  'Dumbbell',
+  'EZ Bar',
+  'Foam Roller',
+  'Kettlebell',
+  'Machine',
+  'Medicine Ball',
+  'Resistance Band',
+  'Smith Machine',
+  'TRX',
+  'Hex Bar'
+];
+
+final List<String> injuredAreas = [
+  'Ankle',
+  'Arm',
+  'Back',
+  'Elbow',
+  'Foot',
+  'Hamstring',
+  'Hand',
+  'Hip',
+  'Knee',
+  'Neck',
+  'Rib',
+  'Shoulder'
+];
+
 final List<ExerciseData> allExercises = [
   ExerciseData(
     name: 'Cable Hip Abduction',
@@ -73,7 +105,6 @@ final List<ExerciseData> allExercises = [
   ),
 ];
 
-
 List<ExerciseData> getAvailableExercises({
   List<String>? availableEquipment,
   List<String>? injuredAreas,
@@ -91,7 +122,8 @@ List<ExerciseData> getAvailableExercises({
 
     // Check if the user has any injury restrictions that conflict with the exercise
     if (injuredAreas != null &&
-        exerciseInjuryRestrictions.any((injury) => injuredAreas.contains(injury))) {
+        exerciseInjuryRestrictions
+            .any((injury) => injuredAreas.contains(injury))) {
       return false;
     }
 
@@ -100,4 +132,3 @@ List<ExerciseData> getAvailableExercises({
 
   return filteredExercises;
 }
-
