@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:app_project/exercise_data.dart';
 import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'exercise_data.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Workout App',
       home: WorkoutPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -22,11 +25,12 @@ class WorkoutPage extends StatefulWidget {
 }
 
 class _WorkoutPageState extends State<WorkoutPage> {
-  final List<String> _injuries = ['Knee', 'Shoulder', 'Back'];
-  final List<String> _equipment = ['Cable', 'Dumbbell', 'Bench', 'Barbell', 'Resistance Band'];
+  final List<String> _injuries = injuredAreas;
+  final List<String> _equipment = availableEquipment;
   final _selectedInjuries = <String>{};
   final _selectedEquipment = <String>{};
   final _availableExercises = <ExerciseData>[];
+  final List<ExerciseData> _selectedExercises = [];
 
   void _onInjurySelected(String injury) {
     setState(() {
@@ -35,6 +39,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
       } else {
         _selectedInjuries.add(injury);
       }
+      _updateAvailableExercises();
     });
   }
 
@@ -45,31 +50,35 @@ class _WorkoutPageState extends State<WorkoutPage> {
       } else {
         _selectedEquipment.add(equipment);
       }
+      _updateAvailableExercises();
     });
   }
 
-  @override
-  void initState() {
-    super.initState();
+  void _updateAvailableExercises() {
+    _availableExercises.clear();
     _availableExercises.addAll(getAvailableExercises(
         availableEquipment: _selectedEquipment.toList(),
         injuredAreas: _selectedInjuries.toList()));
   }
 
+  @override
+  void initState() {
+    super.initState();
+    _selectedEquipment.addAll(_equipment);
+    _updateAvailableExercises();
+  }
+
   void _generateWorkout(int numberOfExercises) {
     final random = Random();
-    final List<ExerciseData> selectedExercises = [];
-    while (selectedExercises.length < numberOfExercises) {
-      final exerciseIndex = random.nextInt(_availableExercises.length);
-      final exercise = _availableExercises[exerciseIndex];
-      if (!selectedExercises.contains(exercise)) {
-        selectedExercises.add(exercise);
+    _selectedExercises.clear();
+    while (_selectedExercises.length < numberOfExercises) {
+      final exerciseIndex = random.nextInt(allExercises.length);
+      final exercise = allExercises[exerciseIndex];
+      if (!_selectedExercises.contains(exercise)) {
+        _selectedExercises.add(exercise);
       }
     }
-    print('Selected Exercises:');
-    selectedExercises.forEach((exercise) {
-      print(' - ${exercise.name}');
-    });
+    setState(() {});
   }
 
   @override
@@ -109,12 +118,19 @@ class _WorkoutPageState extends State<WorkoutPage> {
                       ))
                   .toList(),
             ),
+            SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
-                _generateWorkout(2);
+                _generateWorkout(5);
               },
               child: Text('Generate Workout'),
             ),
+            SizedBox(height: 16.0),
+            if (_selectedExercises.isNotEmpty) Text('Here is your workout:'),
+            for (final exercise in _selectedExercises)
+              ListTile(
+                title: Text(exercise.name),
+              ),
           ],
         ),
       ),
