@@ -23,7 +23,7 @@ class WorkoutPage extends StatefulWidget {
 
 class _WorkoutPageState extends State<WorkoutPage> {
   final List<String> _injuries = ['Knee', 'Shoulder', 'Back'];
-  final List<String> _equipment = ['Dumbbell', 'Bench', 'Resistance Band'];
+  final List<String> _equipment = ['Cable', 'Dumbbell', 'Bench', 'Barbell', 'Resistance Band'];
   final _selectedInjuries = <String>{};
   final _selectedEquipment = <String>{};
   final _availableExercises = <ExerciseData>[];
@@ -111,7 +111,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
             ),
             ElevatedButton(
               onPressed: () {
-                _generateWorkout(3);
+                _generateWorkout(2);
               },
               child: Text('Generate Workout'),
             ),
