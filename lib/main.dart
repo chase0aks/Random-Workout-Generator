@@ -39,7 +39,6 @@ class _WorkoutPageState extends State<WorkoutPage> {
       } else {
         _selectedInjuries.add(injury);
       }
-      _updateAvailableExercises();
     });
   }
 
@@ -50,22 +49,13 @@ class _WorkoutPageState extends State<WorkoutPage> {
       } else {
         _selectedEquipment.add(equipment);
       }
-      _updateAvailableExercises();
     });
-  }
-
-  void _updateAvailableExercises() {
-    _availableExercises.clear();
-    _availableExercises.addAll(getAvailableExercises(
-        availableEquipment: _selectedEquipment.toList(),
-        injuredAreas: _selectedInjuries.toList()));
   }
 
   @override
   void initState() {
     super.initState();
     _selectedEquipment.addAll(_equipment);
-    _updateAvailableExercises();
   }
 
   void _generateWorkout(int numberOfExercises) {

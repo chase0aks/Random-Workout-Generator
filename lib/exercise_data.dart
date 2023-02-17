@@ -1247,33 +1247,6 @@ final List<ExerciseData> allExercises = [
       injuredAreas: ['Knee']),
 ];
 
-List<ExerciseData> getAvailableExercises({
-  List<String>? availableEquipment,
-  List<String>? injuredAreas,
-}) {
-  // Filter exercises by equipment and injury restrictions
-  final filteredExercises = allExercises.where((exercise) {
-    final exerciseEquipment = exercise.equipment;
-    final exerciseInjuryRestrictions = exercise.injuredAreas;
-
-    // Check if the user has all required equipment
-    if (availableEquipment != null &&
-        !availableEquipment.every((e) => exerciseEquipment.contains(e))) {
-      return false;
-    }
-
-    // Check if the user has any injury restrictions that conflict with the exercise
-    if (injuredAreas != null &&
-        exerciseInjuryRestrictions
-            .any((injury) => injuredAreas.contains(injury))) {
-      return false;
-    }
-
-    return true;
-  }).toList();
-
-  return filteredExercises;
-}
 
 /*Use this format ExerciseData(
     name: 'Bodyweight Reverse Alternating Lunge',
