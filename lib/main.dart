@@ -111,7 +111,7 @@ class _WorkoutPageState extends State<WorkoutPage> {
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
-                _generateWorkout(5);
+                _generateWorkout(10);
               },
               child: Text('Generate Workout'),
             ),

@@ -58,6 +58,7 @@ final List<String> availableEquipment = [
   'Kettlebell',
   'Machine',
   'Medicine Ball',
+  'Stability Ball',
   'Resistance Band',
   'Smith Machine',
   'TRX',
@@ -2136,6 +2137,1499 @@ final List<ExerciseData> allExercises = [
       muscleGroups: ['Glutes', 'Hamstrings', 'Back', 'Shoulders'],
       equipment: ['Kettlebell'],
       injuredAreas: ['Lower Back', 'Shoulder']),
+  ExerciseData(name: 'Kettlebell Turkish Get-Up', muscleGroups: [
+    'Abs',
+    'Back',
+    'Glutes',
+    'Hamstrings',
+    'Shoulders',
+    'Triceps'
+  ], equipment: [
+    'Kettlebell'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist',
+    'Neck',
+    'Back',
+    'Knee'
+  ]),
+  ExerciseData(name: 'Kettlebell Windmill', muscleGroups: [
+    'Abs',
+    'Back',
+    'Glutes',
+    'Hamstrings',
+    'Obliques',
+    'Shoulders'
+  ], equipment: [
+    'Kettlebell'
+  ], injuredAreas: [
+    'Wrist',
+    'Shoulder',
+    'Lower Back',
+    'Neck'
+  ]),
+  ExerciseData(name: 'Kick Through', muscleGroups: [
+    'Abs',
+    'Back',
+    'Glutes',
+    'Hamstrings',
+    'Obliques',
+    'Quads'
+  ], equipment: [], injuredAreas: [
+    'Wrist',
+    'Shoulder',
+    'Knee',
+    'Hip'
+  ]),
+  ExerciseData(
+      name: 'L-Sit Hold',
+      muscleGroups: ['Abs', 'Hip Flexors', 'Shoulders', 'Triceps'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist', 'Neck']),
+  ExerciseData(
+      name: 'Landmine Close Grip Row',
+      muscleGroups: ['Back', 'Biceps', 'Rear Shoulders'],
+      equipment: ['Barbell', 'Landmine'],
+      injuredAreas: ['Wrist', 'Elbow', 'Shoulder', 'Lower Back']),
+  ExerciseData(
+      name: 'Landmine Press',
+      muscleGroups: ['Front Shoulders', 'Triceps'],
+      equipment: ['Barbell', 'Landmine'],
+      injuredAreas: ['Wrist', 'Elbow', 'Shoulder', 'Neck']),
+  ExerciseData(
+      name: 'Landmine Squat',
+      muscleGroups: ['Glutes', 'Hamstrings', 'Quads'],
+      equipment: ['Barbell', 'Landmine'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Landmine Twist',
+      muscleGroups: ['Abs', 'Obliques'],
+      equipment: ['Barbell', 'Landmine'],
+      injuredAreas: ['Wrist', 'Elbow', 'Shoulder', 'Lower Back']),
+  ExerciseData(
+      name: 'Lateral Lunge',
+      muscleGroups: ['Adductors', 'Glutes', 'Hamstrings', 'Quads'],
+      equipment: [],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Lateral Lunge to Side Step Up',
+      muscleGroups: ['Adductors', 'Glutes', 'Hamstrings', 'Quads'],
+      equipment: [],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Lower Calf Stretch (Seated)',
+      muscleGroups: ['Calves'],
+      equipment: [],
+      injuredAreas: ['Achilles', 'Ankle']),
+  ExerciseData(
+      name: 'Lower Calf Stretch (Standing)',
+      muscleGroups: ['Calves'],
+      equipment: [],
+      injuredAreas: ['Achilles', 'Ankle']),
+  ExerciseData(
+      name: 'Lying Cobra',
+      muscleGroups: ['Lower Back'],
+      equipment: [],
+      injuredAreas: ['Neck', 'Lower Back']),
+  ExerciseData(
+      name: 'Lying Leg-Hip Raise',
+      muscleGroups: ['Abs', 'Glutes', 'Hip Flexors', 'Lower Back'],
+      equipment: [],
+      injuredAreas: ['Lower Back', 'Hip']),
+  ExerciseData(
+      name: 'Lying Piriformis Stretch',
+      muscleGroups: ['Glutes'],
+      equipment: [],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Lying Posterior Deltoid Stretch',
+      muscleGroups: ['Shoulders'],
+      equipment: [],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Machine Back Extension',
+      muscleGroups: ['Lower Back'],
+      equipment: ['Machine'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Machine Behind Neck Press',
+      muscleGroups: ['Shoulders'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder', 'Neck']),
+  ExerciseData(
+      name: 'Machine Bench Press',
+      muscleGroups: ['Chest', 'Triceps', 'Front Shoulders'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Machine Chest Dip',
+      muscleGroups: ['Chest', 'Triceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Machine Chest Press',
+      muscleGroups: ['Chest', 'Triceps', 'Front Shoulders'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Machine Close Grip Incline Row',
+      muscleGroups: ['Upper Back', 'Biceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Machine Curl',
+      muscleGroups: ['Biceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Elbow']),
+  ExerciseData(
+      name: 'Machine Decline Chest Press',
+      muscleGroups: ['Lower Chest', 'Triceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Machine Donkey Calf Raise',
+      muscleGroups: ['Calves'],
+      equipment: ['Machine'],
+      injuredAreas: ['Ankle']),
+  ExerciseData(
+      name: 'Machine Hack Press',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Machine'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Machine Hammer Preacher Curl',
+      muscleGroups: ['Biceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Elbow']),
+  ExerciseData(
+      name: 'Machine Incline Bench Press',
+      muscleGroups: ['Upper Chest', 'Front Shoulders', 'Triceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Machine Incline Chest Press',
+      muscleGroups: ['Upper Chest', 'Front Shoulders', 'Triceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Machine Incline Chest Press (Parallel Grip)',
+      muscleGroups: ['Upper Chest', 'Front Shoulders', 'Triceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Machine Incline Row',
+      muscleGroups: ['Upper Back', 'Biceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Machine Kneeling Rear Kickback',
+      muscleGroups: ['Glutes'],
+      equipment: ['Machine'],
+      injuredAreas: ['Hip']),
+  ExerciseData(
+      name: 'Machine Kneeling Twist',
+      muscleGroups: ['Obliques'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Lat Pulldown',
+      muscleGroups: ['Lats'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Lat Underhand Pulldown',
+      muscleGroups: ['Lats', 'Biceps'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Lateral Raise',
+      muscleGroups: ['Shoulders'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Leg Extension',
+      muscleGroups: ['Quads'],
+      equipment: ['Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Machine Lying Leg Curl',
+      muscleGroups: ['Hamstrings'],
+      equipment: ['Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Machine Lying T-Bar Row',
+      muscleGroups: ['Lats', 'Rhomboids'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Pec Deck Fly',
+      muscleGroups: ['Chest'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Preacher Curl',
+      muscleGroups: ['Biceps'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Pullover',
+      muscleGroups: ['Lats', 'Chest'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Reverse Wrist Curl',
+      muscleGroups: ['Forearms'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Seated Calf Press',
+      muscleGroups: ['Calves'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Seated Calf Raise',
+      muscleGroups: ['Calves'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Seated Crunch',
+      muscleGroups: ['Abs'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Seated Crunch (Arm Pad Version)',
+      muscleGroups: ['Abs'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Seated Crunch (Chest Pad Version)',
+      muscleGroups: ['Abs'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Seated Fly',
+      muscleGroups: ['Chest', 'Shoulders'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Seated High Row',
+      muscleGroups: ['Lats', 'Traps'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Seated Hip Abduction',
+      muscleGroups: ['Glutes'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Seated Hip Adduction',
+      muscleGroups: ['Adductors'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Machine Seated Leg Curl',
+      muscleGroups: ['Hamstrings'],
+      equipment: ['Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Machine Seated Leg Press',
+      muscleGroups: ['Quads', 'Glutes'],
+      equipment: ['Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Machine Seated Leg Raise Crunch',
+      muscleGroups: ['Abs', 'Hip Flexors'],
+      equipment: ['Machine'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Machine Seated Reverse Fly',
+      muscleGroups: ['Rear Shoulders'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Machine Seated Row',
+      muscleGroups: ['Lats', 'Rhomboids', 'Biceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Lower Back', 'Shoulder']),
+  ExerciseData(
+      name: 'Machine Seated Row (Horizontal Grip)',
+      muscleGroups: ['Lats', 'Rhomboids', 'Biceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Lower Back', 'Shoulder']),
+  ExerciseData(
+      name: 'Machine Seated Shrug',
+      muscleGroups: ['Traps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Neck']),
+  ExerciseData(
+      name: 'Machine Seated Single-Leg Curl',
+      muscleGroups: ['Hamstrings'],
+      equipment: ['Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Machine Shoulder Press',
+      muscleGroups: ['Front Shoulders', 'Triceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Machine Shoulder Press (Parallel Grip)',
+      muscleGroups: ['Front Shoulders', 'Triceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Machine Shrug',
+      muscleGroups: ['Traps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Neck']),
+  ExerciseData(
+      name: 'Machine Single-Leg Extension',
+      muscleGroups: ['Quads'],
+      equipment: ['Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Machine Single-Leg Lying Leg Curl',
+      muscleGroups: ['Hamstrings'],
+      equipment: ['Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Machine Single-Leg Seated Leg Press',
+      muscleGroups: ['Quads'],
+      equipment: ['Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Machine Standing Calf Raise',
+      muscleGroups: ['Calves'],
+      equipment: ['Machine'],
+      injuredAreas: ['Ankle']),
+  ExerciseData(
+      name: 'Machine Standing Leg Curl',
+      muscleGroups: ['Hamstrings'],
+      equipment: ['Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Machine T-Bar Row',
+      muscleGroups: ['Lats', 'Rhomboids', 'Biceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Lower Back', 'Shoulder']),
+  ExerciseData(
+      name: 'Machine Tricep Dip',
+      muscleGroups: ['Triceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Elbow', 'Shoulder']),
+  ExerciseData(
+      name: 'Machine Tricep Extension',
+      muscleGroups: ['Triceps'],
+      equipment: ['Machine'],
+      injuredAreas: ['Elbow', 'Shoulder']),
+  ExerciseData(
+      name: 'Machine V-Squat',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Machine Wrist Curl',
+      muscleGroups: ['Forearms'],
+      equipment: ['Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Medicine Ball Push-Up',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders', 'Core'],
+      equipment: ['Medicine Ball'],
+      injuredAreas: ['Shoulder', 'Wrist']),
+  ExerciseData(
+      name: 'Medicine Ball Side Slam',
+      muscleGroups: ['Core', 'Shoulders'],
+      equipment: ['Medicine Ball'],
+      injuredAreas: ['Shoulder', 'Back']),
+  ExerciseData(
+      name: 'Medicine Ball Slam',
+      muscleGroups: ['Core', 'Shoulders'],
+      equipment: ['Medicine Ball'],
+      injuredAreas: ['Shoulder', 'Back']),
+  ExerciseData(
+      name: 'Mini Band Arm Raise',
+      muscleGroups: ['Shoulders'],
+      equipment: ['Resistance Band'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Mini Band Lateral Walk',
+      muscleGroups: ['Glutes', 'Abductors'],
+      equipment: ['Resistance Band'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Mini Band Lying Abduction',
+      muscleGroups: ['Glutes'],
+      equipment: ['Resistance Band'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Mini Band Monster Walk',
+      muscleGroups: ['Glutes', 'Abductors'],
+      equipment: ['Resistance Band'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Mini Band Seated Hip Abduction',
+      muscleGroups: ['Glutes', 'Abductors'],
+      equipment: ['Resistance Band'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Mini Band Squat',
+      muscleGroups: ['Quads', 'Glutes'],
+      equipment: ['Resistance Band'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Mountain Climbers',
+      muscleGroups: ['Core', 'Cardio'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Nordic Curl',
+      muscleGroups: ['Hamstrings'],
+      equipment: [],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Oblique Side-Leg Raise',
+      muscleGroups: ['Obliques', 'Abductors'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Pancake Stretch',
+      muscleGroups: ['Hamstrings', 'Hips'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Pec Minor Stretch',
+      muscleGroups: ['Chest'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Pigeon Pose',
+      muscleGroups: ['Hips', 'Glutes'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Pike Push-Up',
+      muscleGroups: ['Shoulders', 'Triceps', 'Chest'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Wrist']),
+  ExerciseData(
+      name: 'Pistol Squat',
+      muscleGroups: ['Quads', 'Glutes'],
+      equipment: [],
+      injuredAreas: ['Knee', 'Ankle']),
+  ExerciseData(
+      name: 'Plank Pull Through',
+      muscleGroups: ['Core', 'Back', 'Shoulders'],
+      equipment: ['Plate'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Plank to Push-Up',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders', 'Core'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Plank With Shoulder Tap',
+      muscleGroups: ['Abs', 'Shoulders'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Plank, Row, Rotate, Press',
+      muscleGroups: ['Abs', 'Back', 'Shoulders'],
+      equipment: ['Dumbbell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Plate Front Raise',
+      muscleGroups: ['Front Shoulders'],
+      equipment: ['Weight Plates'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Plate Side Bend',
+      muscleGroups: ['Obliques'],
+      equipment: ['Weight Plates'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Plyometric Push-Up',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Wrist']),
+  ExerciseData(
+      name: 'Prowler Sled Drag (Backwards)',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Prowler Sled'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Prowler Sled Push',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Prowler Sled'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Pull-Up',
+      muscleGroups: ['Back', 'Biceps'],
+      equipment: ['Pull-Up Bar'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Pull-Up (Parallel Close Grip)',
+      muscleGroups: ['Back', 'Biceps'],
+      equipment: ['Pull-Up Bar'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Pulse Lunge',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: [],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Pulse Squat',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: [],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Push Jerk',
+      muscleGroups: ['Shoulders', 'Triceps'],
+      equipment: ['Barbell'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Push Press',
+      muscleGroups: ['Shoulders', 'Triceps'],
+      equipment: ['Barbell'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Push-Up',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Wrist']),
+  ExerciseData(
+      name: 'Push-Up (Eccentric Only)',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Wrist']),
+  ExerciseData(
+      name: 'Push-Up (On Knees)',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Wrist']),
+  ExerciseData(
+      name: 'Push-Up With Rotation',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders', 'Obliques'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Wrist']),
+  ExerciseData(
+      name: 'Push-Up With Single Arm Deficit',
+      muscleGroups: ['Chest', 'Triceps'],
+      equipment: ['Bodyweight'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Quadruped Straight Leg Fire Hydrant',
+      muscleGroups: ['Glutes'],
+      equipment: ['Bodyweight'],
+      injuredAreas: ['Hip']),
+  ExerciseData(
+      name: 'Rack Chin',
+      muscleGroups: ['Biceps'],
+      equipment: ['Barbell'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Resistance Band Assisted Goblet Squat',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Resistance Band Bent-Over Row',
+      muscleGroups: ['Lats', 'Rhomboids', 'Biceps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Resistance Band Bulgarian Split Squat',
+      muscleGroups: ['Quads', 'Glutes'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Resistance Band Chest Fly',
+      muscleGroups: ['Chest'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Resistance Band Chest Press',
+      muscleGroups: ['Chest', 'Triceps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Resistance Band Crab Walk',
+      muscleGroups: ['Glutes', 'Hip Abductors'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Hip']),
+  ExerciseData(
+      name: 'Resistance Band Deadlift',
+      muscleGroups: ['Hamstrings', 'Glutes', 'Lower Back'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Resistance Band Decline Push-Up',
+      muscleGroups: ['Chest', 'Triceps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Resistance Band Kneeling Ab Crunch',
+      muscleGroups: ['Abs'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Neck', 'Lower Back']),
+  ExerciseData(
+      name: 'Resistance Band Kneeling Lat Extension',
+      muscleGroups: ['Lats'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Resistance Band Kneeling Tricep Extension',
+      muscleGroups: ['Triceps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Resistance Band Low Row',
+      muscleGroups: ['Lats', 'Rhomboids', 'Biceps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Resistance Band Lunge',
+      muscleGroups: ['Quads', 'Glutes'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Resistance Band Lying Hamstring Curl',
+      muscleGroups: ['Hamstrings'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Resistance Band One Arm Bent-Over Row',
+      muscleGroups: ['Lats', 'Middle Back', 'Biceps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Lower Back']),
+  ExerciseData(
+      name: 'Resistance Band One Arm Chest Fly',
+      muscleGroups: ['Chest'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Resistance Band One Arm Standing Kickbacks',
+      muscleGroups: ['Triceps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Resistance Band Overhead Tricep Extension',
+      muscleGroups: ['Triceps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Resistance Band Resisted Crunch',
+      muscleGroups: ['Abs'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Neck', 'Shoulder']),
+  ExerciseData(
+      name: 'Resistance Band Resisted Military Push-Up',
+      muscleGroups: ['Chest', 'Triceps', 'Front Shoulders'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Resistance Band Reverse Fly',
+      muscleGroups: ['Rear Shoulders', 'Upper Back'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Resistance Band Romanian Deadlift',
+      muscleGroups: ['Hamstrings', 'Glutes', 'Lower Back'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Resistance Band Seated Back High Row',
+      muscleGroups: ['Lats', 'Middle Back'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Lower Back']),
+  ExerciseData(
+      name: 'Resistance Band Shoulder Press',
+      muscleGroups: ['Front Shoulders'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Resistance Band Shrugs',
+      muscleGroups: ['Traps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Resistance Band Squat',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Resistance Band Standing Ab Twist',
+      muscleGroups: ['Abs', 'Obliques'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Resistance Band Standing Back Extension',
+      muscleGroups: ['Lower Back', 'Glutes'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Resistance Band Standing Bicep Curl',
+      muscleGroups: ['Biceps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Resistance Band Standing Calf Raise',
+      muscleGroups: ['Calves'],
+      equipment: ['Resistance Band'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Resistance Band Standing Chest Press',
+      muscleGroups: ['Chest', 'Triceps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Resistance Band Standing Front Shoulder Raise',
+      muscleGroups: ['Front Shoulders'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Resistance Band Standing Hammer Curl',
+      muscleGroups: ['Biceps', 'Forearms'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Resistance Band Standing Lateral Raise',
+      muscleGroups: ['Side Shoulders'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Resistance Band Standing Leg Extension',
+      muscleGroups: ['Quads'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Knee', 'Hip']),
+  ExerciseData(
+      name: 'Resistance Band Standing One Arm Preacher Curl',
+      muscleGroups: ['Biceps', 'Forearms'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Resistance Band Step-Up',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Knee', 'Hip']),
+  ExerciseData(
+      name: 'Resistance Band Upright Row',
+      muscleGroups: ['Side Shoulders', 'Traps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Resistance Band Wide Grip Lat Pulldown',
+      muscleGroups: ['Lats', 'Biceps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist', 'Neck']),
+  ExerciseData(
+      name: 'Resting Squat',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: [],
+      injuredAreas: ['Knee', 'Ankle', 'Hip', 'Lower Back']),
+  ExerciseData(
+      name: 'Reverse Crunch',
+      muscleGroups: ['Abs'],
+      equipment: [],
+      injuredAreas: ['Neck', 'Lower Back']),
+  ExerciseData(
+      name: 'Reverse Lunge To Knee Drive',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: [],
+      injuredAreas: ['Knee', 'Hip']),
+  ExerciseData(
+      name: 'Reverse Lunge With Twist',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings', 'Obliques'],
+      equipment: [],
+      injuredAreas: ['Knee', 'Hip', 'Lower Back']),
+  ExerciseData(
+      name: 'RKC Plank',
+      muscleGroups: ['Abs', 'Shoulders'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist', 'Lower Back']),
+  ExerciseData(
+      name: 'Rotary Calf Extension',
+      muscleGroups: ['Calves'],
+      equipment: [],
+      injuredAreas: ['Ankle']),
+  ExerciseData(
+      name: 'Russian Hamstring Curl',
+      muscleGroups: ['Hamstrings'],
+      equipment: [],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Russian Twist',
+      muscleGroups: ['Abs', 'Obliques'],
+      equipment: ['Medicine Ball'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Scapular Pull-Up',
+      muscleGroups: ['Back', 'Shoulders'],
+      equipment: ['Pull-Up Bar'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Scapular Push-Up',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Shoulder Dislocation',
+      muscleGroups: ['Shoulders'],
+      equipment: ['Resistance Band'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Side Bridge',
+      muscleGroups: ['Abs', 'Obliques'],
+      equipment: [],
+      injuredAreas: ['Wrist']),
+  ExerciseData(
+      name: 'Side Lying Thoracic Rotation',
+      muscleGroups: ['Back', 'Abs', 'Obliques'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Side Plank',
+      muscleGroups: ['Abs', 'Obliques'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Side Plank Reach Through',
+      muscleGroups: ['Abs', 'Obliques'],
+      equipment: ['Dumbbell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Side Shuffle',
+      muscleGroups: ['Legs'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Side-Lying Leg Lift',
+      muscleGroups: ['Glutes', 'Hip Abductors'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Single Arm Kettlebell Clean',
+      muscleGroups: ['Back', 'Shoulders', 'Legs'],
+      equipment: ['Kettlebell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Single Arm Kettlebell Strict Press',
+      muscleGroups: ['Shoulders', 'Triceps'],
+      equipment: ['Kettlebell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Single Arm Kettlebell Swing',
+      muscleGroups: ['Back', 'Glutes', 'Legs'],
+      equipment: ['Kettlebell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Single Arm Landmine Press',
+      muscleGroups: ['Shoulders', 'Triceps'],
+      equipment: ['Barbell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Single Arm Landmine Pull and Press',
+      muscleGroups: ['Back', 'Shoulders'],
+      equipment: ['Barbell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Single Kettlebell Lunge',
+      muscleGroups: ['Legs'],
+      equipment: ['Kettlebell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Single-Leg Glute Bridge',
+      muscleGroups: ['Glutes'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Single-Leg Hip Thrust (On Bench)',
+      muscleGroups: ['Glutes'],
+      equipment: ['Bench'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Sit-Up',
+      muscleGroups: ['Abs'],
+      equipment: [],
+      injuredAreas: ['Neck']),
+  ExerciseData(
+      name: 'Skater Jumps',
+      muscleGroups: ['Legs'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Sled 45 Calf Press',
+      muscleGroups: ['Calves'],
+      equipment: ['Sled'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Sled 45 Calf Raise',
+      muscleGroups: ['Calves'],
+      equipment: ['Sled 45'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Sled 45 Leg Press',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Sled 45'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Sled Single Leg 45 Leg Press',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Sled 45'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Slider Atomic Push-Up',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders', 'Abs'],
+      equipment: ['Sliders'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Slider Hamstring Curl',
+      muscleGroups: ['Hamstrings'],
+      equipment: ['Sliders'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Slider Hip Abduction',
+      muscleGroups: ['Glutes'],
+      equipment: ['Sliders'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Slider Mountain Climbers',
+      muscleGroups: ['Abs', 'Hip Flexors'],
+      equipment: ['Sliders'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Slider Tuck',
+      muscleGroups: ['Abs'],
+      equipment: ['Sliders'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Slider Walkout',
+      muscleGroups: ['Abs', 'Shoulders'],
+      equipment: ['Sliders'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Slow Push-Up (3-1-1 Tempo)',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders', 'Abs'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Smith Machine Behind Neck Press',
+      muscleGroups: ['Shoulders', 'Triceps'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Shoulder', 'Neck']),
+  ExerciseData(
+      name: 'Smith Machine Bench Press',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
+      equipment: ['Smith Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Smith Machine Bent-Over Row',
+      muscleGroups: ['Lats', 'Rhomboids', 'Biceps', 'Forearms'],
+      equipment: ['Smith Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Smith Machine Close Grip Bench Press',
+      muscleGroups: ['Triceps', 'Chest', 'Shoulders'],
+      equipment: ['Smith Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Smith Machine Close Grip Incline Bench Press',
+      muscleGroups: ['Triceps', 'Chest', 'Shoulders'],
+      equipment: ['Smith Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Smith Machine Deadlift',
+      muscleGroups: ['Hamstrings', 'Glutes', 'Lower Back'],
+      equipment: ['Smith Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Smith Machine Decline Bench Press',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
+      equipment: ['Smith Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Smith Machine Front Squat',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Smith Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Smith Machine Good Morning',
+      muscleGroups: ['Hamstrings', 'Lower Back', 'Glutes'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Smith Machine Hip Thrust',
+      muscleGroups: ['Glutes', 'Hamstrings'],
+      equipment: ['Smith Machine'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Smith Machine Incline Bench Press',
+      muscleGroups: ['Chest', 'Triceps', 'Front Shoulders'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Smith Machine Rear Delt Row',
+      muscleGroups: ['Rear Shoulders', 'Upper Back'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Smith Machine Rear Lunge',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Smith Machine Shoulder Press',
+      muscleGroups: ['Front Shoulders', 'Triceps'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Smith Machine Shrug',
+      muscleGroups: ['Traps'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Smith Machine Single Leg Split Squat',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Smith Machine Split Squat',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Smith Machine Squat',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Smith Machine Standing Calf Raise',
+      muscleGroups: ['Calves'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Ankle']),
+  ExerciseData(
+      name: 'Smith Machine Stiff-Leg Deadlift',
+      muscleGroups: ['Hamstrings', 'Lower Back', 'Glutes'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Smith Machine Upright Row',
+      muscleGroups: ['Front Shoulders', 'Traps'],
+      equipment: ['Smith Machine'],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Spiderman Push-Up',
+      muscleGroups: ['Chest', 'Triceps', 'Abs', 'Hip Flexors'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Wrist']),
+  ExerciseData(name: 'Split Jerk', muscleGroups: [
+    'Front Shoulders',
+    'Triceps',
+    'Quads',
+    'Glutes',
+    'Hamstrings',
+    'Calves'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Shoulder',
+    'Elbow',
+    'Knee'
+  ]),
+  ExerciseData(
+      name: 'Squat Clean',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings', 'Lower Back', 'Calves'],
+      equipment: ['Barbell'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Squat Jack',
+      muscleGroups: ['Quads', 'Glutes', 'Calves', 'Cardiovascular'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Squat Jump',
+      muscleGroups: ['Quads', 'Glutes', 'Calves', 'Cardiovascular'],
+      equipment: [],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Stability Ball Elevated Push-Up (Chest Elevated)',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders', 'Core'],
+      equipment: ['Stability Ball'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Stability Ball Elevated Push-Up (Feet Elevated)',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders', 'Core'],
+      equipment: ['Stability Ball'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Stability Ball Pike',
+      muscleGroups: ['Abdominals', 'Shoulders', 'Triceps'],
+      equipment: ['Stability Ball'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Stability Ball Plank',
+      muscleGroups: ['Abdominals', 'Lower Back'],
+      equipment: ['Stability Ball'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Stability Ball Rollout',
+      muscleGroups: ['Abdominals', 'Shoulders', 'Triceps'],
+      equipment: ['Stability Ball'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Stability Ball Tuck',
+      muscleGroups: ['Abdominals', 'Hip Flexors'],
+      equipment: ['Stability Ball'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Staggered Stance Dumbbell Romanian Deadlift',
+      muscleGroups: ['Hamstrings', 'Glutes', 'Lower Back'],
+      equipment: ['Dumbbell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Standing Hip C.A.R.',
+      muscleGroups: ['Hip Flexors', 'Glutes'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Standing Oblique Crunch',
+      muscleGroups: ['Obliques'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Standing Rear Delt Cable Crossover',
+      muscleGroups: ['Shoulders'],
+      equipment: ['Cable'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Starfish Side Plank',
+      muscleGroups: ['Obliques', 'Abdominals', 'Hip Flexors'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Static Distal Hamstring Stretch',
+      muscleGroups: ['Hamstrings'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Static Hip Flexor Stretch',
+      muscleGroups: ['Hip Flexors'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Static Lat and Tricep Stretch',
+      muscleGroups: ['Lats', 'Triceps'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Static Oblique and Lat Stretch (Seated)',
+      muscleGroups: ['Lats', 'Obliques'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Static Oblique and Lat Stretch (Standing)',
+      muscleGroups: ['Lats', 'Obliques'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Static Quadricep Stretch',
+      muscleGroups: ['Quads'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Straight Leg Kickback',
+      muscleGroups: ['Glutes', 'Hamstrings'],
+      equipment: ['Ankle Weights'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Superman Raise',
+      muscleGroups: ['Lower Back'],
+      equipment: [],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Svend Press',
+      muscleGroups: ['Chest'],
+      equipment: ['Dumbbell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Swinging High Kicks',
+      muscleGroups: ['Quads', 'Glutes'],
+      equipment: [],
+      injuredAreas: ['Hip', 'Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Swiss Ball Crunch',
+      muscleGroups: ['Abs'],
+      equipment: ['Swiss Ball'],
+      injuredAreas: ['Neck', 'Lower Back']),
+  ExerciseData(
+      name: 'Swiss Ball Glute Bridge',
+      muscleGroups: ['Glutes', 'Hamstrings'],
+      equipment: ['Swiss Ball'],
+      injuredAreas: ['Lower Back', 'Knee']),
+  ExerciseData(
+      name: 'Swiss Ball Hamstring Curl',
+      muscleGroups: ['Hamstrings'],
+      equipment: ['Swiss Ball'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Swiss Ball Lower Back Extension',
+      muscleGroups: ['Lower Back'],
+      equipment: ['Swiss Ball'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Swiss Ball Single Leg Leg Curl',
+      muscleGroups: ['Hamstrings'],
+      equipment: ['Swiss Ball'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Table Inverted Row',
+      muscleGroups: ['Back', 'Biceps'],
+      equipment: [],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'Terminal Knee Extension',
+      muscleGroups: ['Quads'],
+      equipment: ['Resistance Band'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Towel Bicep Curl',
+      muscleGroups: ['Biceps'],
+      equipment: ['Towel'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Towel Row',
+      muscleGroups: ['Back', 'Biceps'],
+      equipment: ['Towel'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Tricep Dip',
+      muscleGroups: ['Triceps'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Triceps Bow',
+      muscleGroups: ['Triceps'],
+      equipment: ['Resistance Band'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'TRX 3 Way Row',
+      muscleGroups: ['Back', 'Biceps'],
+      equipment: ['TRX'],
+      injuredAreas: ['Shoulder']),
+  ExerciseData(
+      name: 'TRX Atomic Push-Up',
+      muscleGroups: ['Chest', 'Triceps', 'Abs'],
+      equipment: ['TRX'],
+      injuredAreas: ['Shoulder', 'Wrist']),
+  ExerciseData(
+      name: 'TRX Bicep Curl',
+      muscleGroups: ['Biceps'],
+      equipment: ['TRX'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'TRX Chest Fly',
+      muscleGroups: ['Chest'],
+      equipment: ['TRX'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'TRX Chest Press',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
+      equipment: ['TRX'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist', 'Lower Back']),
+  ExerciseData(
+      name: 'TRX Deltoid Fly',
+      muscleGroups: ['Shoulders'],
+      equipment: ['TRX'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist', 'Lower Back']),
+  ExerciseData(
+      name: 'TRX Glute Bridge',
+      muscleGroups: ['Glutes', 'Hamstrings', 'Core'],
+      equipment: ['TRX'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'TRX Hamstring Curl',
+      muscleGroups: ['Hamstrings'],
+      equipment: ['TRX'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'TRX Incline Press',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
+      equipment: ['TRX'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist', 'Lower Back']),
+  ExerciseData(
+      name: 'TRX Inverted Row',
+      muscleGroups: ['Back', 'Biceps', 'Forearms'],
+      equipment: ['TRX'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'TRX Knee Tuck',
+      muscleGroups: ['Abs', 'Hip Flexors'],
+      equipment: ['TRX'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'TRX Lunge',
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      equipment: ['TRX'],
+      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'TRX Overhead Squat',
+      muscleGroups: ['Quads', 'Glutes', 'Shoulders'],
+      equipment: ['TRX'],
+      injuredAreas: ['Knee', 'Shoulder', 'Lower Back']),
+  ExerciseData(
+      name: 'TRX Pike',
+      muscleGroups: ['Abs', 'Shoulders', 'Hip Flexors'],
+      equipment: ['TRX'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist', 'Neck']),
+  ExerciseData(
+      name: 'TRX Push-Up',
+      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
+      equipment: ['TRX'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'TRX Squat to Row',
+      muscleGroups: ['Quads', 'Glutes', 'Back', 'Biceps'],
+      equipment: ['TRX'],
+      injuredAreas: ['Knee', 'Lower Back', 'Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'TRX Tricep Extension',
+      muscleGroups: ['Triceps', 'Shoulders'],
+      equipment: ['TRX'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'TRX Y Pull',
+      muscleGroups: ['Back', 'Rear Shoulders', 'Biceps', 'Forearms'],
+      equipment: ['TRX'],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Twisting Elbow Plank',
+      muscleGroups: ['Abs', 'Obliques', 'Shoulders'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Twisting Mountain Climber',
+      muscleGroups: ['Abs', 'Obliques', 'Shoulders'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'V Twist',
+      muscleGroups: ['Abs', 'Obliques'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'V Up',
+      muscleGroups: ['Abs', 'Hip Flexors'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Wall Sit',
+      muscleGroups: ['Quads', 'Glutes'],
+      equipment: [],
+      injuredAreas: ['Knee', 'Hip']),
+  ExerciseData(
+      name: 'Wall Skullcrusher',
+      muscleGroups: ['Triceps'],
+      equipment: ['Dumbbell'],
+      injuredAreas: ['Elbow', 'Shoulder']),
+  ExerciseData(
+      name: 'Weighted 45 Side Bend',
+      muscleGroups: ['Obliques'],
+      equipment: ['Dumbbell', 'Barbell'],
+      injuredAreas: ['Back']),
+  ExerciseData(
+      name: 'Weighted Chest-Dip',
+      muscleGroups: ['Chest', 'Triceps'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Weighted Chin-Up',
+      muscleGroups: ['Back', 'Biceps'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Elbow']),
+  ExerciseData(
+      name: 'Weighted Crunch',
+      muscleGroups: ['Abs'],
+      equipment: ['Dumbbell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Weighted Crunch (On Stability Ball)',
+      muscleGroups: ['Abs'],
+      equipment: ['Stability Ball'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Weighted Crunch (Plate On Chest)',
+      muscleGroups: ['Abs'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Weighted Crunch Toe-Touch',
+      muscleGroups: ['Abs'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Weighted Decline Russian Twist',
+      muscleGroups: ['Obliques'],
+      equipment: [],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Weighted Hyperextension',
+      muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings'],
+      equipment: ['Dumbbell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Weighted Incline Crunch',
+      muscleGroups: ['Abs'],
+      equipment: ['Dumbbell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Weighted Incline Sit-Up',
+      muscleGroups: ['Abs'],
+      equipment: ['Dumbbell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Weighted Lateral Lunge',
+      muscleGroups: ['Quads', 'Glutes', 'Adductors'],
+      equipment: ['Dumbbell'],
+      injuredAreas: ['Knee']),
+  ExerciseData(
+      name: 'Weighted Lower Back Extensions',
+      muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings'],
+      equipment: ['Dumbbell'],
+      injuredAreas: []),
+  ExerciseData(
+      name: 'Weighted Pull-Up',
+      muscleGroups: ['Back', 'Biceps'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
+  ExerciseData(
+      name: 'Weighted Side Bend (On Stability Ball)',
+      muscleGroups: ['Obliques', 'Abs'],
+      equipment: ['Stability Ball', 'Dumbbell', 'Kettlebell'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Weighted Side Crunch',
+      muscleGroups: ['Obliques', 'Abs'],
+      equipment: ['Dumbbell'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Weighted Side Crunch (On Stability Ball)',
+      muscleGroups: ['Obliques', 'Abs'],
+      equipment: ['Stability Ball', 'Dumbbell', 'Kettlebell'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Weighted Sit-Up',
+      muscleGroups: ['Abs'],
+      equipment: ['Dumbbell'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Weighted Twisting Crunch (On Stability Ball)',
+      muscleGroups: ['Obliques', 'Abs'],
+      equipment: ['Stability Ball', 'Dumbbell', 'Kettlebell'],
+      injuredAreas: ['Lower Back']),
+  ExerciseData(
+      name: 'Yoga Push-Up',
+      muscleGroups: ['Chest', 'Triceps'],
+      equipment: [],
+      injuredAreas: ['Shoulder', 'Wrist', 'Elbow'])
 ];
 
 
