@@ -986,22 +986,22 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Cable Bar Bench Press',
       muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
-      equipment: ['Cable', 'Barbell'],
+      equipment: ['Cable'],
       injuredAreas: ['Shoulder', 'Wrist']),
   ExerciseData(
       name: 'Cable Bar Shoulder Press',
       muscleGroups: ['Shoulders', 'Triceps'],
-      equipment: ['Cable', 'Barbell'],
+      equipment: ['Cable'],
       injuredAreas: ['Shoulder', 'Wrist']),
   ExerciseData(
       name: 'Cable Bar Standing Chest Press',
       muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
-      equipment: ['Cable', 'Barbell'],
+      equipment: ['Cable'],
       injuredAreas: ['Shoulder', 'Wrist']),
   ExerciseData(
       name: 'Cable Bar Standing Incline Chest Press',
       muscleGroups: ['Upper Chest', 'Triceps', 'Shoulders'],
-      equipment: ['Cable', 'Barbell'],
+      equipment: ['Cable'],
       injuredAreas: ['Shoulder', 'Wrist']),
   ExerciseData(
       name: 'Cable Bench Press',

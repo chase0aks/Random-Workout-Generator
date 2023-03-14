@@ -25,6 +25,7 @@ class WorkoutPage extends StatefulWidget {
 class _WorkoutPageState extends State<WorkoutPage> {
   final _selectedInjuries = <String>{};
   final _selectedEquipment = <String>{};
+  final _selectedMuscles = <String>{};
   final List<ExerciseData> _selectedExercises = [];
 
   void _onInjurySelected(String injury) {
@@ -47,6 +48,15 @@ class _WorkoutPageState extends State<WorkoutPage> {
     });
   }
 
+  void _onMuscleSelected(String muscle) {
+    setState(() {
+      if (_selectedMuscles.contains(muscle)) {
+        _selectedMuscles.remove(muscle);
+      } else {
+        _selectedMuscles.add(muscle);
+      }
+    });
+  }
   void _generateWorkout() {
     final random = Random();
     _selectedExercises.clear();
@@ -57,6 +67,9 @@ class _WorkoutPageState extends State<WorkoutPage> {
           (_selectedInjuries.isEmpty ||
               !exercise.injuredAreas
                   .any((injury) => _selectedInjuries.contains(injury))) &&
+          (_selectedMuscles.isEmpty ||
+              !exercise.muscleGroups
+                  .any((muscle) => _selectedMuscles.contains(muscle))) && 
           (_selectedEquipment.isEmpty ||
               exercise.equipment.any(
                   (equipment) => _selectedEquipment.contains(equipment)))) {
@@ -99,6 +112,20 @@ class _WorkoutPageState extends State<WorkoutPage> {
                         selected: _selectedEquipment.contains(equipment),
                         onSelected: (selected) {
                           _onEquipmentSelected(equipment);
+                        },
+                      ))
+                  .toList(),
+            ),
+            Text('What muscles do you want to workout?'),
+            Wrap(
+              spacing: 8.0,
+              runSpacing: 4.0,
+              children: allMuscleGroups
+                  .map((muscle) => FilterChip(
+                        label: Text(muscle),
+                        selected: _selectedMuscles.contains(muscle),
+                        onSelected: (selected) {
+                          _onMuscleSelected(muscle);
                         },
                       ))
                   .toList(),
