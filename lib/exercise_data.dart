@@ -101,7 +101,7 @@ final List<ExerciseData> allExercises = [
       muscleGroups: ['Abs', 'Hip Flexors'],
       equipment: [''],
       injuredAreas: ['']),
-  ExerciseData( 
+  ExerciseData(
       name: 'Air Bicycle',
       muscleGroups: ['Abs', 'Hip Flexors'],
       equipment: [''],
@@ -171,11 +171,20 @@ final List<ExerciseData> allExercises = [
       muscleGroups: ['Rear Shoulders', 'Abs', 'Lats'],
       equipment: ['Resistance Band'],
       injuredAreas: ['Shoulder']),
-  ExerciseData(
-      name: 'Bar Muscle Up',
-      muscleGroups: ['Lats', 'Biceps', 'Mid Chest', 'Triceps', 'Upper Chest', 'Abs'],
-      equipment: ['Bar'],
-      injuredAreas: ['Shoulders', 'Elbows', 'Wrists']),
+  ExerciseData(name: 'Bar Muscle Up', muscleGroups: [
+    'Lats',
+    'Biceps',
+    'Mid Chest',
+    'Triceps',
+    'Upper Chest',
+    'Abs'
+  ], equipment: [
+    'Bar'
+  ], injuredAreas: [
+    'Shoulders',
+    'Elbows',
+    'Wrists'
+  ]),
   ExerciseData(
       name: 'Barbell Behind Neck Press',
       muscleGroups: ['Front Shoulders', 'Mid Shoulders', 'Triceps'],
@@ -186,69 +195,133 @@ final List<ExerciseData> allExercises = [
       muscleGroups: ['Mid Chest', 'Upper Chest', 'Triceps', 'Front Shoulders'],
       equipment: ['Barbell', 'Bench'],
       injuredAreas: ['Shoulders', 'Elbows']),
-  ExerciseData(
-      name: 'Barbell Bent-Over Row',
-      muscleGroups: ['Lats', 'Rhomboids', 'Teres Major', 'Biceps', 'Forearms', 'Rear Shoulders', 'Traps'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Lower Back']),
-  ExerciseData(
-      name: 'Barbell Block Pull',
-      muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings'],
-      equipment: ['Barbell', 'Blocks'],
-      injuredAreas: ['Back', 'Knee']),
+  ExerciseData(name: 'Barbell Bent-Over Row', muscleGroups: [
+    'Lats',
+    'Rhomboids',
+    'Teres Major',
+    'Biceps',
+    'Forearms',
+    'Rear Shoulders',
+    'Traps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Barbell Block Pull', muscleGroups: [
+    'Lower Back',
+    'Glutes',
+    'Hamstrings',
+    'Erector Spinae',
+    'Abs',
+    'Forearms',
+    'Lats',
+    'Obliques',
+    'Quads',
+    'Teres Major',
+    'Traps'
+  ], equipment: [
+    'Barbell',
+    'Blocks'
+  ], injuredAreas: [
+    'Back',
+    'Knee'
+  ]),
   ExerciseData(
       name: 'Barbell Board Press',
-      muscleGroups: ['Mid Chest', 'Front Shoulders', 'Triceps'],
+      muscleGroups: ['Mid Chest', 'Front Shoulders', 'Triceps', 'Upper Chest'],
       equipment: ['Barbell', 'Bench', 'Board'],
       injuredAreas: ['Shoulder', 'Elbow']),
-  ExerciseData(
-      name: 'Barbell Box Squat',
-      muscleGroups: ['Quads', 'Hamstrings', 'Glutes'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(name: 'Barbell Box Squat', muscleGroups: [
+    'Quads',
+    'Hamstrings',
+    'Glutes',
+    'Obliques',
+    'Erector Spinae',
+    'Abs'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Knee',
+    'Lower Back'
+  ]),
   ExerciseData(
       name: 'Barbell Bulgarian Split Squat',
-      muscleGroups: ['Quads', 'Hamstrings', 'Glutes'],
+      muscleGroups: ['Quads', 'Glutes'],
       equipment: ['Barbell'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Barbell Close Grip Bench Press',
-      muscleGroups: ['Triceps', 'Chest', 'Shoulders'],
+      muscleGroups: ['Triceps', 'Mid Chest', 'Upper Chest' 'Front Shoulders'],
       equipment: ['Barbell', 'Bench'],
       injuredAreas: ['Elbows', 'Shoulders']),
-  ExerciseData(
-      name: 'Barbell Close Grip Bent-Over Row',
-      muscleGroups: ['Lats', 'Rhomboids', 'Biceps', 'Forearms'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Lower Back']),
+  ExerciseData(name: 'Barbell Close Grip Bent-Over Row', muscleGroups: [
+    'Lats',
+    'Rhomboids',
+    'Biceps',
+    'Forearms',
+    'Teres Major',
+    'Rear Shoulders',
+    'Traps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Lower Back'
+  ]),
   ExerciseData(
       name: 'Barbell Close Grip Floor Press',
-      muscleGroups: ['Triceps', 'Chest', 'Front Shoulders'],
+      muscleGroups: ['Triceps', 'Mid Chest', 'Upper Chest', 'Front Shoulders'],
       equipment: ['Barbell'],
       injuredAreas: ['Elbow', 'Wrist', 'Shoulder']),
   ExerciseData(
       name: 'Barbell Close Grip Incline Bench Press',
-      muscleGroups: ['Triceps', 'Chest', 'Front Shoulders'],
+      muscleGroups: ['Triceps', 'Mid Chest', 'Upper Chest', 'Front Shoulders'],
       equipment: ['Barbell'],
       injuredAreas: ['Elbow', 'Wrist', 'Shoulder']),
   ExerciseData(
       name: 'Barbell Curl',
-      muscleGroups: ['Biceps', 'Forearms'],
+      muscleGroups: ['Biceps', 'Forearms', 'Brachialis'],
       equipment: ['Barbell'],
       injuredAreas: ['Elbows', 'Wrists']),
-  ExerciseData(
-      name: 'Barbell Dead Row',
-      muscleGroups: ['Lats', 'Upper Back', 'Biceps'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Wrist', 'Lower Back']),
-  ExerciseData(
-      name: 'Barbell Deadlift',
-      muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings', 'Quads'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Lower Back', 'Knees']),
+  ExerciseData(name: 'Barbell Dead Row', muscleGroups: [
+    'Lats',
+    'Traps',
+    'Erector Spinae',
+    'Hamstrings',
+    'Teres Major',
+    'Abs',
+    'Forearms',
+    'Glutes',
+    'Lower Back',
+    'Obliques',
+    'Quads'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Wrist',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Barbell Deadlift', muscleGroups: [
+    'Lats',
+    'Traps',
+    'Erector Spinae',
+    'Hamstrings',
+    'Teres Major',
+    'Abs',
+    'Forearms',
+    'Glutes',
+    'Lower Back',
+    'Obliques',
+    'Quads'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Lower Back',
+    'Knees'
+  ]),
   ExerciseData(
       name: 'Barbell Decline Bench Press',
-      muscleGroups: ['Chest', 'Triceps'],
+      muscleGroups: ['Mid Chest', 'Upper Chest', 'Front Shoulders', 'Triceps'],
       equipment: ['Barbell'],
       injuredAreas: ['Elbow', 'Wrist', 'Shoulder']),
   ExerciseData(
@@ -256,59 +329,108 @@ final List<ExerciseData> allExercises = [
       muscleGroups: ['Triceps'],
       equipment: ['Barbell'],
       injuredAreas: ['Elbow', 'Wrist', 'Shoulder']),
-  ExerciseData(
-      name: 'Barbell Deficit Deadlift',
-      muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings', 'Quads'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Lower Back', 'Knees']),
+  ExerciseData(name: 'Barbell Deficit Deadlift', muscleGroups: [
+    'Lats',
+    'Traps',
+    'Erector Spinae',
+    'Hamstrings',
+    'Teres Major',
+    'Abs',
+    'Forearms',
+    'Glutes',
+    'Lower Back',
+    'Obliques',
+    'Quads'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Lower Back',
+    'Knees'
+  ]),
   ExerciseData(
       name: 'Barbell Floor Press',
-      muscleGroups: ['Chest', 'Triceps', 'Front Shoulders'],
+      muscleGroups: ['Mid Chest', 'Upper Chest', 'Triceps', 'Front Shoulders'],
       equipment: ['Barbell'],
       injuredAreas: ['Elbow', 'Wrist', 'Shoulder']),
   ExerciseData(
       name: 'Barbell Front Raise',
-      muscleGroups: ['Front Shoulders'],
+      muscleGroups: ['Front Shoulders', 'Mid Shoulders'],
       equipment: ['Barbell'],
       injuredAreas: ['Elbow', 'Wrist', 'Shoulder']),
-  ExerciseData(
-      name: 'Barbell Front Squat',
-      muscleGroups: ['Quads', 'Glutes', 'Lower Back'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Knees', 'Lower Back']),
-  ExerciseData(
-      name: 'Barbell Full Squat',
-      muscleGroups: ['Quads', 'Glutes', 'Adductors', 'Erector Spinae'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Knees', 'Lower Back']),
-  ExerciseData(
-      name: 'Barbell Glute-Ham Raise',
-      muscleGroups: ['Hamstrings', 'Glutes'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Knees']),
-  ExerciseData(
-      name: 'Barbell Good Morning',
-      muscleGroups: ['Lower Back', 'Hamstrings', 'Glutes', 'Calves'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Lower Back']),
+  ExerciseData(name: 'Barbell Front Squat', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Abs',
+    'Erector Spinae',
+    'Hamstrings',
+    'Obliques'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Knees',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Barbell Full Squat', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Abs',
+    'Erector Spinae',
+    'Hamstrings',
+    'Obliques'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Knees',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Barbell Glute-Ham Raise', muscleGroups: [
+    'Glutes',
+    'Abs',
+    'Erector Spinae',
+    'Hamstrings',
+    'Obliques'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Knees'
+  ]),
+  ExerciseData(name: 'Barbell Good Morning', muscleGroups: [
+    'Glutes',
+    'Abs',
+    'Erector Spinae',
+    'Hamstrings',
+    'Obliques'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Lower Back'
+  ]),
   ExerciseData(
       name: 'Barbell Guillotine Bench Press',
-      muscleGroups: ['Chest', 'Triceps', 'Front Shoulders'],
+      muscleGroups: ['Mid Chest', 'Upper Chest' 'Triceps', 'Front Shoulders'],
       equipment: ['Barbell'],
       injuredAreas: ['Neck', 'Shoulder']),
-  ExerciseData(
-      name: 'Barbell Hack Squat',
-      muscleGroups: ['Quads', 'Glutes', 'Calves', 'Hip Flexors'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Knees']),
+  ExerciseData(name: 'Barbell Hack Squat', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Abs',
+    'Erector Spinae',
+    'Hamstrings',
+    'Obliques',
+    'Traps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Knees'
+  ]),
   ExerciseData(
       name: 'Barbell High Box Squat',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      muscleGroups: ['Quads', 'Glutes', 'Abs', 'Hamstrings', 'Obliques'],
       equipment: ['Barbell'],
       injuredAreas: ['Knees', 'Lower Back']),
   ExerciseData(
       name: 'Barbell Hip Thrust',
-      muscleGroups: ['Glutes', 'Hamstrings'],
+      muscleGroups: ['Glutes', 'Hamstrings', 'Erector Spinae', 'Quads'],
       equipment: ['Barbell'],
       injuredAreas: ['']),
   ExerciseData(
@@ -318,17 +440,17 @@ final List<ExerciseData> allExercises = [
       injuredAreas: ['']),
   ExerciseData(
       name: 'Barbell Hyperextension',
-      muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings'],
+      muscleGroups: ['Lower Back', 'Erector Spinae', 'Glutes', 'Hamstrings'],
       equipment: ['Barbell'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Barbell Incline Bench Press',
-      muscleGroups: ['Upper Chest', 'Front Shoulders', 'Triceps'],
+      muscleGroups: ['Upper Chest', 'Mid Chest', 'Front Shoulders', 'Triceps'],
       equipment: ['Barbell'],
       injuredAreas: ['Shoulder', 'Elbow']),
   ExerciseData(
       name: 'Barbell Incline Front Raise',
-      muscleGroups: ['Front Shoulders'],
+      muscleGroups: ['Front Shoulders', 'Mid Shoulders'],
       equipment: ['Barbell'],
       injuredAreas: ['Shoulder', 'Elbow']),
   ExerciseData(
@@ -338,17 +460,17 @@ final List<ExerciseData> allExercises = [
       injuredAreas: ['Elbow']),
   ExerciseData(
       name: 'Barbell JM Bench Press',
-      muscleGroups: ['Chest', 'Triceps', 'Front Shoulders'],
+      muscleGroups: ['Mid Chest', 'Upper Chest', 'Triceps', 'Front Shoulders'],
       equipment: ['Barbell'],
       injuredAreas: ['Shoulder', 'Elbow']),
   ExerciseData(
       name: 'Barbell Lunge',
-      muscleGroups: ['Glutes', 'Hamstrings', 'Quads'],
+      muscleGroups: ['Glutes', 'Quads'],
       equipment: ['Barbell'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Barbell Lying Incline Curl',
-      muscleGroups: ['Biceps'],
+      muscleGroups: ['Biceps', 'Brachialis'],
       equipment: ['Barbell'],
       injuredAreas: ['Elbow']),
   ExerciseData(
@@ -356,69 +478,121 @@ final List<ExerciseData> allExercises = [
       muscleGroups: ['Triceps'],
       equipment: ['Barbell'],
       injuredAreas: ['Elbow']),
-  ExerciseData(
-      name: 'Barbell Paused Squat',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Knee', 'Lower Back']),
-  ExerciseData(
-      name: 'Barbell Pendley Row',
-      muscleGroups: ['Lats', 'Rear Shoulders', 'Biceps'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Lower Back']),
-  ExerciseData(
-      name: 'Barbell Power Clean',
-      muscleGroups: ['Glutes', 'Hamstrings', 'Quads', 'Traps'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Knee']),
+  ExerciseData(name: 'Barbell Paused Squat', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Abs',
+    'Erector Spinae',
+    'Hamstrings',
+    'Obliques'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Knee',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Barbell Pendley Row', muscleGroups: [
+    'Lats',
+    'Rear Shoulders',
+    'Biceps',
+    'Forearms',
+    'Traps',
+    'Teres Major',
+    'Rhomboids'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Barbell Power Clean', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Biceps',
+    'Front Shoulders',
+    'Hamstrings',
+    'Rear Shoulders',
+    'Triceps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Knee'
+  ]),
   ExerciseData(
       name: 'Barbell Preacher Curl',
-      muscleGroups: ['Biceps'],
+      muscleGroups: ['Biceps', 'Brachialis', 'Forearms'],
       equipment: ['Barbell'],
       injuredAreas: ['Elbow']),
-  ExerciseData(
-      name: 'Barbell Pullover',
-      muscleGroups: ['Lats', 'Chest', 'Triceps'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Shoulder']),
+  ExerciseData(name: 'Barbell Pullover', muscleGroups: [
+    'Lats',
+    'Mid Chest',
+    'Rear Shoulders',
+    'Rhomboids',
+    'Teres Major',
+    'Triceps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Shoulder'
+  ]),
   ExerciseData(
       name: 'Barbell Push Crunch',
-      muscleGroups: ['Abs'],
+      muscleGroups: ['Abs', 'Obliques'],
       equipment: ['Barbell'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Barbell Push Sit-Up',
-      muscleGroups: ['Abs'],
+      muscleGroups: ['Abs', 'Obliques'],
       equipment: ['Barbell'],
       injuredAreas: ['']),
-  ExerciseData(
-      name: 'Barbell Rack Pull',
-      muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Lower Back', 'Knees']),
+  ExerciseData(name: 'Barbell Rack Pull', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Abs',
+    'Erector Spinae',
+    'Hamstrings',
+    'Obliques',
+    'Forearms',
+    'Lats',
+    'Lower Back',
+    'Teres Major',
+    'Traps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Lower Back',
+    'Knees'
+  ]),
   ExerciseData(
       name: 'Barbell Rear Delt Raise',
-      muscleGroups: ['Rear Shoulders'],
+      muscleGroups: ['Rear Shoulders', 'Biceps', 'Mid Shoulders', 'Traps'],
       equipment: ['Barbell'],
       injuredAreas: ['Shoulder', 'Elbow']),
-  ExerciseData(
-      name: 'Barbell Rear Delt Row',
-      muscleGroups: ['Rear Shoulders', 'Lats'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Shoulder', 'Elbow', 'Lower Back']),
+  ExerciseData(name: 'Barbell Rear Delt Row', muscleGroups: [
+    'Rear Shoulders',
+    'Traps',
+    'Mid Shoulders',
+    'Rhomboids',
+    'Teres Major'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Shoulder',
+    'Elbow',
+    'Lower Back'
+  ]),
   ExerciseData(
       name: 'Barbell Rear Lunge',
-      muscleGroups: ['Glutes', 'Hamstrings', 'Quads'],
+      muscleGroups: ['Glutes', 'Quads'],
       equipment: ['Barbell'],
       injuredAreas: ['Knee']),
   ExerciseData(
       name: 'Barbell Reverse Curl',
-      muscleGroups: ['Biceps', 'Forearms'],
+      muscleGroups: ['Biceps', 'Forearms', 'Brachialis'],
       equipment: ['Barbell'],
       injuredAreas: ['Wrist']),
   ExerciseData(
       name: 'Barbell Reverse Preacher Curl',
-      muscleGroups: ['Biceps'],
+      muscleGroups: ['Biceps', 'Forearms', 'Brachialis'],
       equipment: ['Barbell'],
       injuredAreas: ['Elbow', 'Wrist']),
   ExerciseData(
@@ -426,21 +600,42 @@ final List<ExerciseData> allExercises = [
       muscleGroups: ['Forearms'],
       equipment: ['Barbell'],
       injuredAreas: ['Wrist']),
-  ExerciseData(
-      name: 'Barbell Rollout',
-      muscleGroups: ['Abs'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Shoulder']),
-  ExerciseData(
-      name: 'Barbell Romanian Deadlift',
-      muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Lower Back', 'Hamstring']),
-  ExerciseData(
-      name: 'Barbell Seal Row',
-      muscleGroups: ['Lats', 'Middle Back', 'Rear Shoulders'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Shoulder']),
+  ExerciseData(name: 'Barbell Rollout', muscleGroups: [
+    'Abs',
+    'Transverse Abdominis',
+    'Hip Flexors',
+    'Lats',
+    'Triceps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Shoulder'
+  ]),
+  ExerciseData(name: 'Barbell Romanian Deadlift', muscleGroups: [
+    'Lower Back',
+    'Glutes',
+    'Hamstrings',
+    'Erector Spinae',
+    'Forearms'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Lower Back',
+    'Hamstring'
+  ]),
+  ExerciseData(name: 'Barbell Seal Row', muscleGroups: [
+    'Lats',
+    'Biceps',
+    'Rear Shoulders',
+    'Rhomboids',
+    'Teres Major',
+    'Forearms',
+    'Traps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Shoulder'
+  ]),
   ExerciseData(
       name: 'Barbell Seated Calf Raise',
       muscleGroups: ['Calves'],
@@ -448,12 +643,12 @@ final List<ExerciseData> allExercises = [
       injuredAreas: ['Knee', 'Ankle']),
   ExerciseData(
       name: 'Barbell Seated Shoulder Press',
-      muscleGroups: ['Front Shoulders', 'Triceps'],
+      muscleGroups: ['Front Shoulders', 'Mid Shoulders', 'Triceps'],
       equipment: ['Barbell'],
       injuredAreas: ['Shoulder', 'Elbow']),
   ExerciseData(
       name: 'Barbell Shoulder Press',
-      muscleGroups: ['Front Shoulders', 'Triceps'],
+      muscleGroups: ['Front Shoulders', 'Mid Shoulders', 'Triceps'],
       equipment: ['Barbell'],
       injuredAreas: ['Shoulder', 'Elbow']),
   ExerciseData(
@@ -461,21 +656,51 @@ final List<ExerciseData> allExercises = [
       muscleGroups: ['Traps'],
       equipment: ['Barbell'],
       injuredAreas: ['Shoulder']),
-  ExerciseData(
-      name: 'Barbell Snatch',
-      muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings', 'Quads'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Shoulder']),
-  ExerciseData(
-      name: 'Barbell Squat',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Knee', 'Lower Back']),
-  ExerciseData(
-      name: 'Barbell Staggered Stance Deadlift',
-      muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Lower Back', 'Hamstring']),
+  ExerciseData(name: 'Barbell Snatch', muscleGroups: [
+    'Lower Back',
+    'Adductors',
+    'Glutes',
+    'Hamstrings',
+    'Quads',
+    'Calves',
+    'Forearms',
+    'Traps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Shoulder'
+  ]),
+  ExerciseData(name: 'Barbell Squat', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Hamstrings',
+    'Abs',
+    'Erector Spinae',
+    'Obliques'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Knee',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Barbell Staggered Stance Deadlift', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Abs',
+    'Erector Spinae',
+    'Hamstrings',
+    'Obliques',
+    'Forearms',
+    'Lats',
+    'Lower Back',
+    'Teres Major',
+    'Traps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Lower Back',
+    'Hamstring'
+  ]),
   ExerciseData(
       name: 'Barbell Standing Calf Raise',
       muscleGroups: ['Calves'],
@@ -483,47 +708,76 @@ final List<ExerciseData> allExercises = [
       injuredAreas: ['Knee', 'Ankle']),
   ExerciseData(
       name: 'Barbell Standing Preacher Curl',
-      muscleGroups: ['Biceps'],
+      muscleGroups: ['Biceps', 'Brachialis', 'Forearms'],
       equipment: ['Barbell'],
       injuredAreas: ['Elbow']),
   ExerciseData(
       name: 'Barbell Step-Up',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      muscleGroups: ['Quads', 'Glutes'],
       equipment: ['Barbell'],
       injuredAreas: ['Knees']),
   ExerciseData(
       name: 'Barbell Suitcase Iso-Hold',
-      muscleGroups: ['Forearms', 'Abs'],
+      muscleGroups: ['Forearms', 'Abs', 'Biceps', 'Erector Spinae'],
       equipment: ['Barbell'],
       injuredAreas: ['']),
-  ExerciseData(
-      name: 'Barbell Sumo Deadlift',
-      muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Lower Back']),
+  ExerciseData(name: 'Barbell Sumo Deadlift', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Abs',
+    'Erector Spinae',
+    'Hamstrings',
+    'Obliques',
+    'Forearms',
+    'Lats',
+    'Lower Back',
+    'Teres Major',
+    'Traps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Lower Back'
+  ]),
   ExerciseData(
       name: 'Barbell Sumo Squat',
-      muscleGroups: ['Quads', 'Glutes', 'Adductors'],
+      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
       equipment: ['Barbell'],
       injuredAreas: ['Knees']),
-  ExerciseData(
-      name: 'Barbell Thruster',
-      muscleGroups: ['Quads', 'Glutes', 'Front Shoulders', 'Triceps'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Knees', 'Shoulders', 'Wrists']),
-  ExerciseData(
-      name: 'Barbell Underhand Bent-Over Row',
-      muscleGroups: ['Lats', 'Biceps', 'Forearms'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Lower Back']),
+  ExerciseData(name: 'Barbell Thruster', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Mid Shoulders',
+    'Triceps',
+    'Abs',
+    'Hamstrings'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Knees',
+    'Shoulders',
+    'Wrists'
+  ]),
+  ExerciseData(name: 'Barbell Underhand Bent-Over Row', muscleGroups: [
+    'Lats',
+    'Biceps',
+    'Forearms',
+    'Rhomboids',
+    'Teres Major',
+    'Rear Shoulders',
+    'Traps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Lower Back'
+  ]),
   ExerciseData(
       name: 'Barbell Upright Row',
-      muscleGroups: ['Traps', 'Lats', 'Front Shoulders'],
+      muscleGroups: ['Traps', 'Mid Shoulders', 'Front Shoulders'],
       equipment: ['Barbell'],
       injuredAreas: ['Shoulders', 'Elbows', 'Wrists']),
   ExerciseData(
       name: 'Barbell Walking Lunge',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      muscleGroups: ['Quads', 'Glutes'],
       equipment: ['Barbell'],
       injuredAreas: ['Knees']),
   ExerciseData(
@@ -533,39 +787,76 @@ final List<ExerciseData> allExercises = [
       injuredAreas: ['Wrists']),
   ExerciseData(
       name: 'Barbell Zercher Good Morning',
-      muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings'],
+      muscleGroups: ['Biceps', 'Glutes', 'Hamstrings'],
       equipment: ['Barbell'],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Barbell Zercher Split Squat',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      muscleGroups: ['Quads', 'Glutes'],
       equipment: ['Barbell'],
       injuredAreas: ['Knees']),
-  ExerciseData(
-      name: 'Barbell Zercher Squat',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings', 'Abs'],
-      equipment: ['Barbell'],
-      injuredAreas: ['Knees']),
-  ExerciseData(
-      name: 'Bear Crawl',
-      muscleGroups: ['Core', 'Shoulders', 'Triceps'],
-      equipment: [''],
-      injuredAreas: ['Shoulders', 'Wrists']),
-  ExerciseData(
-      name: 'Belt Squat',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
-      equipment: ['Belt'],
-      injuredAreas: ['Knees', 'Lower Back']),
+  ExerciseData(name: 'Barbell Zercher Squat', muscleGroups: [
+    'Glutes',
+    'Quads',
+    'Biceps',
+    'Brachialis',
+    'Erector Spinae',
+    'Forearms',
+    'Front Shoulders',
+    'Hamstrings',
+    'Mid Shoulders',
+    'Traps'
+  ], equipment: [
+    'Barbell'
+  ], injuredAreas: [
+    'Knees'
+  ]),
+  ExerciseData(name: 'Bear Crawl', muscleGroups: [
+    'Abs',
+    'Front Shoulders',
+    'Mid Chest',
+    'Mid Shoulders',
+    'Glutes',
+    'Rear Shoulders',
+    'Rhomboids',
+    'Teres Major',
+    'Upper Chest'
+  ], equipment: [
+    ''
+  ], injuredAreas: [
+    'Shoulders',
+    'Wrists'
+  ]),
+  ExerciseData(name: 'Belt Squat', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Hamstrings',
+    'Abs',
+    'Adductors',
+    'Calves',
+    'Lower Back'
+  ], equipment: [
+    'Belt'
+  ], injuredAreas: [
+    'Knees',
+    'Lower Back'
+  ]),
   ExerciseData(
       name: 'Bench Dip',
-      muscleGroups: ['Triceps'],
+      muscleGroups: ['Triceps', 'Front Shoulders', 'Mid Chest', 'Upper Chest'],
       equipment: ['Bench'],
       injuredAreas: ['Shoulder']),
-  ExerciseData(
-      name: 'Bench Hip Thrust',
-      muscleGroups: ['Glutes', 'Hamstrings'],
-      equipment: ['Bench'],
-      injuredAreas: ['Lower Back']),
+  ExerciseData(name: 'Bench Hip Thrust', muscleGroups: [
+    'Glutes',
+    'Hamstrings',
+    'Hip Flexors',
+    'Lower Back',
+    'Quads'
+  ], equipment: [
+    'Bench'
+  ], injuredAreas: [
+    'Lower Back'
+  ]),
   ExerciseData(
       name: 'Bench Leg Raise',
       muscleGroups: ['Abs'],
@@ -578,24 +869,40 @@ final List<ExerciseData> allExercises = [
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Bent Knee Side Bridge',
-      muscleGroups: ['Obliques'],
+      muscleGroups: ['Obliques', 'Glutes'],
       equipment: [''],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Bent Knee Side Plank',
-      muscleGroups: ['Obliques'],
+      muscleGroups: ['Obliques', 'Glutes'],
       equipment: [''],
       injuredAreas: ['']),
-  ExerciseData(
-      name: 'Bird Dog',
-      muscleGroups: ['Lower Back', 'Abs', 'Glutes'],
-      equipment: [''],
-      injuredAreas: ['Lower Back']),
-  ExerciseData(
-      name: 'Bird Dog Row',
-      muscleGroups: ['Upper Back', 'Glutes'],
-      equipment: ['Dumbbell'],
-      injuredAreas: ['Lower Back']),
+  ExerciseData(name: 'Bird Dog', muscleGroups: [
+    'Glutes',
+    'Erector Spinae',
+    'Front Shoulders',
+    'Hamstrings',
+    'Mid Shoulders',
+    'Traps'
+  ], equipment: [
+    ''
+  ], injuredAreas: [
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Bird Dog Row', muscleGroups: [
+    'Lats',
+    'Abs',
+    'Front Shoulders',
+    'Mid Shoulders',
+    'Obliques',
+    'Rear Shoulders',
+    'Rhomboids',
+    'Teres Major'
+  ], equipment: [
+    'Dumbbell'
+  ], injuredAreas: [
+    'Lower Back'
+  ]),
   ExerciseData(
       name: 'Bodyweight Bulgarian Split Squat',
       muscleGroups: ['Quads', 'Glutes'],
@@ -603,69 +910,74 @@ final List<ExerciseData> allExercises = [
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Bodyweight Front Foot Elevated Split Squat',
-      muscleGroups: ['Quads', 'Glutes'],
+      muscleGroups: ['Hamstrings', 'Glutes'],
       equipment: [''],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Bodyweight Hip Thrust',
-      muscleGroups: ['Glutes'],
+      muscleGroups: ['Glutes', 'Erector Spinae', 'Hamstrings', 'Quads'],
       equipment: [''],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Bodyweight Leg Extension',
-      muscleGroups: ['Quads'],
+      muscleGroups: ['Quads', 'Abs', 'Erector Spinae', 'Glutes'],
       equipment: [''],
       injuredAreas: ['Knee']),
   ExerciseData(
       name: 'Bodyweight Reverse Alternating Lunge',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      muscleGroups: ['Quads', 'Glutes'],
       equipment: [''],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Bodyweight Reverse Lunge',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      muscleGroups: ['Quads', 'Glutes'],
       equipment: [''],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Bodyweight Single Leg Romanian Deadlift',
-      muscleGroups: ['Hamstrings', 'Glutes'],
+      muscleGroups: ['Hamstrings', 'Glutes', 'Erector Spinae', 'Lower Back'],
       equipment: [''],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Bodyweight Squat',
-      muscleGroups: ['Quads', 'Glutes'],
+      muscleGroups: ['Quads', 'Glutes', 'Abs', 'Erector Spinae', 'Hamstrings', 'Obliques'],
       equipment: [''],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Bodyweight Squat With Pause',
-      muscleGroups: ['Quads', 'Glutes'],
+      muscleGroups: ['Quads', 'Glutes', 'Abs', 'Erector Spinae', 'Hamstrings', 'Obliques'],
       equipment: [''],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Bodyweight Step-Up',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      muscleGroups: ['Quads', 'Glutes'],
       equipment: [''],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Bodyweight Walking Lunge',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      muscleGroups: ['Quads', 'Glutes'],
       equipment: [''],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
-      name: 'Bosu Dome Up Scissors',
-      muscleGroups: ['Abs', 'Hip Flexors', 'Quads'],
+      name: 'BOSU Dome Up Scissors',
+      muscleGroups: ['Abs', 'Transverse Abdominis', 'Hamstrings'],
       equipment: ['BOSU'],
       injuredAreas: ['Hip', 'Knee']),
   ExerciseData(
       name: 'Box Jump',
-      muscleGroups: ['Quads', 'Glutes', 'Calves'],
+      muscleGroups: ['Quads', 'Glutes', 'Calves', 'Hamstrings'],
       equipment: [''],
       injuredAreas: ['Ankle', 'Knee']),
   ExerciseData(
       name: 'Bulgarian Split Squat Jump',
-      muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
+      muscleGroups: ['Quads', 'Glutes'],
       equipment: [''],
       injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(
+      name: 'Burpee',
+      muscleGroups: [''],
+      equipment: [''],
+      injuredAreas: ['Shoulder']),
   ExerciseData(
       name: 'Cable Alternating Curl',
       muscleGroups: ['Biceps'],
