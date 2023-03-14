@@ -101,7 +101,7 @@ final List<ExerciseData> allExercises = [
       muscleGroups: ['Abs', 'Hip Flexors'],
       equipment: [''],
       injuredAreas: ['']),
-  ExerciseData(
+  ExerciseData( 
       name: 'Air Bicycle',
       muscleGroups: ['Abs', 'Hip Flexors'],
       equipment: [''],
@@ -163,32 +163,32 @@ final List<ExerciseData> allExercises = [
       injuredAreas: ['Shoulders', 'Elbows']),
   ExerciseData(
       name: 'BOSU Dome Up Single Arm Push-Up',
-      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
+      muscleGroups: ['Mid Chest', 'Triceps', 'Front Shoulders', 'Upper Chest'],
       equipment: ['BOSU'],
       injuredAreas: ['Shoulder', 'Wrist']),
   ExerciseData(
       name: 'Banded Face Pull',
-      muscleGroups: ['Rear Shoulders', 'Upper Back'],
+      muscleGroups: ['Rear Shoulders', 'Abs', 'Lats'],
       equipment: ['Resistance Band'],
       injuredAreas: ['Shoulder']),
   ExerciseData(
       name: 'Bar Muscle Up',
-      muscleGroups: ['Lats', 'Biceps', 'Forearms'],
+      muscleGroups: ['Lats', 'Biceps', 'Mid Chest', 'Triceps', 'Upper Chest', 'Abs'],
       equipment: ['Bar'],
       injuredAreas: ['Shoulders', 'Elbows', 'Wrists']),
   ExerciseData(
       name: 'Barbell Behind Neck Press',
-      muscleGroups: ['Front Shoulders', 'Triceps'],
+      muscleGroups: ['Front Shoulders', 'Mid Shoulders', 'Triceps'],
       equipment: ['Barbell'],
       injuredAreas: ['Shoulder', 'Elbow']),
   ExerciseData(
       name: 'Barbell Bench Press',
-      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
+      muscleGroups: ['Mid Chest', 'Upper Chest', 'Triceps', 'Front Shoulders'],
       equipment: ['Barbell', 'Bench'],
       injuredAreas: ['Shoulders', 'Elbows']),
   ExerciseData(
       name: 'Barbell Bent-Over Row',
-      muscleGroups: ['Lats', 'Rhomboids', 'Biceps', 'Forearms'],
+      muscleGroups: ['Lats', 'Rhomboids', 'Teres Major', 'Biceps', 'Forearms', 'Rear Shoulders', 'Traps'],
       equipment: ['Barbell'],
       injuredAreas: ['Lower Back']),
   ExerciseData(
