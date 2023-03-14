@@ -938,16 +938,32 @@ final List<ExerciseData> allExercises = [
       muscleGroups: ['Hamstrings', 'Glutes', 'Erector Spinae', 'Lower Back'],
       equipment: [''],
       injuredAreas: ['Lower Back']),
-  ExerciseData(
-      name: 'Bodyweight Squat',
-      muscleGroups: ['Quads', 'Glutes', 'Abs', 'Erector Spinae', 'Hamstrings', 'Obliques'],
-      equipment: [''],
-      injuredAreas: ['Knee', 'Lower Back']),
-  ExerciseData(
-      name: 'Bodyweight Squat With Pause',
-      muscleGroups: ['Quads', 'Glutes', 'Abs', 'Erector Spinae', 'Hamstrings', 'Obliques'],
-      equipment: [''],
-      injuredAreas: ['Knee', 'Lower Back']),
+  ExerciseData(name: 'Bodyweight Squat', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Abs',
+    'Erector Spinae',
+    'Hamstrings',
+    'Obliques'
+  ], equipment: [
+    ''
+  ], injuredAreas: [
+    'Knee',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Bodyweight Squat With Pause', muscleGroups: [
+    'Quads',
+    'Glutes',
+    'Abs',
+    'Erector Spinae',
+    'Hamstrings',
+    'Obliques'
+  ], equipment: [
+    ''
+  ], injuredAreas: [
+    'Knee',
+    'Lower Back'
+  ]),
   ExerciseData(
       name: 'Bodyweight Step-Up',
       muscleGroups: ['Quads', 'Glutes'],

@@ -1,6 +1,9 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'exercise_data.dart';
+import 'muscle_selection.dart';
+import 'injury_selection.dart';
+import 'equipment_selection.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,72 +14,129 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Workout App',
-      home: WorkoutPage(),
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/muscle': (context) => MuscleSelectionPage(
+              selectedMuscles: Set(),
+              onMusclesSelected: (selectedMuscles) {},
+            ),
+        '/injury': (context) => InjurySelectionPage(
+              selectedInjuries: Set(),
+              onInjurySelected: (selectedInjuries) {},
+            ),
+        '/equipment': (context) => EquipmentSelectionPage(
+              selectedEquipment: Set(),
+              onEquipmentSelected: (selectedEquipment) {},
+            ),
+        '/workout': (context) => WorkoutPage(
+              selectedInjuries: Set(),
+              selectedEquipment: Set(),
+              selectedMuscles: Set(),
+            ),
+      },
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Workout App'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/muscle');
+              },
+              child: Text('Select Muscles'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/injury');
+              },
+              child: Text('Select Injuries'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/equipment');
+              },
+              child: Text('Select Equipment'),
+            ),
+            SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/workout');
+              },
+              child: Text('Generate Workout'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
 
 class WorkoutPage extends StatefulWidget {
+  final Set<String> selectedInjuries;
+  final Set<String> selectedEquipment;
+  final Set<String> selectedMuscles;
+
+  WorkoutPage({
+    required this.selectedInjuries,
+    required this.selectedEquipment,
+    required this.selectedMuscles,
+  });
+
   @override
   _WorkoutPageState createState() => _WorkoutPageState();
 }
 
 class _WorkoutPageState extends State<WorkoutPage> {
-  final _selectedInjuries = <String>{};
-  final _selectedEquipment = <String>{};
-  final _selectedMuscles = <String>{};
-  final List<ExerciseData> _selectedExercises = [];
+  List<ExerciseData> _selectedExercises = [];
 
-  void _onInjurySelected(String injury) {
-    setState(() {
-      if (_selectedInjuries.contains(injury)) {
-        _selectedInjuries.remove(injury);
-      } else {
-        _selectedInjuries.add(injury);
-      }
-    });
+  @override
+  void initState() {
+    super.initState();
+    _generateWorkout();
   }
 
-  void _onEquipmentSelected(String equipment) {
-    setState(() {
-      if (_selectedEquipment.contains(equipment)) {
-        _selectedEquipment.remove(equipment);
-      } else {
-        _selectedEquipment.add(equipment);
-      }
-    });
-  }
-
-  void _onMuscleSelected(String muscle) {
-    setState(() {
-      if (_selectedMuscles.contains(muscle)) {
-        _selectedMuscles.remove(muscle);
-      } else {
-        _selectedMuscles.add(muscle);
-      }
-    });
-  }
   void _generateWorkout() {
     final random = Random();
-    _selectedExercises.clear();
-    while (_selectedExercises.length < 1) {
-      final exerciseIndex = random.nextInt(allExercises.length);
-      final exercise = allExercises[exerciseIndex];
-      if (!_selectedExercises.contains(exercise) &&
-          (_selectedInjuries.isEmpty ||
+    List<ExerciseData> filteredExercises = allExercises.where((exercise) {
+      return (widget.selectedInjuries.isEmpty ||
               !exercise.injuredAreas
-                  .any((injury) => _selectedInjuries.contains(injury))) &&
-          (_selectedMuscles.isEmpty ||
+                  .any((injury) => widget.selectedInjuries.contains(injury))) &&
+          (widget.selectedMuscles.isEmpty ||
               !exercise.muscleGroups
-                  .any((muscle) => _selectedMuscles.contains(muscle))) && 
-          (_selectedEquipment.isEmpty ||
+                  .any((muscle) => widget.selectedMuscles.contains(muscle))) &&
+          (widget.selectedEquipment.isEmpty ||
               exercise.equipment.any(
-                  (equipment) => _selectedEquipment.contains(equipment)))) {
-        _selectedExercises.add(exercise);
-      }
+                  (equipment) => widget.selectedEquipment.contains(equipment)));
+    }).toList();
+
+    if (filteredExercises.isEmpty) {
+      // No exercises match the selected criteria, so display an error message
+      _selectedExercises = [
+        ExerciseData(
+          name: 'No matching exercises found',
+          equipment: [],
+          injuredAreas: [],
+          muscleGroups: [],
+        )
+      ];
+    } else {
+      // Select a random exercise from the filtered list
+      _selectedExercises = [
+        filteredExercises[random.nextInt(filteredExercises.length)]
+      ];
     }
-    setState(() {});
   }
 
   @override
@@ -88,78 +148,33 @@ class _WorkoutPageState extends State<WorkoutPage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Text('Do you have any injuries?'),
-            Wrap(
-              spacing: 8.0,
-              runSpacing: 4.0,
-              children: injuredAreas
-                  .map((injury) => FilterChip(
-                        label: Text(injury),
-                        selected: _selectedInjuries.contains(injury),
-                        onSelected: (selected) {
-                          _onInjurySelected(injury);
-                        },
-                      ))
-                  .toList(),
-            ),
-            Text('What equipment do you have?'),
-            Wrap(
-              spacing: 8.0,
-              runSpacing: 4.0,
-              children: availableEquipment
-                  .map((equipment) => FilterChip(
-                        label: Text(equipment),
-                        selected: _selectedEquipment.contains(equipment),
-                        onSelected: (selected) {
-                          _onEquipmentSelected(equipment);
-                        },
-                      ))
-                  .toList(),
-            ),
-            Text('What muscles do you want to workout?'),
-            Wrap(
-              spacing: 8.0,
-              runSpacing: 4.0,
-              children: allMuscleGroups
-                  .map((muscle) => FilterChip(
-                        label: Text(muscle),
-                        selected: _selectedMuscles.contains(muscle),
-                        onSelected: (selected) {
-                          _onMuscleSelected(muscle);
-                        },
-                      ))
-                  .toList(),
-            ),
+            if (widget.selectedInjuries.isNotEmpty)
+              Text('Injuries: ${widget.selectedInjuries.join(', ')}'),
+            if (widget.selectedEquipment.isNotEmpty)
+              Text('Equipment: ${widget.selectedEquipment.join(', ')}'),
+            if (widget.selectedMuscles.isNotEmpty)
+              Text('Muscles: ${widget.selectedMuscles.join(', ')}'),
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
-                _generateWorkout();
+                setState(() {
+                  _generateWorkout();
+                });
               },
               child: Text('Generate Workout'),
             ),
             SizedBox(height: 16.0),
-            if (_selectedExercises.isNotEmpty) Text('Here is your workout:'),
-            for (final exercise in _selectedExercises)
-              Card(
-                child: ListTile(
-                  leading: Text('${_selectedExercises.indexOf(exercise) + 1}.'),
-                  title: Text(''),
-                  subtitle: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(exercise.name),
-                      SizedBox(height: 4.0),
-                      Row(
-                        children: <Widget>[
-                          Icon(Icons.timer, size: 16.0),
-                          SizedBox(width: 4.0),
-                          Icon(Icons.fitness_center, size: 16.0),
-                          SizedBox(width: 4.0),
-                        ],
+            if (_selectedExercises.isNotEmpty)
+              Column(
+                children: _selectedExercises
+                    .map(
+                      (exercise) => ListTile(
+                        title: Text(exercise.name),
+                        subtitle: Text(
+                            '${exercise.muscleGroups.join(', ')} | ${exercise.equipment.join(', ')}'),
                       ),
-                    ],
-                  ),
-                ),
+                    )
+                    .toList(),
               ),
           ],
         ),
