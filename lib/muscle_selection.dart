@@ -1,27 +1,35 @@
 import 'package:flutter/material.dart';
 import 'exercise_data.dart';
+import 'workout_preferences.dart';
 
-class MuscleSelectionPage extends StatefulWidget {
-  final Set<String> selectedMuscles;
-  final Function(Set<String>) onMusclesSelected;
+class MuscleSelection extends StatefulWidget {
+  final WorkoutPreferences prefs;
 
-  const MuscleSelectionPage({
-    Key? key,
-    required this.selectedMuscles,
-    required this.onMusclesSelected,
-  }) : super(key: key);
+  const MuscleSelection({required this.prefs});
 
   @override
-  _MuscleSelectionPageState createState() => _MuscleSelectionPageState();
+  _MuscleSelectionState createState() => _MuscleSelectionState();
 }
 
-class _MuscleSelectionPageState extends State<MuscleSelectionPage> {
+class _MuscleSelectionState extends State<MuscleSelection> {
   Set<String> _selectedMuscles = {};
 
   @override
   void initState() {
     super.initState();
-    _selectedMuscles = widget.selectedMuscles;
+    _selectedMuscles = widget.prefs.selectedEquipment;
+  }
+
+  void _onMuscleSelected(String muscle, bool selected) {
+    setState(() {
+      if (selected) {
+        _selectedMuscles.add(muscle);
+      } else {
+        _selectedMuscles.remove(muscle);
+      }
+    });
+    widget.prefs.updateInjury(_selectedMuscles);
+    widget.prefs.save();
   }
 
   @override
@@ -30,31 +38,17 @@ class _MuscleSelectionPageState extends State<MuscleSelectionPage> {
       appBar: AppBar(
         title: Text('Select Muscles'),
       ),
-      body: ListView.builder(
-        itemCount: allMuscleGroups.length,
-        itemBuilder: (context, index) {
-          final muscle = allMuscleGroups[index];
+      body: ListView(
+        children: allMuscleGroups.map((muscle) {
+          final isSelected = _selectedMuscles.contains(muscle);
           return CheckboxListTile(
             title: Text(muscle),
-            value: _selectedMuscles.contains(muscle),
-            onChanged: (value) {
-              setState(() {
-                if (value == true) {
-                  _selectedMuscles.add(muscle);
-                } else {
-                  _selectedMuscles.remove(muscle);
-                }
-              });
+            value: isSelected,
+            onChanged: (bool? selected) {
+              _onMuscleSelected(muscle, selected ?? false);
             },
           );
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          widget.onMusclesSelected(_selectedMuscles);
-          Navigator.pop(context);
-        },
-        child: Icon(Icons.check),
+        }).toList(),
       ),
     );
   }

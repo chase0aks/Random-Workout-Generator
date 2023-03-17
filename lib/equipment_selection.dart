@@ -1,27 +1,35 @@
 import 'package:flutter/material.dart';
 import 'exercise_data.dart';
+import 'workout_preferences.dart';
 
-class EquipmentSelectionPage extends StatefulWidget {
-  final Set<String> selectedEquipment;
-  final Function(Set<String>) onEquipmentSelected;
+class EquipmentSelection extends StatefulWidget {
+  final WorkoutPreferences prefs;
 
-  const EquipmentSelectionPage({
-    Key? key,
-    required this.selectedEquipment,
-    required this.onEquipmentSelected,
-  }) : super(key: key);
+  const EquipmentSelection({required this.prefs});
 
   @override
-  _EquipmentSelectionPageState createState() => _EquipmentSelectionPageState();
+  _EquipmentSelectionState createState() => _EquipmentSelectionState();
 }
 
-class _EquipmentSelectionPageState extends State<EquipmentSelectionPage> {
+class _EquipmentSelectionState extends State<EquipmentSelection> {
   Set<String> _selectedEquipment = {};
 
   @override
   void initState() {
     super.initState();
-    _selectedEquipment = widget.selectedEquipment;
+    _selectedEquipment = widget.prefs.selectedEquipment;
+  }
+
+  void _onEquipmentSelected(String equipment, bool selected) {
+    setState(() {
+      if (selected) {
+        _selectedEquipment.add(equipment);
+      } else {
+        _selectedEquipment.remove(equipment);
+      }
+    });
+    widget.prefs.updateEquipment(_selectedEquipment);
+    widget.prefs.save();
   }
 
   @override
@@ -30,31 +38,17 @@ class _EquipmentSelectionPageState extends State<EquipmentSelectionPage> {
       appBar: AppBar(
         title: Text('Select Equipment'),
       ),
-      body: ListView.builder(
-        itemCount: availableEquipment.length,
-        itemBuilder: (context, index) {
-          final equipment = availableEquipment[index];
+      body: ListView(
+        children: availableEquipment.map((equipment) {
+          final isSelected = _selectedEquipment.contains(equipment);
           return CheckboxListTile(
             title: Text(equipment),
-            value: _selectedEquipment.contains(equipment),
-            onChanged: (value) {
-              setState(() {
-                if (value == true) {
-                  _selectedEquipment.add(equipment);
-                } else {
-                  _selectedEquipment.remove(equipment);
-                }
-              });
+            value: isSelected,
+            onChanged: (bool? selected) {
+              _onEquipmentSelected(equipment, selected ?? false);
             },
           );
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          widget.onEquipmentSelected(_selectedEquipment);
-          Navigator.pop(context);
-        },
-        child: Icon(Icons.check),
+        }).toList(),
       ),
     );
   }

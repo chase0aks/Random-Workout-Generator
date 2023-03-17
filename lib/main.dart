@@ -1,9 +1,11 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'exercise_data.dart';
 import 'muscle_selection.dart';
 import 'injury_selection.dart';
 import 'equipment_selection.dart';
+import 'workout_generator.dart';
+import 'workout_preferences.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,67 +15,149 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Workout App',
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomePage(),
-        '/muscle': (context) => MuscleSelectionPage(
-              selectedMuscles: Set(),
-              onMusclesSelected: (selectedMuscles) {},
-            ),
-        '/injury': (context) => InjurySelectionPage(
-              selectedInjuries: Set(),
-              onInjurySelected: (selectedInjuries) {},
-            ),
-        '/equipment': (context) => EquipmentSelectionPage(
-              selectedEquipment: Set(),
-              onEquipmentSelected: (selectedEquipment) {},
-            ),
-        '/workout': (context) => WorkoutPage(
-              selectedInjuries: Set(),
-              selectedEquipment: Set(),
-              selectedMuscles: Set(),
-            ),
-      },
+      title: 'Workout Generator',
+      home: HomePage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _numExercises = 1;
+  WorkoutPreferences _prefs = WorkoutPreferences();
+
+  void _setNumExercises(int numExercises) {
+    setState(() {
+      _numExercises = numExercises;
+    });
+  }
+
+  void _setMuscles(Set<String> selectedMuscles) {
+    setState(() {
+      _prefs.updateInjury(selectedMuscles);
+    });
+  }
+
+  void _setInjuries(Set<String> selectedInjuries) {
+    setState(() {
+      _prefs.updateInjuries(selectedInjuries);
+    });
+  }
+
+  void _setEquipment(Set<String> selectedEquipment) {
+    setState(() {
+      _prefs.updateEquipment(selectedEquipment);
+    });
+  }
+
+  Future<void> _generateWorkout() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await _prefs.save;
+    List<ExerciseData> workout = WorkoutGenerator(_prefs).generateWorkout();
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => WorkoutPage(workout)),
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPrefs();
+  }
+
+  Future<void> _loadPrefs() async {
+    await _prefs.load();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Workout App'),
+        title: Text('Workout Generator'),
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text(
+              'Number Of Exercises:',
+              style: TextStyle(fontSize: 18),
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    onChanged: (value) {
+                      _setNumExercises(int.parse(value));
+                    },
+                    decoration: InputDecoration(
+                      hintText: '$_numExercises',
+                      contentPadding: EdgeInsets.all(8.0),
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16.0),
             ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/muscle');
+              onPressed: () async {
+                Set<String> selectedMuscles = await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => MuscleSelection(
+                            prefs: _prefs,
+                          )),
+                );
+                if (selectedMuscles != null) {
+                  _setMuscles(selectedMuscles);
+                }
               },
               child: Text('Select Muscles'),
             ),
+            SizedBox(height: 16.0),
             ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/injury');
+              onPressed: () async {
+                Set<String> selectedInjuries = await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => InjurySelection(
+                            prefs: _prefs,
+                          )),
+                );
+                if (selectedInjuries != null) {
+                  _setInjuries(selectedInjuries);
+                }
               },
               child: Text('Select Injuries'),
             ),
+            SizedBox(height: 16.0),
             ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/equipment');
+              onPressed: () async {
+                Set<String> selectedEquipment = await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => EquipmentSelection(
+                            prefs: _prefs,
+                          )),
+                );
+                if (selectedEquipment != null) {
+                  _setEquipment(selectedEquipment);
+                }
               },
               child: Text('Select Equipment'),
             ),
             SizedBox(height: 16.0),
             ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/workout');
-              },
+              onPressed: _generateWorkout,
               child: Text('Generate Workout'),
             ),
           ],
@@ -83,101 +167,25 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class WorkoutPage extends StatefulWidget {
-  final Set<String> selectedInjuries;
-  final Set<String> selectedEquipment;
-  final Set<String> selectedMuscles;
+class WorkoutPage extends StatelessWidget {
+  final List<ExerciseData> workout;
 
-  WorkoutPage({
-    required this.selectedInjuries,
-    required this.selectedEquipment,
-    required this.selectedMuscles,
-  });
-
-  @override
-  _WorkoutPageState createState() => _WorkoutPageState();
-}
-
-class _WorkoutPageState extends State<WorkoutPage> {
-  List<ExerciseData> _selectedExercises = [];
-
-  @override
-  void initState() {
-    super.initState();
-    _generateWorkout();
-  }
-
-  void _generateWorkout() {
-    final random = Random();
-    List<ExerciseData> filteredExercises = allExercises.where((exercise) {
-      return (widget.selectedInjuries.isEmpty ||
-              !exercise.injuredAreas
-                  .any((injury) => widget.selectedInjuries.contains(injury))) &&
-          (widget.selectedMuscles.isEmpty ||
-              !exercise.muscleGroups
-                  .any((muscle) => widget.selectedMuscles.contains(muscle))) &&
-          (widget.selectedEquipment.isEmpty ||
-              exercise.equipment.any(
-                  (equipment) => widget.selectedEquipment.contains(equipment)));
-    }).toList();
-
-    if (filteredExercises.isEmpty) {
-      // No exercises match the selected criteria, so display an error message
-      _selectedExercises = [
-        ExerciseData(
-          name: 'No matching exercises found',
-          equipment: [],
-          injuredAreas: [],
-          muscleGroups: [],
-        )
-      ];
-    } else {
-      // Select a random exercise from the filtered list
-      _selectedExercises = [
-        filteredExercises[random.nextInt(filteredExercises.length)]
-      ];
-    }
-  }
+  WorkoutPage(this.workout);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Workout App'),
+        title: Text('Workout'),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            if (widget.selectedInjuries.isNotEmpty)
-              Text('Injuries: ${widget.selectedInjuries.join(', ')}'),
-            if (widget.selectedEquipment.isNotEmpty)
-              Text('Equipment: ${widget.selectedEquipment.join(', ')}'),
-            if (widget.selectedMuscles.isNotEmpty)
-              Text('Muscles: ${widget.selectedMuscles.join(', ')}'),
-            SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _generateWorkout();
-                });
-              },
-              child: Text('Generate Workout'),
-            ),
-            SizedBox(height: 16.0),
-            if (_selectedExercises.isNotEmpty)
-              Column(
-                children: _selectedExercises
-                    .map(
-                      (exercise) => ListTile(
-                        title: Text(exercise.name),
-                        subtitle: Text(
-                            '${exercise.muscleGroups.join(', ')} | ${exercise.equipment.join(', ')}'),
-                      ),
-                    )
-                    .toList(),
-              ),
-          ],
-        ),
+      body: ListView.builder(
+        itemCount: workout.length,
+        itemBuilder: (BuildContext context, int index) {
+          ExerciseData exercise = workout[index];
+          return ListTile(
+            title: Text(exercise.name),
+          );
+        },
       ),
     );
   }

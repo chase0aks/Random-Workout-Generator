@@ -1,27 +1,35 @@
 import 'package:flutter/material.dart';
 import 'exercise_data.dart';
+import 'workout_preferences.dart';
 
-class InjurySelectionPage extends StatefulWidget {
-  final Set<String> selectedInjuries;
-  final Function(Set<String>) onInjurySelected;
+class InjurySelection extends StatefulWidget {
+  final WorkoutPreferences prefs;
 
-  const InjurySelectionPage({
-    Key? key,
-    required this.selectedInjuries,
-    required this.onInjurySelected,
-  }) : super(key: key);
+  const InjurySelection({required this.prefs});
 
   @override
-  _InjurySelectionPageState createState() => _InjurySelectionPageState();
+  _InjurySelectionState createState() => _InjurySelectionState();
 }
 
-class _InjurySelectionPageState extends State<InjurySelectionPage> {
+class _InjurySelectionState extends State<InjurySelection> {
   Set<String> _selectedInjuries = {};
 
   @override
   void initState() {
     super.initState();
-    _selectedInjuries = widget.selectedInjuries;
+    _selectedInjuries = widget.prefs.selectedEquipment;
+  }
+
+  void _onInjurySelected(String injury, bool selected) {
+    setState(() {
+      if (selected) {
+        _selectedInjuries.add(injury);
+      } else {
+        _selectedInjuries.remove(injury);
+      }
+    });
+    widget.prefs.updateInjury(_selectedInjuries);
+    widget.prefs.save();
   }
 
   @override
@@ -30,31 +38,17 @@ class _InjurySelectionPageState extends State<InjurySelectionPage> {
       appBar: AppBar(
         title: Text('Select Injuries'),
       ),
-      body: ListView.builder(
-        itemCount: injuredAreas.length,
-        itemBuilder: (context, index) {
-          final injuries = injuredAreas[index];
+      body: ListView(
+        children: injuredAreas.map((injury) {
+          final isSelected = _selectedInjuries.contains(injury);
           return CheckboxListTile(
-            title: Text(injuries),
-            value: _selectedInjuries.contains(injuries),
-            onChanged: (value) {
-              setState(() {
-                if (value == true) {
-                  _selectedInjuries.add(injuries);
-                } else {
-                  _selectedInjuries.remove(injuries);
-                }
-              });
+            title: Text(injury),
+            value: isSelected,
+            onChanged: (bool? selected) {
+              _onInjurySelected(injury, selected ?? false);
             },
           );
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          widget.onInjurySelected(_selectedInjuries);
-          Navigator.pop(context);
-        },
-        child: Icon(Icons.check),
+        }).toList(),
       ),
     );
   }
