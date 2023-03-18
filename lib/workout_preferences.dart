@@ -1,44 +1,48 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import 'injury_selection.dart';
+import 'muscle_selection.dart';
+import 'equipment_selection.dart';
 
-class WorkoutPreferences {
-  static const _selectedMusclesKey = 'selectedMuscles';
-  static const _selectedInjuriesKey = 'selectedInjuries';
-  static const _selectedEquipmentKey = 'selectedEquipment';
+class StorageManager {
+  static const String _musclesKey = 'selectedMuscles';
+  static const String _injuriesKey = 'selectedInjuries';
+  static const String _equipmentKey = 'selectedEquipment';
 
-  Set<String> _selectedMuscles = {};
-  Set<String> _selectedInjuries = {};
-  Set<String> _selectedEquipment = {};
+  static SharedPreferences? _prefs;
 
-  Set<String> get selectedMuscles => _selectedMuscles;
-  Set<String> get selectedInjuries => _selectedInjuries;
-  Set<String> get selectedEquipment => _selectedEquipment;
-
-  Future<void> load() async {
-    final prefs = await SharedPreferences.getInstance();
-    _selectedMuscles = prefs.getStringList(_selectedMusclesKey)?.toSet() ?? {};
-    _selectedInjuries =
-        prefs.getStringList(_selectedInjuriesKey)?.toSet() ?? {};
-    _selectedEquipment =
-        prefs.getStringList(_selectedEquipmentKey)?.toSet() ?? {};
+  static Future<void> _initPrefs() async {
+    if (_prefs == null) {
+      _prefs = await SharedPreferences.getInstance();
+    }
   }
 
-  Future<void> save() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setStringList(_selectedMusclesKey, _selectedMuscles.toList());
-    await prefs.setStringList(_selectedInjuriesKey, _selectedInjuries.toList());
-    await prefs.setStringList(
-        _selectedEquipmentKey, _selectedEquipment.toList());
+  static Future<void> saveSelectedMuscles(List<String> muscles) async {
+    await _initPrefs();
+    await _prefs!.setStringList(_musclesKey, muscles);
   }
 
-  void updateMuscles(Set<String> muscles) {
-    _selectedMuscles = muscles;
+  static Future<List<String>> getSelectedMuscles() async {
+    await _initPrefs();
+    return _prefs!.getStringList(_musclesKey) ?? [];
   }
 
-  void updateInjuries(Set<String> injuries) {
-    _selectedInjuries = injuries;
+  static Future<void> saveSelectedInjuries(List<String> injuries) async {
+    await _initPrefs();
+    await _prefs!.setStringList(_injuriesKey, injuries);
   }
 
-  void updateEquipment(Set<String> equipment) {
-    _selectedEquipment = equipment;
+  static Future<List<String>> getSelectedInjuries() async {
+    await _initPrefs();
+    return _prefs!.getStringList(_injuriesKey) ?? [];
+  }
+
+  static Future<void> saveSelectedEquipment(List<String> equipment) async {
+    await _initPrefs();
+    await _prefs!.setStringList(_equipmentKey, equipment);
+  }
+
+  static Future<List<String>> getSelectedEquipment() async {
+    await _initPrefs();
+    return _prefs!.getStringList(_equipmentKey) ?? [];
   }
 }
