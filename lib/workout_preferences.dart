@@ -30,7 +30,7 @@ class WorkoutPreferences {
         _selectedEquipmentKey, _selectedEquipment.toList());
   }
 
-  void updateInjury(Set<String> muscles) {
+  void updateMuscles(Set<String> muscles) {
     _selectedMuscles = muscles;
   }
 

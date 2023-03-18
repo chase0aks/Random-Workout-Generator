@@ -1,54 +1,74 @@
 import 'package:flutter/material.dart';
-import 'exercise_data.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'workout_preferences.dart';
 
 class EquipmentSelection extends StatefulWidget {
-  final WorkoutPreferences prefs;
-
-  const EquipmentSelection({required this.prefs});
+  const EquipmentSelection({Key? key}) : super(key: key);
 
   @override
   _EquipmentSelectionState createState() => _EquipmentSelectionState();
 }
 
 class _EquipmentSelectionState extends State<EquipmentSelection> {
+final List<String> _availableEquipment = [
+  'Ab Wheel',
+  'Sliders',
+  'Slingshot',
+  'Assisted Machine',
+  'Barbell',
+  'BOSU',
+  'Cable',
+  'Dumbbell',
+  'EZ Bar',
+  'Foam Roller',
+  'Kettlebell',
+  'Machine',
+  'Medicine Ball',
+  'Stability Ball',
+  'Resistance Band',
+  'Smith Machine',
+  'TRX',
+  'Hex Bar'
+];
+
   Set<String> _selectedEquipment = {};
+  WorkoutPreferences _preferences = WorkoutPreferences();
 
   @override
   void initState() {
     super.initState();
-    _selectedEquipment = widget.prefs.selectedEquipment;
-  }
-
-  void _onEquipmentSelected(String equipment, bool selected) {
-    setState(() {
-      if (selected) {
-        _selectedEquipment.add(equipment);
-      } else {
-        _selectedEquipment.remove(equipment);
-      }
+    _preferences.load().then((_) {
+      setState(() {
+        _selectedEquipment = _preferences.selectedEquipment;
+      });
     });
-    widget.prefs.updateEquipment(_selectedEquipment);
-    widget.prefs.save();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Select Equipment'),
+        title: const Text('Equipment Selection'),
       ),
-      body: ListView(
-        children: availableEquipment.map((equipment) {
-          final isSelected = _selectedEquipment.contains(equipment);
+      body: ListView.builder(
+        itemCount: _availableEquipment.length,
+        itemBuilder: (BuildContext context, int index) {
+          final String equipment = _availableEquipment[index];
           return CheckboxListTile(
             title: Text(equipment),
-            value: isSelected,
-            onChanged: (bool? selected) {
-              _onEquipmentSelected(equipment, selected ?? false);
+            value: _selectedEquipment.contains(equipment),
+            onChanged: (bool? value) {
+              setState(() {
+                if (value != null && value) {
+                  _selectedEquipment.add(equipment);
+                } else {
+                  _selectedEquipment.remove(equipment);
+                }
+                _preferences.updateEquipment(_selectedEquipment);
+              });
             },
           );
-        }).toList(),
+        },
       ),
     );
   }
