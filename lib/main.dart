@@ -1,7 +1,14 @@
+import 'workout_generator.dart';
 import 'package:flutter/material.dart';
 import 'injury_selection.dart';
 import 'muscle_selection.dart';
 import 'equipment_selection.dart';
+
+const String homeRoute = '/';
+const String injurySelectionRoute = '/injurySelection';
+const String muscleSelectionRoute = '/muscleSelection';
+const String equipmentSelectionRoute = '/equipmentSelection';
+const String workoutGeneratorRoute = '/workoutGenerator';
 
 void main() => runApp(MyApp());
 
@@ -12,14 +19,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Workout App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.blue,
+        accentColor: Colors.blueAccent,
+        fontFamily: 'Roboto',
       ),
-      initialRoute: '/',
+      initialRoute: homeRoute,
       routes: {
-        '/': (context) => HomePage(),
-        '/injurySelection': (context) => InjurySelection(),
-        '/muscleSelection': (context) => MuscleSelection(),
-        '/equipmentSelection': (context) => EquipmentSelection(),
+        homeRoute: (context) => HomePage(),
+        injurySelectionRoute: (context) => InjurySelection(),
+        muscleSelectionRoute: (context) => MuscleSelection(),
+        equipmentSelectionRoute: (context) => EquipmentSelection(),
+        workoutGeneratorRoute: (context) => WorkoutGenerator(),
       },
     );
   }
@@ -50,31 +60,45 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Workout App'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Number of Exercises: $_numberOfExercises',
-              style: TextStyle(fontSize: 24),
+              'Number of Exercises',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
-                  onPressed: _incrementCounter,
-                  child: Icon(Icons.add),
+                  onPressed: _decrementCounter,
+                  child: Icon(Icons.remove),
                   style: ElevatedButton.styleFrom(
                     shape: CircleBorder(),
                     padding: EdgeInsets.all(15),
                   ),
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 10),
+                Text(
+                  '$_numberOfExercises',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(width: 10),
                 ElevatedButton(
-                  onPressed: _decrementCounter,
-                  child: Icon(Icons.remove),
+                  onPressed: _incrementCounter,
+                  child: Icon(Icons.add),
                   style: ElevatedButton.styleFrom(
                     shape: CircleBorder(),
                     padding: EdgeInsets.all(15),
@@ -86,36 +110,69 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
+                ElevatedButton.icon(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/injurySelection');
+                    Navigator.pushNamed(context, injurySelectionRoute);
                   },
-                  child: Text('Select Injuries'),
-                  style: ElevatedButton.styleFrom(),
+                  icon: Icon(Icons.healing),
+                  label: Text('Injuries'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.redAccent,
+                    onPrimary: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
                 ),
-                ElevatedButton(
+                ElevatedButton.icon(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/muscleSelection');
+                    Navigator.pushNamed(context, muscleSelectionRoute);
                   },
-                  child: Text('Select Muscles'),
-                  style: ElevatedButton.styleFrom(),
+                  icon: Icon(Icons.fitness_center),
+                  label: Text('Muscles'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.greenAccent,
+                    onPrimary: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
                 ),
-                ElevatedButton(
+                ElevatedButton.icon(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/equipmentSelection');
+                    Navigator.pushNamed(context, equipmentSelectionRoute);
                   },
-                  child: Text('Select Equipment'),
-                  style: ElevatedButton.styleFrom(),
+                  icon: Icon(Icons.fitness_center),
+                  label: Text('Equipment'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.orangeAccent,
+                    onPrimary: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
                 ),
               ],
             ),
             SizedBox(height: 40),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  workoutGeneratorRoute,
+                  arguments: WorkoutGeneratorArguments(
+                    numberOfExercises: _numberOfExercises,
+                  ),
+                );
+              },
               child: Text('Generate Workout'),
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                textStyle: TextStyle(fontSize: 24),
+                primary: Colors.blueAccent,
+                onPrimary: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
               ),
             ),
           ],
@@ -123,4 +180,10 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+class WorkoutGeneratorArguments {
+  final int numberOfExercises;
+
+  WorkoutGeneratorArguments({required this.numberOfExercises});
 }

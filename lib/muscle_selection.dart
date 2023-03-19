@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'workout_preferences.dart';
 
-final List<String> allMuscleGroups = [
+const List<String> allMuscleGroups = [
   'Abductors',
   'Abs',
   'Adductors',
@@ -45,16 +45,20 @@ class _MuscleSelectionState extends State<MuscleSelection> {
     _initSelectedMuscles();
   }
 
-  Future<void> _initSelectedMuscles() async {
-    List<String> selectedMuscles = await StorageManager.getSelectedMuscles();
+  void _initSelectedMuscles() async {
+    List<String> selectedMuscles =
+        await StorageManager.getSelectedMuscles();
     if (selectedMuscles.isNotEmpty) {
+      List<int> selectedIndices = [];
       for (int i = 0; i < allMuscleGroups.length; i++) {
         if (selectedMuscles.contains(allMuscleGroups[i])) {
-          setState(() {
-            _selected[i] = true;
-          });
+          selectedIndices.add(i);
         }
       }
+      setState(() {
+        _selected = List.generate(
+            allMuscleGroups.length, (i) => selectedIndices.contains(i));
+      });
     }
   }
 
@@ -66,80 +70,73 @@ class _MuscleSelectionState extends State<MuscleSelection> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Muscle Groups',
-      home: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Muscle Groups'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.check_circle),
             onPressed: () {
-              Navigator.pop(context);
+              setState(() {
+                _selected = List.filled(allMuscleGroups.length, true);
+              });
             },
           ),
-          centerTitle: true,
-          title: Text('Muscle Groups'),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.check_circle),
-              onPressed: () {
-                setState(() {
-                  for (int i = 0; i < _selected.length; i++) {
-                    _selected[i] = true;
-                  }
-                });
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.check_circle_outline),
-              onPressed: () {
-                setState(() {
-                  for (int i = 0; i < _selected.length; i++) {
-                    _selected[i] = false;
-                  }
-                });
-              },
-            ),
-          ],
+          IconButton(
+            icon: Icon(Icons.check_circle_outline),
+            onPressed: () {
+              setState(() {
+                _selected = List.filled(allMuscleGroups.length, false);
+              });
+            },
+          ),
+        ],
+      ),
+      body: GridView.builder(
+        padding: EdgeInsets.all(8),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          childAspectRatio: 3,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8,
         ),
-        body: GridView.count(
-          crossAxisCount: 4,
-          children: List.generate(
-            allMuscleGroups.length,
-            (index) => InkWell(
-              onTap: () {
-                setState(() {
-                  _selected[index] = !_selected[index];
-                });
-              },
-              child: Container(
-                margin: EdgeInsets.all(8),
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: _selected[index] ? Colors.blue : Colors.grey[200],
-                  border: Border.all(
-                    color: _selected[index] ? Colors.blue : Colors.grey[300]!,
-                    width: 2,
-                  ),
+        itemCount: allMuscleGroups.length,
+        itemBuilder: (BuildContext context, int index) {
+          return InkWell(
+            onTap: () {
+              setState(() {
+                _selected[index] = !_selected[index];
+              });
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.grey,
                 ),
-                child: Center(
-                  child: Text(
-                    allMuscleGroups[index],
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: _selected[index] ? Colors.white : Colors.black,
-                      fontWeight: _selected[index]
-                          ? FontWeight.bold
-                          : FontWeight.normal,
-                      fontSize: 16,
-                    ),
+                borderRadius: BorderRadius.circular(8),
+                color: _selected[index] ? Colors.blue : Colors.white,
+              ),
+              child: Center(
+                child: Text(
+                  allMuscleGroups[index],
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    color: _selected[index] ? Colors.white : Colors.black,
                   ),
                 ),
               ),
             ),
-          ),
-        ),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.check),
+        onPressed: () {
+          StorageManager.saveSelectedMuscles(_getSelectedMuscles());
+          Navigator.pop(context);
+        },
       ),
     );
   }

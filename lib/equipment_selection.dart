@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'workout_preferences.dart';
 
-final List<String> availableEquipment = [
-'Ab Wheel',
-'Assisted Machine',
-'Barbell',
-'BOSU',
-'Cable',
-'Dumbbell',
-'EZ Bar',
-'Foam Roller',
-'Hex Bar',
-'Kettlebell',
-'Machine',
-'Medicine Ball',
-'Resistance Band',
-'Sliders',
-'Slingshot',
-'Smith Machine',
-'Stability Ball',
-'TRX'
+const List<String> availableEquipment = [
+  'Ab Wheel',
+  'Assisted Machine',
+  'Barbell',
+  'BOSU',
+  'Cable',
+  'Dumbbell',
+  'EZ Bar',
+  'Foam Roller',
+  'Hex Bar',
+  'Kettlebell',
+  'Machine',
+  'Medicine Ball',
+  'Resistance Band',
+  'Sliders',
+  'Slingshot',
+  'Smith Machine',
+  'Stability Ball',
+  'TRX'
 ];
 
 class EquipmentSelection extends StatefulWidget {
@@ -36,16 +36,20 @@ class _EquipmentSelectionState extends State<EquipmentSelection> {
     _initSelectedEquipment();
   }
 
-  Future<void> _initSelectedEquipment() async {
-    List<String> selectedEquipment = await StorageManager.getSelectedEquipment();
+  void _initSelectedEquipment() async {
+    List<String> selectedEquipment =
+        await StorageManager.getSelectedEquipment();
     if (selectedEquipment.isNotEmpty) {
+      List<int> selectedIndices = [];
       for (int i = 0; i < availableEquipment.length; i++) {
         if (selectedEquipment.contains(availableEquipment[i])) {
-          setState(() {
-            _selected[i] = true;
-          });
+          selectedIndices.add(i);
         }
       }
+      setState(() {
+        _selected = List.generate(
+            availableEquipment.length, (i) => selectedIndices.contains(i));
+      });
     }
   }
 
@@ -57,80 +61,73 @@ class _EquipmentSelectionState extends State<EquipmentSelection> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Available Equipment',
-      home: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Available Equipment'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.check_circle),
             onPressed: () {
-              Navigator.pop(context);
+              setState(() {
+                _selected = List.filled(availableEquipment.length, true);
+              });
             },
           ),
-          centerTitle: true,
-          title: Text('Available Equipment'),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.check_circle),
-              onPressed: () {
-                setState(() {
-                  for (int i = 0; i < _selected.length; i++) {
-                    _selected[i] = true;
-                  }
-                });
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.check_circle_outline),
-              onPressed: () {
-                setState(() {
-                  for (int i = 0; i < _selected.length; i++) {
-                    _selected[i] = false;
-                  }
-                });
-              },
-            ),
-          ],
+          IconButton(
+            icon: Icon(Icons.check_circle_outline),
+            onPressed: () {
+              setState(() {
+                _selected = List.filled(availableEquipment.length, false);
+              });
+            },
+          ),
+        ],
+      ),
+      body: GridView.builder(
+        padding: EdgeInsets.all(8),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          childAspectRatio: 3,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8,
         ),
-        body: GridView.count(
-          crossAxisCount: 4,
-          children: List.generate(
-            availableEquipment.length,
-            (index) => InkWell(
-              onTap: () {
-                setState(() {
-                  _selected[index] = !_selected[index];
-                });
-              },
-              child: Container(
-                margin: EdgeInsets.all(8),
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: _selected[index] ? Colors.blue : Colors.grey[200],
-                  border: Border.all(
-                    color: _selected[index] ? Colors.blue : Colors.grey[300]!,
-                    width: 2,
-                  ),
+        itemCount: availableEquipment.length,
+        itemBuilder: (BuildContext context, int index) {
+          return InkWell(
+            onTap: () {
+              setState(() {
+                _selected[index] = !_selected[index];
+              });
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.grey,
                 ),
-                child: Center(
-                  child: Text(
-                    availableEquipment[index],
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: _selected[index] ? Colors.white : Colors.black,
-                      fontWeight: _selected[index]
-                          ? FontWeight.bold
-                          : FontWeight.normal,
-                      fontSize: 16,
-                    ),
+                borderRadius: BorderRadius.circular(8),
+                color: _selected[index] ? Colors.blue : Colors.white,
+              ),
+              child: Center(
+                child: Text(
+                  availableEquipment[index],
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    color: _selected[index] ? Colors.white : Colors.black,
                   ),
                 ),
               ),
             ),
-          ),
-        ),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.check),
+        onPressed: () {
+          StorageManager.saveSelectedEquipment(_getSelectedEquipment());
+          Navigator.pop(context);
+        },
       ),
     );
   }

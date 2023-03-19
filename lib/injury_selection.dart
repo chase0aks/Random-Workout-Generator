@@ -27,19 +27,23 @@ class _InjurySelectionState extends State<InjurySelection> {
   @override
   void initState() {
     super.initState();
-    _initSelectedInjuries();
+    _initSelectedInjury();
   }
 
-  Future<void> _initSelectedInjuries() async {
-    List<String> selectedInjuries = await StorageManager.getSelectedInjuries();
-    if (selectedInjuries.isNotEmpty) {
+  void _initSelectedInjury() async {
+    List<String> selectedInjury =
+        await StorageManager.getSelectedInjuries();
+    if (selectedInjury.isNotEmpty) {
+      List<int> selectedIndices = [];
       for (int i = 0; i < injuredAreas.length; i++) {
-        if (selectedInjuries.contains(injuredAreas[i])) {
-          setState(() {
-            _selected[i] = true;
-          });
+        if (selectedInjury.contains(injuredAreas[i])) {
+          selectedIndices.add(i);
         }
       }
+      setState(() {
+        _selected = List.generate(
+            injuredAreas.length, (i) => selectedIndices.contains(i));
+      });
     }
   }
 
@@ -51,80 +55,73 @@ class _InjurySelectionState extends State<InjurySelection> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Injured Areas',
-      home: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Injured Areas'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.check_circle),
             onPressed: () {
-              Navigator.pop(context);
+              setState(() {
+                _selected = List.filled(injuredAreas.length, true);
+              });
             },
           ),
-          centerTitle: true,
-          title: Text('Injured Areas'),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.check_circle),
-              onPressed: () {
-                setState(() {
-                  for (int i = 0; i < _selected.length; i++) {
-                    _selected[i] = true;
-                  }
-                });
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.check_circle_outline),
-              onPressed: () {
-                setState(() {
-                  for (int i = 0; i < _selected.length; i++) {
-                    _selected[i] = false;
-                  }
-                });
-              },
-            ),
-          ],
+          IconButton(
+            icon: Icon(Icons.check_circle_outline),
+            onPressed: () {
+              setState(() {
+                _selected = List.filled(injuredAreas.length, false);
+              });
+            },
+          ),
+        ],
+      ),
+      body: GridView.builder(
+        padding: EdgeInsets.all(8),
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          childAspectRatio: 3,
+          crossAxisSpacing: 8,
+          mainAxisSpacing: 8,
         ),
-        body: GridView.count(
-          crossAxisCount: 4,
-          children: List.generate(
-            injuredAreas.length,
-            (index) => InkWell(
-              onTap: () {
-                setState(() {
-                  _selected[index] = !_selected[index];
-                });
-              },
-              child: Container(
-                margin: EdgeInsets.all(8),
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: _selected[index] ? Colors.blue : Colors.grey[200],
-                  border: Border.all(
-                    color: _selected[index] ? Colors.blue : Colors.grey[300]!,
-                    width: 2,
-                  ),
+        itemCount: injuredAreas.length,
+        itemBuilder: (BuildContext context, int index) {
+          return InkWell(
+            onTap: () {
+              setState(() {
+                _selected[index] = !_selected[index];
+              });
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.grey,
                 ),
-                child: Center(
-                  child: Text(
-                    injuredAreas[index],
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: _selected[index] ? Colors.white : Colors.black,
-                      fontWeight: _selected[index]
-                          ? FontWeight.bold
-                          : FontWeight.normal,
-                      fontSize: 16,
-                    ),
+                borderRadius: BorderRadius.circular(8),
+                color: _selected[index] ? Colors.blue : Colors.white,
+              ),
+              child: Center(
+                child: Text(
+                  injuredAreas[index],
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    color: _selected[index] ? Colors.white : Colors.black,
                   ),
                 ),
               ),
             ),
-          ),
-        ),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.check),
+        onPressed: () {
+          StorageManager.saveSelectedInjuries(_getSelectedInjuries());
+          Navigator.pop(context);
+        },
       ),
     );
   }
