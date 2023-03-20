@@ -24,10 +24,10 @@ const List<String> availableEquipment = [
 
 class EquipmentSelection extends StatefulWidget {
   @override
-  _EquipmentSelectionState createState() => _EquipmentSelectionState();
+  EquipmentSelectionState createState() => EquipmentSelectionState();
 }
 
-class _EquipmentSelectionState extends State<EquipmentSelection> {
+class EquipmentSelectionState extends State<EquipmentSelection> {
   List<bool> _selected = List.filled(availableEquipment.length, false);
 
   @override

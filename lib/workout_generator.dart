@@ -5,10 +5,10 @@ import 'main.dart';
 
 class WorkoutGenerator extends StatefulWidget {
   @override
-  _WorkoutGeneratorState createState() => _WorkoutGeneratorState();
+  WorkoutGeneratorState createState() => WorkoutGeneratorState();
 }
 
-class _WorkoutGeneratorState extends State<WorkoutGenerator> {
+class WorkoutGeneratorState extends State<WorkoutGenerator> {
   List<String> _selectedMuscles = [];
   List<String> _selectedInjuries = [];
   List<String> _selectedEquipment = [];
@@ -38,7 +38,9 @@ class _WorkoutGeneratorState extends State<WorkoutGenerator> {
 
   @override
   Widget build(BuildContext context) {
-    final numberOfExercises = ModalRoute.of(context)!.settings.arguments as int;
+    final numberOfExercises = (ModalRoute.of(context)!.settings.arguments
+            as WorkoutGeneratorArguments)
+        .numberOfExercises;
 
     final filteredExercises = allExercises.where((exercise) {
       final matchesMuscles = _selectedMuscles.isEmpty ||
@@ -58,7 +60,7 @@ class _WorkoutGeneratorState extends State<WorkoutGenerator> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Filtered Exercises'),
+        title: Text('Exercise List'),
       ),
       body: ListView.builder(
         itemCount: numberOfExercises,

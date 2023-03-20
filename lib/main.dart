@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
       title: 'Workout App',
       theme: ThemeData(
         primaryColor: Colors.blue,
-        accentColor: Colors.blueAccent,
         fontFamily: 'Roboto',
       ),
       initialRoute: homeRoute,
@@ -37,10 +36,10 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
   int _numberOfExercises = 1;
 
   void _incrementCounter() {
@@ -63,120 +62,236 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Workout App'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Number of Exercises',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+      body: MediaQuery.of(context).size.width > 600
+          ? _buildWideLayout()
+          : _buildNarrowLayout(),
+    );
+  }
+
+  Widget _buildWideLayout() {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            'Number of Exercises',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: _decrementCounter,
+                style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(15),
+                ),
+                child: Icon(Icons.remove),
               ),
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: _decrementCounter,
-                  child: Icon(Icons.remove),
-                  style: ElevatedButton.styleFrom(
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.all(15),
-                  ),
-                ),
-                SizedBox(width: 10),
-                Text(
-                  '$_numberOfExercises',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: _incrementCounter,
-                  child: Icon(Icons.add),
-                  style: ElevatedButton.styleFrom(
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.all(15),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, injurySelectionRoute);
-                  },
-                  icon: Icon(Icons.healing),
-                  label: Text('Injuries'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.redAccent,
-                    onPrimary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, muscleSelectionRoute);
-                  },
-                  icon: Icon(Icons.fitness_center),
-                  label: Text('Muscles'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.greenAccent,
-                    onPrimary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                ),
-                ElevatedButton.icon(
-                  onPressed: () {
-                    Navigator.pushNamed(context, equipmentSelectionRoute);
-                  },
-                  icon: Icon(Icons.fitness_center),
-                  label: Text('Equipment'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.orangeAccent,
-                    onPrimary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 40),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  workoutGeneratorRoute,
-                  arguments: WorkoutGeneratorArguments(
-                    numberOfExercises: _numberOfExercises,
-                  ),
-                );
-              },
-              child: Text('Generate Workout'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.blueAccent,
-                onPrimary: Colors.white,
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+              SizedBox(width: 10),
+              Text(
+                '$_numberOfExercises',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: _incrementCounter,
+                style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(15),
+                ),
+                child: Icon(Icons.add),
+              ),
+            ],
+          ),
+          SizedBox(height: 40),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, injurySelectionRoute);
+                },
+                icon: Icon(Icons.healing),
+                label: Text('Injuries'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.redAccent,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, muscleSelectionRoute);
+                },
+                icon: Icon(Icons.fitness_center),
+                label: Text('Muscles'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.greenAccent,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, equipmentSelectionRoute);
+                },
+                icon: Icon(Icons.fitness_center),
+                label: Text('Equipment'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orangeAccent,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 40),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                workoutGeneratorRoute,
+                arguments: WorkoutGeneratorArguments(
+                  numberOfExercises: _numberOfExercises,
+                ),
+              );
+            },
+            child: Text(
+              'Generate Workout',
+              style: TextStyle(fontSize: 20),
             ),
-          ],
-        ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildNarrowLayout() {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            'Number of Exercises',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: _decrementCounter,
+                style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(15),
+                ),
+                child: Icon(Icons.remove),
+              ),
+              SizedBox(width: 10),
+              Text(
+                '$_numberOfExercises',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: _incrementCounter,
+                style: ElevatedButton.styleFrom(
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(15),
+                ),
+                child: Icon(Icons.add),
+              ),
+            ],
+          ),
+          SizedBox(height: 40),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, injurySelectionRoute);
+                },
+                icon: Icon(Icons.healing),
+                label: Text('Injuries'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.redAccent,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, muscleSelectionRoute);
+                },
+                icon: Icon(Icons.fitness_center),
+                label: Text('Muscles'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.greenAccent,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, equipmentSelectionRoute);
+                },
+                icon: Icon(Icons.fitness_center),
+                label: Text('Equipment'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orangeAccent,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 40),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                workoutGeneratorRoute,
+                arguments: WorkoutGeneratorArguments(
+                  numberOfExercises: _numberOfExercises,
+                ),
+              );
+            },
+            child: Text(
+              'Generate Workout',
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+        ],
       ),
     );
   }

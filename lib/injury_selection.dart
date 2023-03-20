@@ -18,10 +18,10 @@ final List<String> injuredAreas = [
 
 class InjurySelection extends StatefulWidget {
   @override
-  _InjurySelectionState createState() => _InjurySelectionState();
+  InjurySelectionState createState() => InjurySelectionState();
 }
 
-class _InjurySelectionState extends State<InjurySelection> {
+class InjurySelectionState extends State<InjurySelection> {
   List<bool> _selected = List.filled(injuredAreas.length, false);
 
   @override

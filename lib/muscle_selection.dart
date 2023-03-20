@@ -33,10 +33,10 @@ const List<String> allMuscleGroups = [
 
 class MuscleSelection extends StatefulWidget {
   @override
-  _MuscleSelectionState createState() => _MuscleSelectionState();
+  MuscleSelectionState createState() => MuscleSelectionState();
 }
 
-class _MuscleSelectionState extends State<MuscleSelection> {
+class MuscleSelectionState extends State<MuscleSelection> {
   List<bool> _selected = List.filled(allMuscleGroups.length, false);
 
   @override

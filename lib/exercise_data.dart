@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class ExerciseData {
   final String name;
   final List<String> muscleGroups;

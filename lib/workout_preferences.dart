@@ -1,7 +1,4 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'injury_selection.dart';
-import 'muscle_selection.dart';
-import 'equipment_selection.dart';
 
 class StorageManager {
   static const String _musclesKey = 'selectedMuscles';
@@ -10,8 +7,7 @@ class StorageManager {
 
   static SharedPreferences? _prefs;
 
-  static Future<void> _initPrefs() async {
-    if (_prefs == null) {
+  static Future<void> _initPrefs() async {{
       _prefs = await SharedPreferences.getInstance();
     }
   }
