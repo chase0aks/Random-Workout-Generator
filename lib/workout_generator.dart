@@ -140,12 +140,6 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/workout_preferences');
-        },
-        child: Icon(Icons.filter_list),
-      ),
     );
   }
 }
