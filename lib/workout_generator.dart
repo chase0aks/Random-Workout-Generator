@@ -66,78 +66,96 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
         itemCount: numberOfExercises,
         itemBuilder: (context, index) {
           final exercise = filteredExercises[index % filteredExercises.length];
-          return Container(
-            margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
-                    borderRadius:
-                        BorderRadius.vertical(top: Radius.circular(10)),
-                  ),
-                  child: Center(
-                    child: Text(
-                      exercise.name,
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          return Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade200,
+                        borderRadius:
+                            BorderRadius.vertical(top: Radius.circular(10)),
+                      ),
+                      child: Center(
+                        child: Text(
+                          exercise.name,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
-                  ),
+                    Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Affected Muscle Groups:',
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          SizedBox(height: 5),
+                          Wrap(
+                            spacing: 5,
+                            runSpacing: 5,
+                            children: exercise.muscleGroups
+                                .map((muscle) => Chip(label: Text(muscle)))
+                                .toList(),
+                          ),
+                          SizedBox(height: 10),
+                          Text('Necessary Equipment:',
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          SizedBox(height: 5),
+                          Wrap(
+                            spacing: 5,
+                            runSpacing: 5,
+                            children: exercise.equipment.isNotEmpty
+                                ? exercise.equipment
+                                    .map((equipment) =>
+                                        Chip(label: Text(equipment)))
+                                    .toList()
+                                : [Text('None')],
+                          ),
+                          SizedBox(height: 10),
+                          Text('Injured Areas:',
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          SizedBox(height: 5),
+                          Wrap(
+                            spacing: 5,
+                            runSpacing: 5,
+                            children: exercise.injuredAreas.isNotEmpty
+                                ? exercise.injuredAreas
+                                    .map((injury) => Chip(label: Text(injury)))
+                                    .toList()
+                                : [Text('None')],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Affected Muscle Groups:',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      SizedBox(height: 5),
-                      Wrap(
-                        spacing: 5,
-                        runSpacing: 5,
-                        children: exercise.muscleGroups
-                            .map((muscle) => Chip(label: Text(muscle)))
-                            .toList(),
-                      ),
-                      SizedBox(height: 10),
-                      Text('Necessary Equipment:',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      SizedBox(height: 5),
-                      Wrap(
-                        spacing: 5,
-                        runSpacing: 5,
-                        children: exercise.equipment.isNotEmpty
-                            ? exercise.equipment
-                                .map(
-                                    (equipment) => Chip(label: Text(equipment)))
-                                .toList()
-                            : [Text('None')],
-                      ),
-                      SizedBox(height: 10),
-                      Text('Injured Areas:',
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      SizedBox(height: 5),
-                      Wrap(
-                        spacing: 5,
-                        runSpacing: 5,
-                        children: exercise.injuredAreas.isNotEmpty
-                            ? exercise.injuredAreas
-                                .map((injury) => Chip(label: Text(injury)))
-                                .toList()
-                            : [Text('None')],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+              ),
             ),
-          );
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.not_interested),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.refresh),
+                )
+              ],
+            )
+          ]);
         },
       ),
     );
