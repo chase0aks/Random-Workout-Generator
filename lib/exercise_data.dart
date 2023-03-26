@@ -16,7 +16,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: '3D Lunges',
       muscleGroups: ['Glutes', 'Hamstrings', 'Quads'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Ab Wheel Kneeling Rollout',
@@ -31,67 +31,67 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Active Leg Raise',
       muscleGroups: ['Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Air Bicycle',
       muscleGroups: ['Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Alternating Full Plank',
       muscleGroups: ['Abs', 'Obliques'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Alternating Jump Lunge',
       muscleGroups: ['Glutes', 'Hamstrings', 'Quads'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Alternating Leg Raise',
       muscleGroups: ['Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Alternating Superman',
       muscleGroups: ['Lower Back'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Alternating Toe Touch',
       muscleGroups: ['Abs'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Arm Circles',
       muscleGroups: ['Front Shoulders', 'Rear Shoulders'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Assisted Chest Dip',
       muscleGroups: ['Triceps', 'Chest', 'Shoulders'],
-      equipment: ['Assisted Dip Machine'],
+      equipment: ['Assisted Machine'],
       injuredAreas: ['Shoulders', 'Elbows']),
   ExerciseData(
       name: 'Assisted Chin-Up',
       muscleGroups: ['Lats', 'Biceps', 'Forearms'],
-      equipment: ['Assisted Pull-Up Machine'],
+      equipment: ['Assisted Machine'],
       injuredAreas: ['Shoulders', 'Elbows', 'Wrists']),
   ExerciseData(
       name: 'Assisted Pistol Squat',
       muscleGroups: ['Quads', 'Glutes', 'Calves', 'Adductors', 'Abductors'],
-      equipment: ['Assisted Pistol Squat Machine'],
+      equipment: ['Assisted Machine'],
       injuredAreas: ['Knees', 'Hips']),
   ExerciseData(
       name: 'Assisted Pull-Up',
       muscleGroups: ['Lats', 'Biceps', 'Forearms'],
-      equipment: ['Assisted Pull-Up Machine'],
+      equipment: ['Assisted Machine'],
       injuredAreas: ['Shoulders', 'Elbows', 'Wrists']),
   ExerciseData(
       name: 'Assisted Tricep Dip',
       muscleGroups: ['Triceps', 'Chest', 'Shoulders'],
-      equipment: ['Assisted Dip Machine'],
+      equipment: ['Assisted Machine'],
       injuredAreas: ['Shoulders', 'Elbows']),
   ExerciseData(
       name: 'BOSU Dome Up Single Arm Push-Up',
@@ -802,12 +802,12 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Bent Knee Side Bridge',
       muscleGroups: ['Obliques', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Bent Knee Side Plank',
       muscleGroups: ['Obliques', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(name: 'Bird Dog', muscleGroups: [
     'Glutes',
@@ -838,37 +838,37 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Bodyweight Bulgarian Split Squat',
       muscleGroups: ['Quads', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Bodyweight Front Foot Elevated Split Squat',
       muscleGroups: ['Hamstrings', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Bodyweight Hip Thrust',
       muscleGroups: ['Glutes', 'Erector Spinae', 'Hamstrings', 'Quads'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Bodyweight Leg Extension',
       muscleGroups: ['Quads', 'Abs', 'Erector Spinae', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee']),
   ExerciseData(
       name: 'Bodyweight Reverse Alternating Lunge',
       muscleGroups: ['Quads', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Bodyweight Reverse Lunge',
       muscleGroups: ['Quads', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Bodyweight Single Leg Romanian Deadlift',
       muscleGroups: ['Hamstrings', 'Glutes', 'Erector Spinae', 'Lower Back'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Lower Back']),
   ExerciseData(name: 'Bodyweight Squat', muscleGroups: [
     'Quads',
@@ -899,12 +899,12 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Bodyweight Step-Up',
       muscleGroups: ['Quads', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Bodyweight Walking Lunge',
       muscleGroups: ['Quads', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'BOSU Dome Up Scissors',
@@ -914,17 +914,17 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Box Jump',
       muscleGroups: ['Quads', 'Glutes', 'Calves', 'Hamstrings'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Ankle', 'Knee']),
   ExerciseData(
       name: 'Bulgarian Split Squat Jump',
       muscleGroups: ['Quads', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Burpee',
       muscleGroups: [''],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder']),
   ExerciseData(
       name: 'Cable Alternating Curl',
@@ -1394,17 +1394,17 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Chest Dip',
       muscleGroups: ['Chest', 'Triceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Elbow']),
   ExerciseData(
       name: 'Chin-Up',
       muscleGroups: ['Lats', 'Biceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Elbow', 'Shoulder']),
   ExerciseData(
       name: 'Clamshells',
       muscleGroups: ['Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Clean and Jerk',
@@ -1414,47 +1414,47 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Close Grip Push-Up',
       muscleGroups: ['Chest', 'Triceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Elbow', 'Shoulder']),
   ExerciseData(
       name: 'Cobra Stretch',
       muscleGroups: ['Stretching'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Copenhagen Hip Adduction',
       muscleGroups: ['Adductors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee']),
   ExerciseData(
       name: 'Cyclist Squat',
       muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee']),
   ExerciseData(
       name: 'Dead Bug',
       muscleGroups: ['Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Dead Hang',
       muscleGroups: ['Forearms', 'Lats'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder']),
   ExerciseData(
       name: 'Decline Push-Up',
       muscleGroups: ['Chest', 'Triceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Wrist']),
   ExerciseData(
       name: 'Decline Reverse Crunch',
       muscleGroups: ['Abs'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Neck']),
   ExerciseData(
       name: 'Doorway Chest Stretch',
       muscleGroups: ['Chest'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder']),
   ExerciseData(
       name: 'Double Kettlebell Clean',
@@ -1479,7 +1479,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Dragon Flag',
       muscleGroups: ['Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Dumbbell 3-Point Row',
@@ -1919,7 +1919,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Dynamic Hip Flexor Stretch',
       muscleGroups: ['Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'EZ Bar Lying Tricep Extension',
@@ -1944,42 +1944,42 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Eccentric Chin-Up',
       muscleGroups: ['Lats', 'Biceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
   ExerciseData(
       name: 'Eccentric Pull-Up',
       muscleGroups: ['Lats', 'Biceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
   ExerciseData(
       name: 'Elevated Pike Press',
       muscleGroups: ['Shoulders', 'Triceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder']),
   ExerciseData(
       name: 'Floor Crunch',
       muscleGroups: ['Abs'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Neck', 'Lower Back']),
   ExerciseData(
       name: 'Floor Glute Kickback',
       muscleGroups: ['Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Floor T Raises',
       muscleGroups: ['Front Shoulders'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder']),
   ExerciseData(
       name: 'Floor T-Bar Row',
       muscleGroups: ['Back', 'Biceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder']),
   ExerciseData(
       name: 'Floor T-Raises',
       muscleGroups: ['Shoulders'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder']),
   ExerciseData(
       name: 'Foam Roller Hamstrings',
@@ -2004,47 +2004,47 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Frog Pump',
       muscleGroups: ['Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Frogger Stretch',
       muscleGroups: ['Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Front Plank',
       muscleGroups: ['Abs'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Lower Back']),
   ExerciseData(
       name: 'Front Plank With Leg Raise',
       muscleGroups: ['Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Lower Back']),
   ExerciseData(
       name: 'Full Plank',
       muscleGroups: ['Abs'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Lower Back']),
   ExerciseData(
       name: 'GHD Reverse Hyperextension',
       muscleGroups: ['Lower Back', 'Hamstrings', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Glute Bridge',
       muscleGroups: ['Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Glute Bridge Walkout',
       muscleGroups: ['Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee']),
   ExerciseData(
       name: 'Glute Side Circle',
       muscleGroups: ['Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee']),
   ExerciseData(
       name: 'Goblet Pause Squat',
@@ -2089,17 +2089,17 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Hanging Knee Raise',
       muscleGroups: ['Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Elbow']),
   ExerciseData(
       name: 'Hanging Straight Leg-Hip Raise',
       muscleGroups: ['Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Elbow']),
   ExerciseData(
       name: 'Heel Taps',
       muscleGroups: ['Abs', 'Obliques'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Hex Dumbbell Hold',
@@ -2109,52 +2109,52 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Hollow Body Hold',
       muscleGroups: ['Abs'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Hollow Hold Sweepers',
       muscleGroups: ['Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Hyperextension',
       muscleGroups: ['Lower Back', 'Glutes', 'Hamstrings'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'In & Out Squat',
       muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Inchworm Walk',
       muscleGroups: ['Hamstrings', 'Glutes', 'Abs', 'Shoulders'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Incline Leg-Hip Raise',
       muscleGroups: ['Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Incline Push-Up',
       muscleGroups: ['Chest', 'Front Shoulders', 'Triceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Wrist']),
   ExerciseData(
       name: 'Inverted Row',
       muscleGroups: ['Back', 'Biceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Elbow', 'Shoulder']),
   ExerciseData(
       name: 'Inverted Sit-Up',
       muscleGroups: ['Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Neck', 'Lower Back']),
   ExerciseData(
       name: 'Jumping Jack',
       muscleGroups: ['Legs'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Ankle']),
   ExerciseData(
       name: 'Kettlebell Bicep 21s',
@@ -2199,7 +2199,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'L-Sit Hold',
       muscleGroups: ['Abs', 'Hip Flexors', 'Shoulders', 'Triceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Elbow', 'Wrist', 'Neck']),
   ExerciseData(
       name: 'Landmine Close Grip Row',
@@ -2224,32 +2224,32 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Lateral Lunge',
       muscleGroups: ['Adductors', 'Glutes', 'Hamstrings', 'Quads'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Lateral Lunge to Side Step Up',
       muscleGroups: ['Adductors', 'Glutes', 'Hamstrings', 'Quads'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Lying Cobra',
       muscleGroups: ['Lower Back'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Neck', 'Lower Back']),
   ExerciseData(
       name: 'Lying Leg-Hip Raise',
       muscleGroups: ['Abs', 'Glutes', 'Hip Flexors', 'Lower Back'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Lower Back', 'Hip']),
   ExerciseData(
       name: 'Lying Piriformis Stretch',
       muscleGroups: ['Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Lying Posterior Deltoid Stretch',
       muscleGroups: ['Shoulders'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder']),
   ExerciseData(
       name: 'Machine Back Extension',
@@ -2559,42 +2559,42 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Mountain Climbers',
       muscleGroups: ['Core', 'Cardio'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Nordic Curl',
       muscleGroups: ['Hamstrings'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Oblique Side-Leg Raise',
       muscleGroups: ['Obliques', 'Abductors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Pancake Stretch',
       muscleGroups: ['Hamstrings', 'Hips'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Pec Minor Stretch',
       muscleGroups: ['Chest'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Pigeon Pose',
       muscleGroups: ['Hips', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Pike Push-Up',
       muscleGroups: ['Shoulders', 'Triceps', 'Chest'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Wrist']),
   ExerciseData(
       name: 'Pistol Squat',
       muscleGroups: ['Quads', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Ankle']),
   ExerciseData(
       name: 'Plank Pull Through',
@@ -2604,12 +2604,12 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Plank With Shoulder Tap',
       muscleGroups: ['Abs', 'Shoulders'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Plank to Push-Up',
       muscleGroups: ['Chest', 'Triceps', 'Shoulders', 'Core'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Plank, Row, Rotate, Press',
@@ -2629,7 +2629,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Plyometric Push-Up',
       muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Wrist']),
   ExerciseData(
       name: 'Prowler Sled Push',
@@ -2644,12 +2644,12 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Pulse Lunge',
       muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee']),
   ExerciseData(
       name: 'Pulse Squat',
       muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Lower Back']),
   ExerciseData(
       name: 'Push Jerk',
@@ -2664,12 +2664,12 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Push-Up',
       muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Wrist']),
   ExerciseData(
       name: 'Push-Up With Rotation',
       muscleGroups: ['Chest', 'Triceps', 'Shoulders', 'Obliques'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Wrist']),
   ExerciseData(
       name: 'Push-Up With Single Arm Deficit',
@@ -2684,7 +2684,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'RKC Plank',
       muscleGroups: ['Abs', 'Shoulders'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Elbow', 'Wrist', 'Lower Back']),
   ExerciseData(
       name: 'Rack Chin',
@@ -2889,32 +2889,32 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Resting Squat',
       muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Ankle', 'Hip', 'Lower Back']),
   ExerciseData(
       name: 'Reverse Crunch',
       muscleGroups: ['Abs'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Neck', 'Lower Back']),
   ExerciseData(
       name: 'Reverse Lunge To Knee Drive',
       muscleGroups: ['Quads', 'Glutes', 'Hamstrings'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Hip']),
   ExerciseData(
       name: 'Reverse Lunge With Twist',
       muscleGroups: ['Quads', 'Glutes', 'Hamstrings', 'Obliques'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Hip', 'Lower Back']),
   ExerciseData(
       name: 'Rotary Calf Extension',
       muscleGroups: ['Calves'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Ankle']),
   ExerciseData(
       name: 'Russian Hamstring Curl',
       muscleGroups: ['Hamstrings'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee']),
   ExerciseData(
       name: 'Russian Twist',
@@ -2929,7 +2929,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Scapular Push-Up',
       muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Shoulder Dislocation',
@@ -2939,17 +2939,17 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Side Bridge',
       muscleGroups: ['Abs', 'Obliques'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Wrist']),
   ExerciseData(
       name: 'Side Lying Thoracic Rotation',
       muscleGroups: ['Back', 'Abs', 'Obliques'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Side Plank',
       muscleGroups: ['Abs', 'Obliques'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Side Plank Reach Through',
@@ -2959,12 +2959,12 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Side Shuffle',
       muscleGroups: ['Legs'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Side-Lying Leg Lift',
       muscleGroups: ['Glutes', 'Hip Abductors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Single Arm Kettlebell Clean',
@@ -2999,17 +2999,17 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Single-Leg Glute Bridge',
       muscleGroups: ['Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Sit-Up',
       muscleGroups: ['Abs'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Neck']),
   ExerciseData(
       name: 'Skater Jumps',
       muscleGroups: ['Legs'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Sled 45 Calf Press',
@@ -3169,7 +3169,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Spiderman Push-Up',
       muscleGroups: ['Chest', 'Triceps', 'Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Wrist']),
   ExerciseData(
       name: 'Squat Clean',
@@ -3179,12 +3179,12 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Squat Jack',
       muscleGroups: ['Quads', 'Glutes', 'Calves', 'Cardiovascular'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Squat Jump',
       muscleGroups: ['Quads', 'Glutes', 'Calves', 'Cardiovascular'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee']),
   ExerciseData(
       name: 'Stability Ball Pike',
@@ -3214,12 +3214,12 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Standing Hip C.A.R.',
       muscleGroups: ['Hip Flexors', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Standing Oblique Crunch',
       muscleGroups: ['Obliques'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Standing Rear Delt Cable Crossover',
@@ -3229,27 +3229,27 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Starfish Side Plank',
       muscleGroups: ['Obliques', 'Abdominals', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Static Distal Hamstring Stretch',
       muscleGroups: ['Hamstrings'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Static Hip Flexor Stretch',
       muscleGroups: ['Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Static Lat and Tricep Stretch',
       muscleGroups: ['Lats', 'Triceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Static Quadricep Stretch',
       muscleGroups: ['Quads'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Straight Leg Kickback',
@@ -3259,7 +3259,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Superman Raise',
       muscleGroups: ['Lower Back'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Lower Back']),
   ExerciseData(
       name: 'Svend Press',
@@ -3269,7 +3269,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Swinging High Kicks',
       muscleGroups: ['Quads', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Hip', 'Knee', 'Lower Back']),
   ExerciseData(
       name: 'Swiss Ball Crunch',
@@ -3389,7 +3389,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Table Inverted Row',
       muscleGroups: ['Back', 'Biceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder']),
   ExerciseData(
       name: 'Terminal Knee Extension',
@@ -3409,7 +3409,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Tricep Dip',
       muscleGroups: ['Triceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Elbow']),
   ExerciseData(
       name: 'Triceps Bow',
@@ -3419,27 +3419,27 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Twisting Elbow Plank',
       muscleGroups: ['Abs', 'Obliques', 'Shoulders'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Twisting Mountain Climber',
       muscleGroups: ['Abs', 'Obliques', 'Shoulders'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'V Twist',
       muscleGroups: ['Abs', 'Obliques'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'V Up',
       muscleGroups: ['Abs', 'Hip Flexors'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Wall Sit',
       muscleGroups: ['Quads', 'Glutes'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Knee', 'Hip']),
   ExerciseData(
       name: 'Wall Skullcrusher',
@@ -3454,12 +3454,12 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Weighted Chest-Dip',
       muscleGroups: ['Chest', 'Triceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Elbow']),
   ExerciseData(
       name: 'Weighted Chin-Up',
       muscleGroups: ['Back', 'Biceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Elbow']),
   ExerciseData(
       name: 'Weighted Crunch',
@@ -3469,12 +3469,12 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Weighted Crunch Toe-Touch',
       muscleGroups: ['Abs'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Weighted Decline Russian Twist',
       muscleGroups: ['Obliques'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['']),
   ExerciseData(
       name: 'Weighted Hyperextension',
@@ -3504,7 +3504,7 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Weighted Pull-Up',
       muscleGroups: ['Back', 'Biceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Elbow', 'Wrist']),
   ExerciseData(
       name: 'Weighted Side Crunch',
@@ -3519,6 +3519,6 @@ final List<ExerciseData> allExercises = [
   ExerciseData(
       name: 'Yoga Push-Up',
       muscleGroups: ['Chest', 'Triceps'],
-      equipment: [''],
+      equipment: ['None'],
       injuredAreas: ['Shoulder', 'Wrist', 'Elbow']),
 ];

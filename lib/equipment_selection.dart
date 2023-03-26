@@ -19,7 +19,8 @@ const List<String> availableEquipment = [
   'Slingshot',
   'Smith Machine',
   'Stability Ball',
-  'TRX'
+  'TRX',
+  'None'
 ];
 
 class EquipmentSelection extends StatefulWidget {
@@ -70,7 +71,12 @@ class EquipmentSelectionState extends State<EquipmentSelection> {
             icon: Icon(Icons.check_circle),
             onPressed: () {
               setState(() {
-                _selected = List.filled(availableEquipment.length, true);
+                if (availableEquipment.contains("None")) {
+                  _selected = List.filled(availableEquipment.length, false);
+                  _selected[availableEquipment.indexOf("None")] = true;
+                } else {
+                  _selected = List.filled(availableEquipment.length, true);
+                }
               });
             },
           ),
@@ -97,7 +103,21 @@ class EquipmentSelectionState extends State<EquipmentSelection> {
           return InkWell(
             onTap: () {
               setState(() {
-                _selected[index] = !_selected[index];
+                if (availableEquipment[index] == "None") {
+                  _selected[index] = !_selected[index];
+                  // Deselect all other buttons
+                  for (int i = 0; i < _selected.length; i++) {
+                    if (i != index) {
+                      _selected[i] = false;
+                    }
+                  }
+                } else {
+                  _selected[index] = !_selected[index];
+                  // Deselect "None" button if other buttons are selected
+                  if (_selected[availableEquipment.indexOf("None")]) {
+                    _selected[availableEquipment.indexOf("None")] = false;
+                  }
+                }
               });
             },
             child: Container(
@@ -109,24 +129,23 @@ class EquipmentSelectionState extends State<EquipmentSelection> {
                 color: _selected[index] ? Colors.blue : Colors.white,
               ),
               child: Center(
-                child: Text(
-                  availableEquipment[index],
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color: _selected[index] ? Colors.white : Colors.black,
+                child: Container(
+                  constraints: BoxConstraints(
+                    maxWidth: 115, // set the maximum width here
+                  ),
+                  child: Text(
+                    availableEquipment[index],
+                    textAlign: TextAlign.center, // center the text horizontally
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: _selected[index] ? Colors.white : Colors.black,
+                    ),
                   ),
                 ),
               ),
             ),
           );
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.check),
-        onPressed: () {
-          StorageManager.saveSelectedEquipment(_getSelectedEquipment());
-          Navigator.pop(context);
         },
       ),
     );

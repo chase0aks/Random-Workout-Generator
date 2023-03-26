@@ -31,8 +31,7 @@ class InjurySelectionState extends State<InjurySelection> {
   }
 
   void _initSelectedInjury() async {
-    List<String> selectedInjury =
-        await StorageManager.getSelectedInjuries();
+    List<String> selectedInjury = await StorageManager.getSelectedInjuries();
     if (selectedInjury.isNotEmpty) {
       List<int> selectedIndices = [];
       for (int i = 0; i < injuredAreas.length; i++) {
@@ -103,24 +102,23 @@ class InjurySelectionState extends State<InjurySelection> {
                 color: _selected[index] ? Colors.blue : Colors.white,
               ),
               child: Center(
-                child: Text(
-                  injuredAreas[index],
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color: _selected[index] ? Colors.white : Colors.black,
+                child: Container(
+                  constraints: BoxConstraints(
+                    maxWidth: 115, // set the maximum width here
+                  ),
+                  child: Text(
+                    injuredAreas[index],
+                    textAlign: TextAlign.center, // center the text horizontally
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: _selected[index] ? Colors.white : Colors.black,
+                    ),
                   ),
                 ),
               ),
             ),
           );
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.check),
-        onPressed: () {
-          StorageManager.saveSelectedInjuries(_getSelectedInjuries());
-          Navigator.pop(context);
         },
       ),
     );
