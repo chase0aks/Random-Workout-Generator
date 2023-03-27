@@ -16,7 +16,6 @@ const List<String> availableEquipment = [
   'Medicine Ball',
   'Resistance Band',
   'Sliders',
-  'Slingshot',
   'Smith Machine',
   'Stability Ball',
   'TRX',
