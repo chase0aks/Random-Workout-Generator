@@ -1160,166 +1160,315 @@ final List<ExerciseData> allExercises = [
   ], injuredAreas: [
     'Shoulder'
   ]),
-  ExerciseData(
-      name: 'Cable Alternating Curl',
-      muscleGroups: ['Biceps'],
-      equipment: ['Cable'],
-      injuredAreas: ['Elbow', 'Wrist']),
-  ExerciseData(
-      name: 'Cable Bar Bench Press',
-      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulder', 'Wrist']),
-  ExerciseData(
-      name: 'Cable Bar Shoulder Press',
-      muscleGroups: ['Shoulders', 'Triceps'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulder', 'Wrist']),
-  ExerciseData(
-      name: 'Cable Bar Standing Chest Press',
-      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulder', 'Wrist']),
-  ExerciseData(
-      name: 'Cable Bar Standing Incline Chest Press',
-      muscleGroups: ['Upper Chest', 'Triceps', 'Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulder', 'Wrist']),
-  ExerciseData(
-      name: 'Cable Bench Press',
-      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulder', 'Wrist']),
-  ExerciseData(
-      name: 'Cable Bent-Over Pullover',
-      muscleGroups: ['Lats', 'Triceps', 'Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulder', 'Wrist']),
-  ExerciseData(
-      name: 'Cable Bent-Over Tricep Extension',
-      muscleGroups: ['Triceps'],
-      equipment: ['Cable'],
-      injuredAreas: ['Elbow', 'Wrist']),
-  ExerciseData(
-      name: 'Cable Chest Press',
-      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulder', 'Wrist', 'Elbow', 'Lower Back']),
-  ExerciseData(
-      name: 'Cable Curl',
-      muscleGroups: ['Biceps', 'Forearms'],
-      equipment: ['Cable'],
-      injuredAreas: ['Elbow', 'Wrist', 'Shoulder']),
-  ExerciseData(
-      name: 'Cable Decline Chest Press',
-      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulder', 'Wrist', 'Elbow', 'Lower Back']),
-  ExerciseData(
-      name: 'Cable Decline Fly',
-      muscleGroups: ['Chest', 'Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulder', 'Wrist', 'Elbow', 'Lower Back']),
-  ExerciseData(
-      name: 'Cable Glute Kickback',
-      muscleGroups: ['Glutes'],
-      equipment: ['Cable'],
-      injuredAreas: ['Knee', 'Lower Back']),
-  ExerciseData(
-      name: 'Cable Hammer Curl',
-      muscleGroups: ['Biceps', 'Forearms'],
-      equipment: ['Cable'],
-      injuredAreas: ['Elbow', 'Wrist', 'Shoulder']),
-  ExerciseData(
-      name: 'Cable Hip Abduction',
-      muscleGroups: ['Glutes'],
-      equipment: ['Cable'],
-      injuredAreas: ['Knee', 'Lower Back']),
-  ExerciseData(
-      name: 'Cable Incline Bench Press',
-      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulder', 'Wrist', 'Elbow', 'Lower Back']),
-  ExerciseData(
-      name: 'Cable Incline Chest Press',
-      muscleGroups: ['Chest', 'Triceps', 'Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulder', 'Wrist', 'Elbow', 'Lower Back']),
-  ExerciseData(
-      name: 'Cable Incline Fly',
-      muscleGroups: ['Chest', 'Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulder', 'Wrist', 'Elbow', 'Lower Back']),
-  ExerciseData(
-      name: 'Cable Incline Tricep Extension',
-      muscleGroups: ['Triceps', 'Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Elbow', 'Wrist', 'Shoulder']),
-  ExerciseData(
-      name: 'Cable Incline Tricep Pushdown',
-      muscleGroups: ['Triceps'],
-      equipment: ['Cable'],
-      injuredAreas: ['Elbow', 'Wrist', 'Shoulder']),
-  ExerciseData(
-      name: 'Cable Kneeling Crunch',
-      muscleGroups: ['Abs'],
-      equipment: ['Cable'],
-      injuredAreas: ['Lower Back', 'Neck']),
-  ExerciseData(
-      name: 'Cable Kneeling Tricep Extension',
-      muscleGroups: ['Triceps'],
-      equipment: ['Cable'],
-      injuredAreas: ['Elbow', 'Wrist', 'Shoulder']),
-  ExerciseData(
-      name: 'Cable Lat Close Grip Pulldown',
-      muscleGroups: ['Lats', 'Biceps'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulders', 'Elbows', 'Lower Back']),
-  ExerciseData(
-      name: 'Cable Lat Pulldown',
-      muscleGroups: ['Lats', 'Biceps'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulders', 'Elbows', 'Lower Back']),
-  ExerciseData(
-      name: 'Cable Lat Underhand Pulldown',
-      muscleGroups: ['Lats', 'Biceps'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulders', 'Elbows', 'Lower Back']),
-  ExerciseData(
-      name: 'Cable Lateral Raise',
-      muscleGroups: ['Shoulders'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulders']),
-  ExerciseData(
-      name: 'Cable Leg Extension',
-      muscleGroups: ['Quads'],
-      equipment: ['Cable'],
-      injuredAreas: ['Knees']),
-  ExerciseData(
-      name: 'Cable Lying Curl',
-      muscleGroups: ['Biceps'],
-      equipment: ['Cable'],
-      injuredAreas: ['Elbows']),
-  ExerciseData(
-      name: 'Cable Lying Fly',
-      muscleGroups: ['Chest'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulders']),
-  ExerciseData(
-      name: 'Cable Lying Pullover',
-      muscleGroups: ['Back', 'Chest', 'Triceps'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulders', 'Elbows', 'Lower Back']),
-  ExerciseData(
-      name: 'Cable Lying Reverse Fly',
-      muscleGroups: ['Shoulders', 'Back'],
-      equipment: ['Cable'],
-      injuredAreas: ['Shoulders']),
-  ExerciseData(
-      name: 'Cable Lying Tricep Extension',
-      muscleGroups: ['Triceps'],
-      equipment: ['Cable'],
-      injuredAreas: ['Elbows']),
+  ExerciseData(name: 'Cable Alternating Curl', muscleGroups: {
+    'primary': ['Biceps'],
+    'secondary': ['Brachialis', 'Forearms']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Elbow',
+    'Wrist'
+  ]),
+  ExerciseData(name: 'Cable Bar Bench Press', muscleGroups: {
+    'primary': ['Mid Chest'],
+    'secondary': ['Front Shoulders', 'Triceps', 'Upper Chest']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist'
+  ]),
+  ExerciseData(name: 'Cable Bar Shoulder Press', muscleGroups: {
+    'primary': ['Front Shoulders'],
+    'secondary': ['Mid Shoulders', 'Triceps']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist'
+  ]),
+  ExerciseData(name: 'Cable Bar Standing Chest Press', muscleGroups: {
+    'primary': ['Mid Chest'],
+    'secondary': ['Front Shoulders', 'Triceps', 'Upper Chest']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist'
+  ]),
+  ExerciseData(name: 'Cable Bar Standing Incline Chest Press', muscleGroups: {
+    'primary': ['Upper Chest'],
+    'secondary': ['Front Shoulders', 'Mid Chest', 'Triceps']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist'
+  ]),
+  ExerciseData(name: 'Cable Bench Press', muscleGroups: {
+    'primary': ['Mid Chest'],
+    'secondary': ['Front Shoulders', 'Triceps', 'Upper Chest']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist'
+  ]),
+  ExerciseData(name: 'Cable Bent-Over Pullover', muscleGroups: {
+    'primary': ['Lats'],
+    'secondary': ['Rear Shoulders', 'Rhomboids', 'Teres Major']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist'
+  ]),
+  ExerciseData(name: 'Cable Bent-Over Tricep Extension', muscleGroups: {
+    'primary': ['Triceps'],
+    'secondary': []
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Elbow',
+    'Wrist'
+  ]),
+  ExerciseData(name: 'Cable Chest Press', muscleGroups: {
+    'primary': ['Mid Chest'],
+    'secondary': ['Front Shoulders', 'Triceps', 'Upper Chest']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist',
+    'Elbow',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Cable Curl', muscleGroups: {
+    'primary': ['Biceps'],
+    'secondary': ['Brachialis', 'Forearms']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Elbow',
+    'Wrist',
+    'Shoulder'
+  ]),
+  ExerciseData(name: 'Cable Decline Chest Press', muscleGroups: {
+    'primary': ['Mid Chest'],
+    'secondary': ['Front Shoulders', 'Triceps', 'Upper Chest']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist',
+    'Elbow',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Cable Decline Fly', muscleGroups: {
+    'primary': ['Mid Chest'],
+    'secondary': ['Front Shoulders', 'Upper Chest']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist',
+    'Elbow',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Cable Glute Kickback', muscleGroups: {
+    'primary': ['Glutes'],
+    'secondary': []
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Knee',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Cable Hammer Curl', muscleGroups: {
+    'primary': ['Biceps', 'Forearms'],
+    'secondary': ['Brachialis']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Elbow',
+    'Wrist',
+    'Shoulder'
+  ]),
+  ExerciseData(name: 'Cable Hip Abduction', muscleGroups: {
+    'primary': ['Abductors'],
+    'secondary': ['Quads']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Knee',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Cable Incline Bench Press', muscleGroups: {
+    'primary': ['Upper Chest'],
+    'secondary': ['Front Shoulders', 'Mid Chest', 'Triceps']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist',
+    'Elbow',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Cable Incline Chest Press', muscleGroups: {
+    'primary': ['Upper Chest'],
+    'secondary': ['Front Shoulders', 'Mid Chest', 'Triceps']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist',
+    'Elbow',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Cable Incline Fly', muscleGroups: {
+    'primary': ['Mid Chest'],
+    'secondary': ['Front Shoulders', 'Upper Chest']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulder',
+    'Wrist',
+    'Elbow',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Cable Incline Tricep Extension', muscleGroups: {
+    'primary': ['Triceps'],
+    'secondary': []
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Elbow',
+    'Wrist',
+    'Shoulder'
+  ]),
+  ExerciseData(name: 'Cable Incline Tricep Pushdown', muscleGroups: {
+    'primary': ['Triceps'],
+    'secondary': []
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Elbow',
+    'Wrist',
+    'Shoulder'
+  ]),
+  ExerciseData(name: 'Cable Kneeling Crunch', muscleGroups: {
+    'primary': ['Abs'],
+    'secondary': ['Obliques']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Lower Back',
+    'Neck'
+  ]),
+  ExerciseData(name: 'Cable Kneeling Tricep Extension', muscleGroups: {
+    'primary': ['Triceps'],
+    'secondary': []
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Elbow',
+    'Wrist',
+    'Shoulder'
+  ]),
+  ExerciseData(name: 'Cable Lat Close Grip Pulldown', muscleGroups: {
+    'primary': ['Lats'],
+    'secondary': ['Biceps', 'Rear Shoulders', 'Rhomboids', 'Teres Major']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulders',
+    'Elbows',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Cable Lat Pulldown', muscleGroups: {
+    'primary': ['Lats'],
+    'secondary': ['Biceps', 'Rear Shoulders', 'Rhomboids', 'Teres Major']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulders',
+    'Elbows',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Cable Lat Underhand Pulldown', muscleGroups: {
+    'primary': ['Lats'],
+    'secondary': ['Biceps', 'Rear Shoulders', 'Rhomboids', 'Teres Major']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulders',
+    'Elbows',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Cable Lateral Raise', muscleGroups: {
+    'primary': ['Mid Shoulders'],
+    'secondary': ['Front Shoulders']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulders'
+  ]),
+  ExerciseData(name: 'Cable Leg Extension', muscleGroups: {
+    'primary': ['Quads'],
+    'secondary': []
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Knees'
+  ]),
+  ExerciseData(name: 'Cable Lying Curl', muscleGroups: {
+    'primary': ['Biceps'],
+    'secondary': []
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Elbows'
+  ]),
+  ExerciseData(name: 'Cable Lying Fly', muscleGroups: {
+    'primary': ['Mid Chest'],
+    'secondary': ['Front Shoulders', 'Upper Chest']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulders'
+  ]),
+  ExerciseData(name: 'Cable Lying Pullover', muscleGroups: {
+    'primary': ['Lats'],
+    'secondary': [
+      'Mid Chest',
+      'Rear Shoulders',
+      'Rhomboids',
+      'Teres Major',
+      'Triceps'
+    ]
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulders',
+    'Elbows',
+    'Lower Back'
+  ]),
+  ExerciseData(name: 'Cable Lying Reverse Fly', muscleGroups: {
+    'primary': ['Rear Shoulders'],
+    'secondary': ['Mid SHoulders', 'Traps']
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Shoulders'
+  ]),
+  ExerciseData(name: 'Cable Lying Tricep Extension', muscleGroups: {
+    'primary': ['Triceps'],
+    'secondary': []
+  }, equipment: [
+    'Cable'
+  ], injuredAreas: [
+    'Elbows'
+  ]),
   ExerciseData(
       name: 'Cable One Arm Bent-Over Row',
       muscleGroups: ['Back', 'Biceps'],
