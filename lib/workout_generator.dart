@@ -44,7 +44,9 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
 
     final filteredExercises = allExercises.where((exercise) {
       final matchesMuscles = _selectedMuscles.isEmpty ||
-          exercise.muscleGroups['primary'].any((muscle) => _selectedMuscles.contains(muscle));
+          (exercise.muscleGroups['primary']
+                  ?.any((muscle) => _selectedMuscles.contains(muscle)) ??
+              false);
       final matchesInjuries = _selectedInjuries.isEmpty ||
           !exercise.injuredAreas
               .any((injury) => _selectedInjuries.contains(injury));
@@ -97,42 +99,55 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Affected Muscle Groups:',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          Center(
+                            child: Text('Affected Main Muscle Groups:',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                          ),
                           SizedBox(height: 5),
-                          Wrap(
-                            spacing: 5,
-                            runSpacing: 5,
-                            children: exercise.muscleGroups['primary']
-                                .map((muscle) => Chip(label: Text(muscle)))
-                                .toList(),
+                          Center(
+                            child: Wrap(
+                              spacing: 5,
+                              runSpacing: 5,
+                              children: exercise.muscleGroups['primary']
+                                      ?.map(
+                                          (muscle) => Chip(label: Text(muscle)))
+                                      ?.toList() ??
+                                  [],
+                            ),
+                          ),
+                          Center(
+                            child: Text('Affected Secondary Muscle Groups:',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                          ),
+                          SizedBox(height: 5),
+                          Center(
+                            child: Wrap(
+                              spacing: 5,
+                              runSpacing: 5,
+                              children: exercise.muscleGroups['secondary']
+                                      ?.map(
+                                          (muscle) => Chip(label: Text(muscle)))
+                                      ?.toList() ??
+                                  [],
+                            ),
                           ),
                           SizedBox(height: 10),
-                          Text('Necessary Equipment:',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          SizedBox(height: 5),
-                          Wrap(
-                            spacing: 5,
-                            runSpacing: 5,
-                            children: exercise.equipment.isNotEmpty
-                                ? exercise.equipment
-                                    .map((equipment) =>
-                                        Chip(label: Text(equipment)))
-                                    .toList()
-                                : [Text('None')],
+                          Center(
+                            child: Text('Necessary Equipment:',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
                           ),
-                          SizedBox(height: 10),
-                          Text('Injured Areas:',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
                           SizedBox(height: 5),
-                          Wrap(
-                            spacing: 5,
-                            runSpacing: 5,
-                            children: exercise.injuredAreas.isNotEmpty
-                                ? exercise.injuredAreas
-                                    .map((injury) => Chip(label: Text(injury)))
-                                    .toList()
-                                : [Text('None')],
+                          Center(
+                            child: Wrap(
+                              spacing: 5,
+                              runSpacing: 5,
+                              children: exercise.equipment.isNotEmpty
+                                  ? exercise.equipment
+                                      .map((equipment) =>
+                                          Chip(label: Text(equipment)))
+                                      .toList()
+                                  : [Text('None')],
+                            ),
                           ),
                         ],
                       ),
@@ -141,19 +156,6 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                 ),
               ),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.not_interested),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.refresh),
-                )
-              ],
-            )
           ]);
         },
       ),
