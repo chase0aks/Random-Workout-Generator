@@ -44,8 +44,7 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
 
     final filteredExercises = allExercises.where((exercise) {
       final matchesMuscles = _selectedMuscles.isEmpty ||
-          exercise.muscleGroups
-              .any((muscle) => _selectedMuscles.contains(muscle));
+          exercise.muscleGroups['primary'].any((muscle) => _selectedMuscles.contains(muscle));
       final matchesInjuries = _selectedInjuries.isEmpty ||
           !exercise.injuredAreas
               .any((injury) => _selectedInjuries.contains(injury));
@@ -104,7 +103,7 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                           Wrap(
                             spacing: 5,
                             runSpacing: 5,
-                            children: exercise.muscleGroups
+                            children: exercise.muscleGroups['primary']
                                 .map((muscle) => Chip(label: Text(muscle)))
                                 .toList(),
                           ),
