@@ -111,7 +111,7 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                               children: exercise.muscleGroups['primary']
                                       ?.map(
                                           (muscle) => Chip(label: Text(muscle)))
-                                      ?.toList() ??
+                                      .toList() ??
                                   [],
                             ),
                           ),
@@ -127,7 +127,7 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                               children: exercise.muscleGroups['secondary']
                                       ?.map(
                                           (muscle) => Chip(label: Text(muscle)))
-                                      ?.toList() ??
+                                      .toList() ??
                                   [],
                             ),
                           ),
@@ -145,6 +145,24 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                                   ? exercise.equipment
                                       .map((equipment) =>
                                           Chip(label: Text(equipment)))
+                                      .toList()
+                                  : [Text('None')],
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Center(
+                            child: Text('Injured Areas:',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                          ),
+                          SizedBox(height: 5),
+                          Center(
+                            child: Wrap(
+                              spacing: 5,
+                              runSpacing: 5,
+                              children: exercise.injuredAreas.isNotEmpty
+                                  ? exercise.injuredAreas
+                                      .map((injuries) =>
+                                          Chip(label: Text(injuries)))
                                       .toList()
                                   : [Text('None')],
                             ),
