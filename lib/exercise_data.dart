@@ -1,8 +1,8 @@
 class ExerciseData {
-  final String name;
-  final Map<String, List<String>> muscleGroups;
-  final List<String> equipment;
-  final List<String> injuredAreas;
+  String name;
+  Map<String, List<String>> muscleGroups;
+  List<String> equipment;
+  List<String> injuredAreas;
 
   ExerciseData({
     required this.name,
@@ -12,10 +12,10 @@ class ExerciseData {
   });
 }
 
-final List<ExerciseData> allExercises = [
+List<ExerciseData> allExercises = [
   ExerciseData(name: '3D Lunges', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -55,7 +55,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Alternating Full Plank', muscleGroups: {
     'primary': ['Abs', 'Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -71,7 +71,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Alternating Leg Raise', muscleGroups: {
     'primary': ['Hip Flexors'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -79,7 +79,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Alternating Superman', muscleGroups: {
     'primary': ['Glutes', 'Traps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -95,7 +95,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Arm Circles', muscleGroups: {
     'primary': ['Mid Shoulders', 'Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -337,7 +337,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Barbell Decline Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -461,7 +461,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Barbell Holds', muscleGroups: {
     'primary': ['Forearms'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -495,7 +495,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Barbell Incline Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -512,7 +512,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Barbell Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -529,7 +529,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Barbell Lying Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -644,7 +644,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Barbell Rear Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -669,7 +669,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Barbell Reverse Wrist Curl', muscleGroups: {
     'primary': ['Forearms'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -702,7 +702,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Barbell Seated Calf Raise', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -729,7 +729,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Barbell Shrug', muscleGroups: {
     'primary': ['Traps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -773,7 +773,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Barbell Standing Calf Raise', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -839,7 +839,7 @@ final List<ExerciseData> allExercises = [
       'Quads',
       'Triceps'
     ],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -867,7 +867,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Barbell Walking Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -875,7 +875,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Barbell Wrist Curl', muscleGroups: {
     'primary': ['Forearms'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -949,7 +949,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Bench Leg Raise', muscleGroups: {
     'primary': ['Abs'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Bench'
   ], injuredAreas: [
@@ -957,7 +957,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Bench Reverse Hyperextension', muscleGroups: {
     'primary': ['Glutes', 'Hamstrings', 'Lower Back'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Bench'
   ], injuredAreas: [
@@ -1049,7 +1049,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Bodyweight Reverse Alternating Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -1058,7 +1058,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Bodyweight Reverse Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -1102,7 +1102,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Bodyweight Walking Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -1225,7 +1225,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Bent-Over Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1277,7 +1277,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Glute Kickback', muscleGroups: {
     'primary': ['Glutes'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1338,7 +1338,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Incline Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1348,7 +1348,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Incline Tricep Pushdown', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1367,7 +1367,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Kneeling Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1415,7 +1415,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Leg Extension', muscleGroups: {
     'primary': ['Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1423,7 +1423,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Lying Curl', muscleGroups: {
     'primary': ['Biceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1463,7 +1463,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Lying Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1573,7 +1573,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable One Arm Split Squat', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1602,7 +1602,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable One Arm Standing Tricep Kickback', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1610,7 +1610,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable One Arm Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1619,7 +1619,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable One Arm Tricep Pushdown', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1654,7 +1654,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Pull Through', muscleGroups: {
     'primary': ['Glutes'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1706,7 +1706,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Reverse Wrist Curl', muscleGroups: {
     'primary': ['Forearms'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1714,7 +1714,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Russian Twist', muscleGroups: {
     'primary': ['Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1796,7 +1796,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Shrug', muscleGroups: {
     'primary': ['Traps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1805,7 +1805,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Side Bend', muscleGroups: {
     'primary': ['Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1813,7 +1813,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Side Crunch', muscleGroups: {
     'primary': ['Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1821,7 +1821,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Side Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1883,7 +1883,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Standing Leg Curl', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1911,7 +1911,7 @@ final List<ExerciseData> allExercises = [
       name: 'Cable Standing Shoulder External Rotation',
       muscleGroups: {
         'primary': ['Infraspinatus'],
-        'secondary': []
+        'secondary': ['']
       },
       equipment: [
         'Cable'
@@ -1923,7 +1923,7 @@ final List<ExerciseData> allExercises = [
       name: 'Cable Standing Shoulder Internal Rotation',
       muscleGroups: {
         'primary': ['Subscapularis'],
-        'secondary': []
+        'secondary': ['']
       },
       equipment: [
         'Cable'
@@ -1950,7 +1950,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1959,7 +1959,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Tricep Pushdown', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -1968,7 +1968,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Twist', muscleGroups: {
     'primary': ['Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -2001,7 +2001,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cable Wrist Curl', muscleGroups: {
     'primary': ['Forearms'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Cable'
   ], injuredAreas: [
@@ -2018,7 +2018,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: "Child's Pose", muscleGroups: {
     'primary': ['Erector Spinae', 'Hip Flexors', 'Lower Back'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -2069,7 +2069,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Cobra Stretch', muscleGroups: {
     'primary': ['Front Shoulders', 'Hip Flexors', 'Mid Chest'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -2077,7 +2077,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Copenhagen Hip Adduction', muscleGroups: {
     'primary': ['Adductors'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -2101,7 +2101,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dead Bug', muscleGroups: {
     'primary': ['Abs', 'Erector Spinae', 'Obliques', 'Transverse Abdominis'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -2285,7 +2285,7 @@ final List<ExerciseData> allExercises = [
       name: 'Dumbbell Bicep Curl with Single Arm ISO-Hold',
       muscleGroups: {
         'primary': ['Biceps'],
-        'secondary': []
+        'secondary': ['']
       },
       equipment: [
         'Dumbbell'
@@ -2354,7 +2354,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Decline Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell',
     'Bench'
@@ -2499,7 +2499,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Incline Kickback', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2524,7 +2524,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Incline Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2533,7 +2533,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Kickback', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2562,7 +2562,7 @@ final List<ExerciseData> allExercises = [
       ]),
   ExerciseData(name: 'Dumbbell Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2587,7 +2587,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Lying Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2621,7 +2621,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell One Arm Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2714,7 +2714,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Rear Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2772,7 +2772,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Shrug', muscleGroups: {
     'primary': ['Traps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2780,7 +2780,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Side Bend', muscleGroups: {
     'primary': ['Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2788,7 +2788,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Single Leg Calf Raise', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2861,7 +2861,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Standing Calf Raise', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2896,7 +2896,7 @@ final List<ExerciseData> allExercises = [
       name: 'Dumbbell Standing Single-Arm Overhead Extension',
       muscleGroups: {
         'primary': ['Triceps'],
-        'secondary': []
+        'secondary': ['']
       },
       equipment: [
         'Dumbbell'
@@ -2906,7 +2906,7 @@ final List<ExerciseData> allExercises = [
       ]),
   ExerciseData(name: 'Dumbbell Standing Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2939,7 +2939,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Tate Press', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2956,7 +2956,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2973,7 +2973,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Walking Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2982,7 +2982,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dumbbell Wrist Curl', muscleGroups: {
     'primary': ['Forearms'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -2999,7 +2999,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Dynamic Hip Flexor Stretch', muscleGroups: {
     'primary': ['Hip Flexors'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -3040,7 +3040,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'EZ Bar Lying Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'EZ Bar'
   ], injuredAreas: [
@@ -3057,7 +3057,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'EZ Bar Seated Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'EZ Bar'
   ], injuredAreas: [
@@ -3067,7 +3067,7 @@ final List<ExerciseData> allExercises = [
       name: 'EZ Bar Standing Overhead Tricep Extension',
       muscleGroups: {
         'primary': ['Triceps'],
-        'secondary': []
+        'secondary': ['']
       },
       equipment: [
         'EZ Bar'
@@ -3077,7 +3077,7 @@ final List<ExerciseData> allExercises = [
       ]),
   ExerciseData(name: "Farmer's Walk", muscleGroups: {
     'primary': ['Forearms'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell',
     'Kettlebell'
@@ -3104,7 +3104,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Floor T Raises', muscleGroups: {
     'primary': ['Lats', 'Rear Shoulders', 'Rhomboids'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -3120,7 +3120,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Floor T-Raises', muscleGroups: {
     'primary': ['Lats', 'Rear Shoulders', 'Rhomboids'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -3128,7 +3128,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Foam Roller Hamstrings', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Foam Roller'
   ], injuredAreas: [
@@ -3136,7 +3136,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Foam Roller Lats', muscleGroups: {
     'primary': ['Lats'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Foam Roller'
   ], injuredAreas: [
@@ -3144,7 +3144,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Foam Roller Quads', muscleGroups: {
     'primary': ['Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Foam Roller'
   ], injuredAreas: [
@@ -3152,7 +3152,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Foam Roller Rhomboids', muscleGroups: {
     'primary': ['Rhomboids'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Foam Roller'
   ], injuredAreas: [
@@ -3168,7 +3168,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Frogger Stretch', muscleGroups: {
     'primary': ['Adductors', 'Hip Flexors'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -3194,7 +3194,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Full Plank', muscleGroups: {
     'primary': ['Abs', 'Transverse Abdominis'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -3203,7 +3203,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'GHD Reverse Hyperextension', muscleGroups: {
     'primary': ['Glutes', 'Hamstrings', 'Lower Back'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -3336,7 +3336,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Heel Taps', muscleGroups: {
     'primary': ['Abs'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -3370,7 +3370,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Hex Bar Shrug', muscleGroups: {
     'primary': ['Traps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Hex Bar'
   ], injuredAreas: [
@@ -3386,7 +3386,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Hex Dumbbell Hold', muscleGroups: {
     'primary': ['Forearms'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -3427,7 +3427,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Inchworm Walk', muscleGroups: {
     'primary': ['Calves', 'Hamstrings', 'Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -3506,7 +3506,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: "Kettlebell Farmer's Walk", muscleGroups: {
     'primary': ['Forearms'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Kettlebell'
   ], injuredAreas: [
@@ -3523,7 +3523,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Kettlebell Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Kettlebell'
   ], injuredAreas: [
@@ -3618,7 +3618,7 @@ final List<ExerciseData> allExercises = [
       'Traps',
       'Triceps'
     ],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Kettlebell'
   ], injuredAreas: [
@@ -3717,7 +3717,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Lying Cobra', muscleGroups: {
     'primary': ['Lower Back'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -3743,7 +3743,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Lying Posterior Deltoid Stretch', muscleGroups: {
     'primary': ['Lats', 'Rear Shoulders'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -3818,7 +3818,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Donkey Calf Raise', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -3875,7 +3875,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Kneeling Twist', muscleGroups: {
     'primary': ['Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -3907,7 +3907,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Leg Extension', muscleGroups: {
     'primary': ['Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -3915,7 +3915,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Lying Leg Curl', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -3961,7 +3961,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Reverse Wrist Curl', muscleGroups: {
     'primary': ['Forearms'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -3969,7 +3969,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Seated Calf Press', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -3977,7 +3977,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Seated Calf Raise', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -4017,7 +4017,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Seated Hip Adduction', muscleGroups: {
     'primary': ['Adductors'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -4025,7 +4025,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Seated Leg Curl', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -4066,7 +4066,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Seated Shrug', muscleGroups: {
     'primary': ['Traps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -4074,7 +4074,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Seated Single-Leg Curl', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -4091,7 +4091,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Shrug', muscleGroups: {
     'primary': ['Traps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -4099,7 +4099,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Single-Leg Extension', muscleGroups: {
     'primary': ['Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -4107,7 +4107,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Single-Leg Lying Leg Curl', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -4123,7 +4123,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Standing Calf Raise', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -4131,7 +4131,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Standing Leg Curl', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -4157,7 +4157,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -4174,7 +4174,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Machine Wrist Curl', muscleGroups: {
     'primary': ['Forearms'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -4241,7 +4241,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Mini Band Seated Hip Abduction', muscleGroups: {
     'primary': ['Abductors'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Resistance Band'
   ], injuredAreas: [
@@ -4265,7 +4265,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Nordic Curl', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -4274,7 +4274,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Oblique Side-Leg Raise', muscleGroups: {
     'primary': ['Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -4282,7 +4282,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Pancake Stretch', muscleGroups: {
     'primary': ['Adductors', 'Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -4290,7 +4290,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Pec Minor Stretch', muscleGroups: {
     'primary': ['Upper Chest'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -4298,7 +4298,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Pigeon Pose', muscleGroups: {
     'primary': ['Abductors', 'Glutes', 'Hip Flexors'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -4356,7 +4356,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Plate Front Raise', muscleGroups: {
     'primary': ['Front Shoulders'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Weight Plates'
   ], injuredAreas: [
@@ -4364,7 +4364,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Plate Side Bend', muscleGroups: {
     'primary': ['Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Weight Plates'
   ], injuredAreas: [
@@ -4391,7 +4391,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Pulse Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -4416,7 +4416,7 @@ final List<ExerciseData> allExercises = [
       'Quads',
       'Triceps'
     ],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -4477,7 +4477,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Quadruped Straight Leg Fire Hydrant', muscleGroups: {
     'primary': ['Abductors'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Bodyweight'
   ], injuredAreas: [
@@ -4538,7 +4538,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Resistance Band Crab Walk', muscleGroups: {
     'primary': ['Glutes'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Resistance Band'
   ], injuredAreas: [
@@ -4594,7 +4594,7 @@ final List<ExerciseData> allExercises = [
       name: 'Resistance Band Kneeling Tricep Extension',
       muscleGroups: {
         'primary': ['Triceps'],
-        'secondary': []
+        'secondary': ['']
       },
       equipment: [
         'Resistance Band'
@@ -4614,7 +4614,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Resistance Band Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Resistance Band'
   ], injuredAreas: [
@@ -4623,7 +4623,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Resistance Band Lying Hamstring Curl', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Resistance Band'
   ], injuredAreas: [
@@ -4653,7 +4653,7 @@ final List<ExerciseData> allExercises = [
       name: 'Resistance Band One Arm Standing Kickbacks',
       muscleGroups: {
         'primary': ['Triceps'],
-        'secondary': []
+        'secondary': ['']
       },
       equipment: [
         'Resistance Band'
@@ -4667,7 +4667,7 @@ final List<ExerciseData> allExercises = [
       name: 'Resistance Band Overhead Tricep Extension',
       muscleGroups: {
         'primary': ['Triceps'],
-        'secondary': []
+        'secondary': ['']
       },
       equipment: [
         'Resistance Band'
@@ -4740,7 +4740,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Resistance Band Shrugs', muscleGroups: {
     'primary': ['Traps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Resistance Band'
   ], injuredAreas: [
@@ -4759,7 +4759,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Resistance Band Standing Ab Twist', muscleGroups: {
     'primary': ['Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Resistance Band'
   ], injuredAreas: [
@@ -4785,7 +4785,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Resistance Band Standing Calf Raise', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Resistance Band'
   ], injuredAreas: [
@@ -4834,7 +4834,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Resistance Band Standing Leg Extension', muscleGroups: {
     'primary': ['Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Resistance Band'
   ], injuredAreas: [
@@ -4885,7 +4885,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Resting Squat', muscleGroups: {
     'primary': ['Glutes', 'Hamstrings', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -4924,7 +4924,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'RKC Plank', muscleGroups: {
     'primary': ['Abs', 'Transverse Abdominis'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -4932,7 +4932,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Rotary Calf Extension', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -4940,7 +4940,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Russian Hamstring Curl', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -4956,7 +4956,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Scapular Pull-Up', muscleGroups: {
     'primary': ['Subscapularis', 'Traps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Pull-Up Bar'
   ], injuredAreas: [
@@ -4972,7 +4972,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Shoulder Dislocation', muscleGroups: {
     'primary': ['Front Shoulders', 'Mid Shoulders', 'Rear Shoulders'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Resistance Band'
   ], injuredAreas: [
@@ -4988,7 +4988,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Side Lying Thoracic Rotation', muscleGroups: {
     'primary': ['Erector Spinae', 'Infraspinatus'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -5012,7 +5012,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Side Shuffle', muscleGroups: {
     'primary': ['Calves', 'Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -5020,7 +5020,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Side-Lying Leg Lift', muscleGroups: {
     'primary': ['Abductors'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -5079,7 +5079,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Single Arm Landmine Pull and Press', muscleGroups: {
     'primary': ['Abs'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Barbell'
   ], injuredAreas: [
@@ -5087,7 +5087,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Single Kettlebell Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Kettlebell'
   ], injuredAreas: [
@@ -5119,7 +5119,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Sled 45 Calf Press', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -5127,7 +5127,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Sled 45 Calf Raise', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Machine'
   ], injuredAreas: [
@@ -5311,7 +5311,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Smith Machine Rear Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Smith Machine'
   ], injuredAreas: [
@@ -5328,7 +5328,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Smith Machine Shrug', muscleGroups: {
     'primary': ['Traps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Smith Machine'
   ], injuredAreas: [
@@ -5361,7 +5361,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Smith Machine Standing Calf Raise', muscleGroups: {
     'primary': ['Calves'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Smith Machine'
   ], injuredAreas: [
@@ -5435,7 +5435,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Stability Ball Pike', muscleGroups: {
     'primary': ['Abs', 'Transverse Abdominis'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Stability Ball'
   ], injuredAreas: [
@@ -5443,7 +5443,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Stability Ball Plank', muscleGroups: {
     'primary': ['Abs', 'Transverse Abdominis'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Stability Ball'
   ], injuredAreas: [
@@ -5487,7 +5487,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Standing Oblique Crunch', muscleGroups: {
     'primary': ['Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -5519,7 +5519,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Static Hip Flexor Stretch', muscleGroups: {
     'primary': ['Hip Flexors'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -5527,7 +5527,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Static Lat and Tricep Stretch', muscleGroups: {
     'primary': ['Lats', 'Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -5568,7 +5568,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Swinging High Kicks', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -5596,7 +5596,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Swiss Ball Hamstring Curl', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Swiss Ball'
   ], injuredAreas: [
@@ -5612,7 +5612,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Swiss Ball Single Leg Leg Curl', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Swiss Ball'
   ], injuredAreas: [
@@ -5628,7 +5628,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Terminal Knee Extension', muscleGroups: {
     'primary': ['Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Resistance Band'
   ], injuredAreas: [
@@ -5717,7 +5717,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'TRX Hamstring Curl', muscleGroups: {
     'primary': ['Hamstrings'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'TRX'
   ], injuredAreas: [
@@ -5726,7 +5726,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'TRX Incline Press', muscleGroups: {
     'primary': ['Upper Chest'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'TRX'
   ], injuredAreas: [
@@ -5757,7 +5757,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'TRX Lunge', muscleGroups: {
     'primary': ['Glutes', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'TRX'
   ], injuredAreas: [
@@ -5804,7 +5804,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'TRX Squat to Row', muscleGroups: {
     'primary': ['Biceps', 'Glutes', 'Lats', 'Quads'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'TRX'
   ], injuredAreas: [
@@ -5816,7 +5816,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'TRX Tricep Extension', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'TRX'
   ], injuredAreas: [
@@ -5836,7 +5836,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Twisting Elbow Plank', muscleGroups: {
     'primary': ['Abs', 'Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'None'
   ], injuredAreas: [
@@ -5877,7 +5877,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Wall Skullcrusher', muscleGroups: {
     'primary': ['Triceps'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [
@@ -5886,7 +5886,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Weighted 45 Side Bend', muscleGroups: {
     'primary': ['Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell',
     'Barbell'
@@ -5987,7 +5987,7 @@ final List<ExerciseData> allExercises = [
   ]),
   ExerciseData(name: 'Weighted Side Crunch', muscleGroups: {
     'primary': ['Obliques'],
-    'secondary': []
+    'secondary': ['']
   }, equipment: [
     'Dumbbell'
   ], injuredAreas: [

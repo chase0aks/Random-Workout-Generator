@@ -4,10 +4,12 @@ class StorageManager {
   static const String _musclesKey = 'selectedMuscles';
   static const String _injuriesKey = 'selectedInjuries';
   static const String _equipmentKey = 'selectedEquipment';
+  static const String _exercisesKey = 'selectedExercises';
 
   static SharedPreferences? _prefs;
 
-  static Future<void> _initPrefs() async {{
+  static Future<void> _initPrefs() async {
+    {
       _prefs = await SharedPreferences.getInstance();
     }
   }
@@ -40,5 +42,15 @@ class StorageManager {
   static Future<List<String>> getSelectedEquipment() async {
     await _initPrefs();
     return _prefs!.getStringList(_equipmentKey) ?? [];
+  }
+
+  static Future<void> saveSelectedExercises(List<String> exercises) async {
+    await _initPrefs();
+    await _prefs!.setStringList(_exercisesKey, exercises);
+  }
+
+  static Future<List<String>> getSelectedExercises() async {
+    await _initPrefs();
+    return _prefs!.getStringList(_exercisesKey) ?? [];
   }
 }
