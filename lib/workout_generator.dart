@@ -88,6 +88,16 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
     return uniqueIndices.toList();
   }
 
+  void ban(int index) async {
+    await StorageManager.saveSelectedExercises(
+        [_filteredExercises[buttonIndices[index]].name]);
+
+    setState(() {
+      // Replace the current element with a random exercise
+      buttonIndices[index] = Random().nextInt(_filteredExercises.length);
+    });
+  }
+
   void changeIndex(int index) {
     setState(() {
       // Replace the current element with a random exercise
@@ -193,11 +203,17 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
                               IconButton(
-                                  onPressed: () => changeIndex(i),
-                                  icon: Icon(Icons.do_not_disturb, color: Colors.red,)),
+                                onPressed: () {
+                                  ban(i);
+                                },
+                                icon: Icon(Icons.do_not_disturb,
+                                    color: Colors.red),
+                              ),
                               Text(
                                 _filteredExercises[buttonIndices[i]].name,
-                                style: TextStyle(fontSize: 24,),
+                                style: TextStyle(
+                                  fontSize: 24,
+                                ),
                               ),
                               IconButton(
                                 onPressed: () => changeIndex(i),

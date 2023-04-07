@@ -1,14 +1,10 @@
 import 'workout_generator.dart';
-import 'package:flutter/material.dart';
 import 'injury_selection.dart';
 import 'muscle_selection.dart';
 import 'equipment_selection.dart';
-
-const String homeRoute = '/';
-const String injurySelectionRoute = '/injurySelection';
-const String muscleSelectionRoute = '/muscleSelection';
-const String equipmentSelectionRoute = '/equipmentSelection';
-const String workoutGeneratorRoute = '/workoutGenerator';
+import 'package:flutter/material.dart';
+import 'profile.dart';
+import 'banned.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,21 +12,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Workout App',
-      theme: ThemeData(
-        primaryColor: Colors.blue,
-        fontFamily: 'Roboto',
-      ),
-      initialRoute: homeRoute,
-      routes: {
-        homeRoute: (context) => HomePage(),
-        injurySelectionRoute: (context) => InjurySelection(),
-        muscleSelectionRoute: (context) => MuscleSelection(),
-        equipmentSelectionRoute: (context) => EquipmentSelection(),
-        workoutGeneratorRoute: (context) => WorkoutGenerator(),
-      },
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Workout App',
+        theme: ThemeData(
+          primaryColor: Colors.blue,
+          fontFamily: 'Roboto',
+        ),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => HomePage(),
+          '/profile': (context) => Profile(),
+          '/injury': (context) => InjurySelection(),
+          '/muscle': (context) => MuscleSelection(),
+          '/equipment': (context) => EquipmentSelection(),
+          '/workout': (context) => WorkoutGenerator(),
+          '/banned':(context) => Banned(),
+        });
   }
 }
 
@@ -118,40 +115,12 @@ class HomePageState extends State<HomePage> {
             children: [
               ElevatedButton.icon(
                 onPressed: () {
-                  Navigator.pushNamed(context, injurySelectionRoute);
+                  Navigator.pushNamed(context, '/profile');
                 },
                 icon: Icon(Icons.healing),
-                label: Text('Injuries'),
+                label: Text('Profile'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.redAccent,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.pushNamed(context, muscleSelectionRoute);
-                },
-                icon: Icon(Icons.fitness_center),
-                label: Text('Muscles'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.greenAccent,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.pushNamed(context, equipmentSelectionRoute);
-                },
-                icon: Icon(Icons.fitness_center),
-                label: Text('Equipment'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orangeAccent,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -165,7 +134,7 @@ class HomePageState extends State<HomePage> {
             onPressed: () {
               Navigator.pushNamed(
                 context,
-                workoutGeneratorRoute,
+                '/workout',
                 arguments: {'numberOfExercises': _numberOfExercises},
               );
             },
@@ -229,42 +198,12 @@ class HomePageState extends State<HomePage> {
             children: [
               ElevatedButton.icon(
                 onPressed: () {
-                  Navigator.pushNamed(context, injurySelectionRoute);
+                  Navigator.pushNamed(context, '/profile');
                 },
                 icon: Icon(Icons.healing),
-                label: Text('Injuries'),
+                label: Text('Profile'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.redAccent,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.pushNamed(context, muscleSelectionRoute);
-                },
-                icon: Icon(Icons.fitness_center),
-                label: Text('Muscles'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.greenAccent,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.pushNamed(context, equipmentSelectionRoute);
-                },
-                icon: Icon(Icons.fitness_center),
-                label: Text('Equipment'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orangeAccent,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -276,11 +215,11 @@ class HomePageState extends State<HomePage> {
           SizedBox(height: 40),
           ElevatedButton(
             onPressed: () {
-Navigator.pushNamed(
-  context,
-  workoutGeneratorRoute,
-  arguments: {'numberOfExercises': _numberOfExercises},
-);
+              Navigator.pushNamed(
+                context,
+                '/workout',
+                arguments: {'numberOfExercises': _numberOfExercises},
+              );
             },
             child: Text(
               'Generate Workout',
