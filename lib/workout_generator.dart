@@ -66,6 +66,12 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
             matchesEquipment &&
             isNotBanned;
       }).toList();
+
+      // Filter out banned exercises
+      _filteredExercises = _filteredExercises.where((exercise) {
+        return !_bannedExercises.contains(exercise.name);
+      }).toList();
+
       buttonIndices = getRandomExerciseIndices();
     });
   }
@@ -89,13 +95,10 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
   }
 
   void ban(int index) async {
-    await StorageManager.saveSelectedExercises(
-        [_filteredExercises[buttonIndices[index]].name]);
-
-    setState(() {
-      // Replace the current element with a random exercise
-      buttonIndices[index] = Random().nextInt(_filteredExercises.length);
-    });
+    final bannedExercise = _filteredExercises[buttonIndices[index]].name;
+    _bannedExercises.add(bannedExercise);
+    await StorageManager.saveSelectedExercises(_bannedExercises);
+    changeIndex(index);
   }
 
   void changeIndex(int index) {
@@ -209,10 +212,14 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                                 icon: Icon(Icons.do_not_disturb,
                                     color: Colors.red),
                               ),
-                              Text(
-                                _filteredExercises[buttonIndices[i]].name,
-                                style: TextStyle(
-                                  fontSize: 24,
+                              Flexible(
+                                child: Text(
+                                  _filteredExercises[buttonIndices[i]].name,
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
                               ),
                               IconButton(

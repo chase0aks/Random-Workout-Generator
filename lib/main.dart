@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           '/muscle': (context) => MuscleSelection(),
           '/equipment': (context) => EquipmentSelection(),
           '/workout': (context) => WorkoutGenerator(),
-          '/banned':(context) => Banned(),
+          '/banned': (context) => Banned(),
         });
   }
 }
@@ -58,6 +58,12 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Workout App'),
+        leading: IconButton(
+          icon: Icon(Icons.person),
+          onPressed: () {
+            Navigator.pushNamed(context, '/profile');
+          },
+        ),
       ),
       body: MediaQuery.of(context).size.width > 600
           ? _buildWideLayout()
@@ -106,26 +112,6 @@ class HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(15),
                 ),
                 child: Icon(Icons.add),
-              ),
-            ],
-          ),
-          SizedBox(height: 40),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/profile');
-                },
-                icon: Icon(Icons.healing),
-                label: Text('Profile'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.redAccent,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
               ),
             ],
           ),
@@ -189,26 +175,6 @@ class HomePageState extends State<HomePage> {
                   padding: EdgeInsets.all(15),
                 ),
                 child: Icon(Icons.add),
-              ),
-            ],
-          ),
-          SizedBox(height: 40),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/profile');
-                },
-                icon: Icon(Icons.healing),
-                label: Text('Profile'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.redAccent,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
               ),
             ],
           ),

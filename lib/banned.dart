@@ -19,11 +19,18 @@ class _BannedState extends State<Banned> {
 
   Future<void> _loadBannedExercises() async {
     final selectedExercises = await StorageManager.getSelectedExercises();
-    final bannedExercises = selectedExercises
-        .where((exercise) => exercise.startsWith('BANNED:'))
-        .toList();
     setState(() {
-      _bannedExercises = bannedExercises;
+      _bannedExercises = selectedExercises;
+    });
+  }
+
+  Future<void> _unbanExercise(int index) async {
+    final bannedExercise = _bannedExercises[index];
+    final selectedExercises = await StorageManager.getSelectedExercises();
+    selectedExercises.remove(bannedExercise);
+    await StorageManager.saveSelectedExercises(selectedExercises);
+    setState(() {
+      _bannedExercises.removeAt(index);
     });
   }
 
@@ -36,9 +43,13 @@ class _BannedState extends State<Banned> {
       body: ListView.builder(
         itemCount: _bannedExercises.length,
         itemBuilder: (context, index) {
-          final bannedExercise = _bannedExercises[index];
+          final exercise = _bannedExercises[index];
           return ListTile(
-            title: Text(bannedExercise),
+            title: Text(exercise),
+            trailing: IconButton(
+              icon: Icon(Icons.delete),
+              onPressed: () => _unbanExercise(index),
+            ),
           );
         },
       ),
