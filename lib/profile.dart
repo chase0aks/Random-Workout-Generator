@@ -1,3 +1,4 @@
+import 'package:app_project/gymtype.dart';
 import 'package:flutter/material.dart';
 import 'injury_selection.dart';
 import 'muscle_selection.dart';
@@ -7,10 +8,6 @@ import 'banned.dart';
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Get screen width and height for button sizing
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Workout App'),
@@ -32,7 +29,7 @@ class Profile extends StatelessWidget {
                       icon: Icon(Icons.healing, size: 50),
                       label: Text('Injuries', style: TextStyle(fontSize: 14)),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.redAccent,
+                        backgroundColor: Colors.redAccent,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -50,7 +47,7 @@ class Profile extends StatelessWidget {
                       icon: Icon(Icons.directions_run, size: 50),
                       label: Text('Muscles', style: TextStyle(fontSize: 14)),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.greenAccent,
+                        backgroundColor: Colors.greenAccent,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -70,12 +67,12 @@ class Profile extends StatelessWidget {
                   Expanded(
                     child: ElevatedButton.icon(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/equipment');
+                        Navigator.pushNamed(context, '/gymtype');
                       },
                       icon: Icon(Icons.fitness_center_sharp, size: 50),
                       label: Text('Equipment', style: TextStyle(fontSize: 14)),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.orangeAccent,
+                        backgroundColor: Colors.orangeAccent,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -94,7 +91,7 @@ class Profile extends StatelessWidget {
                       label:
                           Text('Banned List', style: TextStyle(fontSize: 14)),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.purpleAccent,
+                        backgroundColor: Colors.purpleAccent,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -130,6 +127,7 @@ class MyApp extends StatelessWidget {
         '/muscles': (context) => MuscleSelection(),
         '/equipment': (context) => EquipmentSelection(),
         '/banned': (context) => Banned(),
+        '/gymtype': (context) => GymType(),
       },
     );
   }
