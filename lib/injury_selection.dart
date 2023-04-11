@@ -57,7 +57,7 @@ class InjurySelectionState extends State<InjurySelection> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Injured Areas'),
+        title: Text('Select Your Injuries'),
         actions: [
           IconButton(
             icon: Icon(Icons.check_circle),
@@ -77,49 +77,68 @@ class InjurySelectionState extends State<InjurySelection> {
           ),
         ],
       ),
-      body: GridView.builder(
-        padding: EdgeInsets.all(8),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          childAspectRatio: 3,
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 8,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF5D5FEF),
+              Color(0xFF3AA4F4),
+              Color(0xFF00FFFF),
+            ],
+          ),
         ),
-        itemCount: injuredAreas.length,
-        itemBuilder: (BuildContext context, int index) {
-          return InkWell(
-            onTap: () {
-              setState(() {
-                _selected[index] = !_selected[index];
-              });
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.grey,
+        child: GridView.builder(
+          padding: EdgeInsets.all(8),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            childAspectRatio: 3,
+            crossAxisSpacing: 8,
+            mainAxisSpacing: 8,
+          ),
+          itemCount: injuredAreas.length,
+          itemBuilder: (BuildContext context, int index) {
+            return InkWell(
+              onTap: () {
+                setState(() {
+                  _selected[index] = !_selected[index];
+                });
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Color.fromARGB(0, 0, 0, 75),
+                  boxShadow: [
+                    BoxShadow(
+                      color: _selected[index] ? Colors.black.withOpacity(0.5) : Colors.black.withOpacity(0.2),
+                      blurRadius: 10,
+                      offset: Offset(2, 2),
+                    ),
+                  ],
                 ),
-                borderRadius: BorderRadius.circular(8),
-                color: _selected[index] ? Colors.blue : Colors.white,
-              ),
-              child: Center(
-                child: Container(
-                  constraints: BoxConstraints(
-                    maxWidth: 115, // set the maximum width here
-                  ),
-                  child: Text(
-                    injuredAreas[index],
-                    textAlign: TextAlign.center, // center the text horizontally
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: _selected[index] ? Colors.white : Colors.black,
+                child: Center(
+                  child: Container(
+                    constraints: BoxConstraints(
+                      maxWidth: 115, // set the maximum width here
+                    ),
+                    child: Text(
+                      injuredAreas[index],
+                      textAlign:
+                          TextAlign.center, // center the text horizontally
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontFamily: 'Montserrat',
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

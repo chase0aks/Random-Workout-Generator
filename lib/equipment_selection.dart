@@ -62,92 +62,112 @@ class EquipmentSelectionState extends State<EquipmentSelection> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Available Equipment'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.check_circle),
-            onPressed: () {
-              setState(() {
-                if (availableEquipment.contains("None")) {
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text('Choose Your Equipment'),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.check_circle),
+              onPressed: () {
+                setState(() {
+                  if (availableEquipment.contains("None")) {
+                    _selected = List.filled(availableEquipment.length, false);
+                    _selected[availableEquipment.indexOf("None")] = true;
+                  } else {
+                    _selected = List.filled(availableEquipment.length, true);
+                  }
+                });
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.check_circle_outline),
+              onPressed: () {
+                setState(() {
                   _selected = List.filled(availableEquipment.length, false);
-                  _selected[availableEquipment.indexOf("None")] = true;
-                } else {
-                  _selected = List.filled(availableEquipment.length, true);
-                }
-              });
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.check_circle_outline),
-            onPressed: () {
-              setState(() {
-                _selected = List.filled(availableEquipment.length, false);
-              });
-            },
-          ),
-        ],
-      ),
-      body: GridView.builder(
-        padding: EdgeInsets.all(8),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          childAspectRatio: 3,
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 8,
+                });
+              },
+            ),
+          ],
         ),
-        itemCount: availableEquipment.length,
-        itemBuilder: (BuildContext context, int index) {
-          return InkWell(
-            onTap: () {
-              setState(() {
-                if (availableEquipment[index] == "None") {
-                  _selected[index] = !_selected[index];
-                  // Deselect all other buttons
-                  for (int i = 0; i < _selected.length; i++) {
-                    if (i != index) {
-                      _selected[i] = false;
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Color(0xFF5D5FEF),
+                Color(0xFF3AA4F4),
+                Color(0xFF00FFFF),
+              ],
+            ),
+          ),
+          child: GridView.builder(
+            padding: EdgeInsets.all(8),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              childAspectRatio: 3,
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
+            ),
+            itemCount: availableEquipment.length,
+            itemBuilder: (BuildContext context, int index) {
+              return InkWell(
+                onTap: () {
+                  setState(() {
+                    if (availableEquipment[index] == "None") {
+                      _selected[index] = !_selected[index];
+                      // Deselect all other buttons
+                      for (int i = 0; i < _selected.length; i++) {
+                        if (i != index) {
+                          _selected[i] = false;
+                        }
+                      }
+                    } else {
+                      _selected[index] = !_selected[index];
+                      // Deselect "None" button if other buttons are selected
+                      if (_selected[availableEquipment.indexOf("None")]) {
+                        _selected[availableEquipment.indexOf("None")] = false;
+                      }
                     }
-                  }
-                } else {
-                  _selected[index] = !_selected[index];
-                  // Deselect "None" button if other buttons are selected
-                  if (_selected[availableEquipment.indexOf("None")]) {
-                    _selected[availableEquipment.indexOf("None")] = false;
-                  }
-                }
-              });
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.grey,
-                ),
-                borderRadius: BorderRadius.circular(8),
-                color: _selected[index] ? Colors.blue : Colors.white,
-              ),
-              child: Center(
+                  });
+                },
                 child: Container(
-                  constraints: BoxConstraints(
-                    maxWidth: 115, // set the maximum width here
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Color.fromARGB(0, 0, 0, 75),
+                    boxShadow: [
+                      BoxShadow(
+                        color: _selected[index]
+                            ? Colors.black.withOpacity(0.5)
+                            : Colors.black.withOpacity(0.2),
+                        blurRadius: 10,
+                        offset: Offset(2, 2),
+                      ),
+                    ],
                   ),
-                  child: Text(
-                    availableEquipment[index],
-                    textAlign: TextAlign.center, // center the text horizontally
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: _selected[index] ? Colors.white : Colors.black,
+                  child: Center(
+                    child: Container(
+                      constraints: BoxConstraints(
+                        maxWidth: 115, // set the maximum width here
+                      ),
+                      child: Text(
+                        availableEquipment[index],
+                        textAlign:
+                            TextAlign.center, // center the text horizontally
+                        style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontFamily: 'Montserrat',
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ),
-          );
-        },
-      ),
-    );
+              );
+            },
+          ),
+        ));
   }
 
   List<String> _getSelectedEquipment() {

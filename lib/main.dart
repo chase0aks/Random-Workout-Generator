@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Workout App',
+        title: 'Randome().Exercise',
         theme: ThemeData(
           primaryColor: Colors.blue,
-          fontFamily: 'Roboto',
+          fontFamily: 'Montserrat',
         ),
         initialRoute: '/',
         routes: {
@@ -132,16 +132,26 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Workout App'),
+        title: Text(
+          'Randome().Exercise',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Theme.of(context).primaryColor,
         leading: IconButton(
-          icon: Icon(Icons.person),
+          icon: Icon(
+            Icons.person,
+            color: Colors.white,
+          ),
           onPressed: () {
             Navigator.pushNamed(context, '/profile');
           },
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.history),
+            icon: Icon(
+              Icons.history,
+              color: Colors.white,
+            ),
             onPressed: () {
               print("Not working yet");
             },
@@ -155,286 +165,320 @@ class HomePageState extends State<HomePage> {
   }
 
   Widget _buildWideLayout() {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(height: 20),
-            Text(
-              'Select Number of Exercises',
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                color: Colors.blueGrey[800],
-              ),
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: _decrementCounter,
-                  style: ElevatedButton.styleFrom(
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.all(15),
-                    backgroundColor: Colors.blueGrey[400],
-                  ),
-                  child: Icon(Icons.remove, color: Colors.white),
-                ),
-                SizedBox(width: 20),
-                Text(
-                  '$_numberOfExercises',
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blueGrey[800],
-                  ),
-                ),
-                SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: _incrementCounter,
-                  style: ElevatedButton.styleFrom(
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.all(15),
-                    backgroundColor: Colors.blueGrey[400],
-                  ),
-                  child: Icon(Icons.add, color: Colors.white),
-                ),
-              ],
-            ),
-            SizedBox(height: 40),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    push();
-                    Navigator.pushNamed(
-                      context,
-                      '/workout',
-                      arguments: {'numberOfExercises': _numberOfExercises},
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        Colors.blueGrey[800], // change the button color
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: Text(
-                    'Chest Day',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    pull();
-                    Navigator.pushNamed(
-                      context,
-                      '/workout',
-                      arguments: {'numberOfExercises': _numberOfExercises},
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        Colors.blueGrey[800], // change the button color
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: Text(
-                    'Back Day',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    legs();
-                    Navigator.pushNamed(
-                      context,
-                      '/workout',
-                      arguments: {'numberOfExercises': _numberOfExercises},
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        Colors.blueGrey[800], // change the button color
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: Text(
-                    'Leg Day',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+    return Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF5D5FEF),
+              Color(0xFF3AA4F4),
+              Color(0xFF00FFFF),
+            ],
+          ),
         ),
-      ),
-    );
+        child: Center(
+            child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(height: 20),
+                      Text(
+                        'Select Number of Exercises',
+                        style: TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontFamily: 'Montserrat',
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: _decrementCounter,
+                            style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              padding: EdgeInsets.all(15),
+                              backgroundColor: Colors.black,
+                            ),
+                            child: Icon(Icons.remove, color: Colors.white),
+                          ),
+                          SizedBox(width: 20),
+                          Text(
+                            '$_numberOfExercises',
+                            style: TextStyle(
+                              fontSize: 32,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontFamily: 'Montserrat',
+                            ),
+                          ),
+                          SizedBox(width: 20),
+                          ElevatedButton(
+                            onPressed: _incrementCounter,
+                            style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              padding: EdgeInsets.all(15),
+                              backgroundColor: Colors.black,
+                            ),
+                            child: Icon(Icons.add, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 40),
+                      Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                push();
+                                Navigator.pushNamed(
+                                  context,
+                                  '/workout',
+                                  arguments: {
+                                    'numberOfExercises': _numberOfExercises
+                                  },
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black,
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 20, horizontal: 40),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                              ),
+                              child: Text(
+                                'Chest Day',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: 'Montserrat',
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            ElevatedButton(
+                              onPressed: () {
+                                pull();
+                                Navigator.pushNamed(
+                                  context,
+                                  '/workout',
+                                  arguments: {
+                                    'numberOfExercises': _numberOfExercises
+                                  },
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black,
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 20, horizontal: 40),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                              ),
+                              child: Text(
+                                'Back Day',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: 'Montserrat',
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            ElevatedButton(
+                                onPressed: () {
+                                  legs();
+                                  Navigator.pushNamed(
+                                    context,
+                                    '/workout',
+                                    arguments: {
+                                      'numberOfExercises': _numberOfExercises
+                                    },
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 20, horizontal: 40),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                ),
+                                child: Text('Leg Day',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                      fontFamily: 'Montserrat',
+                                    )))
+                          ])
+                    ]))));
   }
 
   Widget _buildNarrowLayout() {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(height: 20),
-            Text(
-              'Select Number of Exercises',
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                color: Colors.blueGrey[800],
-              ),
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: _decrementCounter,
-                  style: ElevatedButton.styleFrom(
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.all(15),
-                    backgroundColor: Colors.blueGrey[400],
-                  ),
-                  child: Icon(Icons.remove, color: Colors.white),
-                ),
-                SizedBox(width: 20),
-                Text(
-                  '$_numberOfExercises',
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blueGrey[800],
-                  ),
-                ),
-                SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: _incrementCounter,
-                  style: ElevatedButton.styleFrom(
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.all(15),
-                    backgroundColor: Colors.blueGrey[400],
-                  ),
-                  child: Icon(Icons.add, color: Colors.white),
-                ),
-              ],
-            ),
-            SizedBox(height: 40),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    push();
-                    Navigator.pushNamed(
-                      context,
-                      '/workout',
-                      arguments: {'numberOfExercises': _numberOfExercises},
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        Colors.blueGrey[800], // change the button color
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: Text(
-                    'Chest Day',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    pull();
-                    Navigator.pushNamed(
-                      context,
-                      '/workout',
-                      arguments: {'numberOfExercises': _numberOfExercises},
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        Colors.blueGrey[800], // change the button color
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: Text(
-                    'Back Day',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    legs();
-                    Navigator.pushNamed(
-                      context,
-                      '/workout',
-                      arguments: {'numberOfExercises': _numberOfExercises},
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        Colors.blueGrey[800], // change the button color
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: Text(
-                    'Leg Day',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+    return Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF5D5FEF),
+              Color(0xFF3AA4F4),
+              Color(0xFF00FFFF),
+            ],
+          ),
         ),
-      ),
-    );
+        child: Center(
+            child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                    mainAxisSize: MainAxisSize.min, // Set mainAxisSize to min
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(height: 20),
+                      Text(
+                        'Select Number of Exercises',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontFamily: 'Montserrat',
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: _decrementCounter,
+                            style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              padding: EdgeInsets.all(15),
+                              backgroundColor: Colors.black,
+                            ),
+                            child: Icon(Icons.remove, color: Colors.white),
+                          ),
+                          SizedBox(width: 20),
+                          Text(
+                            '$_numberOfExercises',
+                            style: TextStyle(
+                              fontSize: 32,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontFamily: 'Montserrat',
+                            ),
+                          ),
+                          SizedBox(width: 20),
+                          ElevatedButton(
+                            onPressed: _incrementCounter,
+                            style: ElevatedButton.styleFrom(
+                              shape: CircleBorder(),
+                              padding: EdgeInsets.all(15),
+                              backgroundColor: Colors.black,
+                            ),
+                            child: Icon(Icons.add, color: Colors.white),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 40),
+                      Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                push();
+                                Navigator.pushNamed(
+                                  context,
+                                  '/workout',
+                                  arguments: {
+                                    'numberOfExercises': _numberOfExercises
+                                  },
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black,
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 20, horizontal: 40),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                              ),
+                              child: Text(
+                                'Chest Day',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: 'Montserrat',
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            ElevatedButton(
+                              onPressed: () {
+                                pull();
+                                Navigator.pushNamed(
+                                  context,
+                                  '/workout',
+                                  arguments: {
+                                    'numberOfExercises': _numberOfExercises
+                                  },
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black,
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 20, horizontal: 40),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                              ),
+                              child: Text(
+                                'Back Day',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: 'Montserrat',
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            ElevatedButton(
+                                onPressed: () {
+                                  legs();
+                                  Navigator.pushNamed(
+                                    context,
+                                    '/workout',
+                                    arguments: {
+                                      'numberOfExercises': _numberOfExercises
+                                    },
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Color.fromARGB(0, 0, 0, 75),
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 20, horizontal: 40),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                ),
+                                child: Text('Leg Day',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                      fontFamily: 'Montserrat',
+                                    )))
+                          ])
+                    ]))));
   }
 }
