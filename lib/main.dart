@@ -368,7 +368,7 @@ class HomePageState extends State<HomePage> {
                     ),
                   ),
                   child: Text(
-                    'Push Day',
+                    'Chest Day',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -395,7 +395,7 @@ class HomePageState extends State<HomePage> {
                     ),
                   ),
                   child: Text(
-                    'Pull Day',
+                    'Back Day',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
