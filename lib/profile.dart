@@ -98,7 +98,7 @@ class Profile extends StatelessWidget {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Colors.blue,
+                                  color: Colors.yellow,
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black.withOpacity(0.4),

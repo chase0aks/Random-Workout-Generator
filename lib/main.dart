@@ -464,7 +464,7 @@ class HomePageState extends State<HomePage> {
                                   );
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color.fromARGB(0, 0, 0, 75),
+                                  backgroundColor: Colors.black,
                                   padding: EdgeInsets.symmetric(
                                       vertical: 20, horizontal: 40),
                                   shape: RoundedRectangleBorder(
