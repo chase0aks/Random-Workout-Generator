@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Randome().Exercise',
+        title: 'Random().Exercise',
         theme: ThemeData(
           primaryColor: Colors.blue,
           fontFamily: 'Montserrat',
