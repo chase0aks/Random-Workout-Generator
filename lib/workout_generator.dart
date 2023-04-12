@@ -226,7 +226,7 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            'Randome().Exercise',
+            'Random().Exercise',
             style: TextStyle(color: Colors.white),
           ),
           backgroundColor: Theme.of(context).primaryColor,
