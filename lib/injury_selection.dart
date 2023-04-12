@@ -111,7 +111,9 @@ class InjurySelectionState extends State<InjurySelection> {
                   color: Color.fromARGB(0, 0, 0, 75),
                   boxShadow: [
                     BoxShadow(
-                      color: _selected[index] ? Colors.black.withOpacity(0.5) : Colors.black.withOpacity(0.2),
+                      color: _selected[index]
+                          ? Colors.black.withOpacity(0.5)
+                          : Colors.black.withOpacity(0.2),
                       blurRadius: 10,
                       offset: Offset(2, 2),
                     ),
