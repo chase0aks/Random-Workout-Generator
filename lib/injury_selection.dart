@@ -83,9 +83,8 @@ class InjurySelectionState extends State<InjurySelection> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF5D5FEF),
-              Color(0xFF3AA4F4),
-              Color(0xFF00FFFF),
+              Color.fromARGB(255, 255, 0, 255),
+              Color.fromARGB(255, 0, 255, 255),
             ],
           ),
         ),

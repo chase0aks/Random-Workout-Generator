@@ -3,6 +3,7 @@ import 'dart:math';
 import 'exercise_data.dart';
 import 'workout_preferences.dart';
 import 'package:dice_icons/dice_icons.dart';
+import 'final.dart';
 
 class WorkoutGenerator extends StatefulWidget {
   @override
@@ -17,6 +18,7 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
   List<ExerciseData> _filteredExercises = allExercises;
   int currentIndex = 0;
   List<int> buttonIndices = [];
+  List<String> finalList = [];
 
   @override
   void initState() {
@@ -91,6 +93,13 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
       uniqueIndices.add(Random().nextInt(_filteredExercises.length));
     }
 
+    final List<String> exerciseNames =
+        uniqueIndices.map((index) => _filteredExercises[index].name).toList();
+
+    setState(() {
+      finalList = exerciseNames;
+    });
+
     return uniqueIndices.toList();
   }
 
@@ -104,7 +113,10 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
   void changeIndex(int index) {
     setState(() {
       // Replace the current element with a random exercise
-      buttonIndices[index] = Random().nextInt(_filteredExercises.length);
+      final newIndex = Random().nextInt(_filteredExercises.length);
+      buttonIndices[index] = newIndex;
+      finalList[index] = _filteredExercises[newIndex]
+          .name; // store the new exercise name in finalList
     });
   }
 
@@ -126,8 +138,8 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Color(0xFF4286f4),
-                    Color(0xFF5a5f9f),
+                    Color.fromARGB(255, 255, 0, 255),
+                    Color.fromARGB(255, 0, 255, 255),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(16),
@@ -208,7 +220,7 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                             ),
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
@@ -223,6 +235,7 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
     final Map<String, dynamic> args =
         ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
     final int numberOfExercises = args['numberOfExercises'] ?? 1;
+
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -300,7 +313,17 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                               ),
                             ),
                           ),
-                        )
+                        ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => FinalScreen(exercises: finalList),
+                            ),
+                          );
+                        },
+                        child: Text('Finalize Workout'),
+                      )
                     ],
                   ),
           ),

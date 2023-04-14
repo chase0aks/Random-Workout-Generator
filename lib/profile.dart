@@ -17,9 +17,8 @@ class Profile extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Color(0xFF5D5FEF),
-                  Color(0xFF3AA4F4),
-                  Color(0xFF00FFFF),
+                  Color.fromARGB(255, 255, 0, 255),
+                  Color.fromARGB(255, 0, 255, 255),
                 ],
               ),
             ),
@@ -48,26 +47,18 @@ class Profile extends StatelessWidget {
                                 child: Stack(
                                   children: [
                                     Positioned.fill(
-                                      child: Opacity(
-                                        opacity: 0.8,
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            gradient: RadialGradient(
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          gradient: RadialGradient(
                                               center: Alignment.bottomRight,
-                                              radius: 1.5,
+                                              radius: 2,
                                               colors: [
-                                                  Colors.black
-                                                      .withOpacity(0.75),
-                                                  Colors.black.withOpacity(0.5),
-                                                  Colors.black
-                                                      .withOpacity(0.25),
-                                                  Colors.white
-                                                      .withOpacity(0.125)
-                                              ],
-                                            ),
-                                          ),
+                                                Color.fromARGB(255, 255, 0, 0),
+                                                Color.fromARGB(
+                                                    255, 255, 255, 255),
+                                              ]),
                                         ),
                                       ),
                                     ),
@@ -117,18 +108,13 @@ class Profile extends StatelessWidget {
                                             borderRadius:
                                                 BorderRadius.circular(10),
                                             gradient: RadialGradient(
-                                              center: Alignment.bottomLeft,
-                                              radius: 1.5,
-                                              colors: [
-                                                  Colors.black
-                                                      .withOpacity(0.75),
-                                                  Colors.black.withOpacity(0.5),
-                                                  Colors.black
-                                                      .withOpacity(0.25),
-                                                  Colors.white
-                                                      .withOpacity(0.125)
-                                              ],
-                                            ),
+                                                center: Alignment.bottomLeft,
+                                                radius: 2,
+                                                colors: [
+                                                  Color.fromARGB(255, 255, 255, 0),
+                                                  Color.fromARGB(
+                                                      255, 255, 255, 255),
+                                                ]),
                                           ),
                                         ),
                                       ),
@@ -186,18 +172,13 @@ class Profile extends StatelessWidget {
                                             borderRadius:
                                                 BorderRadius.circular(10),
                                             gradient: RadialGradient(
-                                              center: Alignment.topRight,
-                                              radius: 1.5,
-                                              colors: [
-                                                  Colors.black
-                                                      .withOpacity(0.75),
-                                                  Colors.black.withOpacity(0.5),
-                                                  Colors.black
-                                                      .withOpacity(0.25),
-                                                  Colors.white
-                                                      .withOpacity(0.125)
-                                              ],
-                                            ),
+                                                center: Alignment.topRight,
+                                                radius: 1.75,
+                                                colors: [
+                                                  Color.fromARGB(255, 0, 255, 0),
+                                                  Color.fromARGB(
+                                                      255, 255, 255, 255),
+                                                ]),
                                           ),
                                         ),
                                       ),
@@ -249,17 +230,11 @@ class Profile extends StatelessWidget {
                                                   BorderRadius.circular(10),
                                               gradient: RadialGradient(
                                                 center: Alignment.topLeft,
-                                                radius: 1.5,
-                                                colors: [
-                                                  Colors.black
-                                                      .withOpacity(0.75),
-                                                  Colors.black.withOpacity(0.5),
-                                                  Colors.black
-                                                      .withOpacity(0.25),
-                                                  Colors.white
-                                                      .withOpacity(0.125)
-                                                ],
-                                              ),
+                                              radius: 2,
+                                              colors: [
+                                                Color.fromARGB(255, 255, 0, 255),
+                                                Color.fromARGB(255, 255, 255, 255),
+                                              ]),
                                             ),
                                           ),
                                         ),

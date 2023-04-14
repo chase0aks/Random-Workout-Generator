@@ -171,9 +171,8 @@ class HomePageState extends State<HomePage> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF5D5FEF),
-              Color(0xFF3AA4F4),
-              Color(0xFF00FFFF),
+              Color.fromARGB(255, 255, 0, 255),
+              Color.fromARGB(255, 0, 255, 255),
             ],
           ),
         ),
@@ -317,7 +316,37 @@ class HomePageState extends State<HomePage> {
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
                                       fontFamily: 'Montserrat',
-                                    )))
+                                    ))),
+                            SizedBox(height: 20),
+                            ElevatedButton(
+                              onPressed: () {
+                                pull();
+                                Navigator.pushNamed(
+                                  context,
+                                  '/workout',
+                                  arguments: {
+                                    'numberOfExercises': _numberOfExercises
+                                  },
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.black,
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 20, horizontal: 40),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                              ),
+                              child: Text(
+                                'Your Own Muscle Day',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontFamily: 'Montserrat',
+                                ),
+                              ),
+                            ),
                           ])
                     ]))));
   }
@@ -482,3 +511,4 @@ class HomePageState extends State<HomePage> {
                     ]))));
   }
 }
+
