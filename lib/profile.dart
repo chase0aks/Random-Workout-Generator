@@ -39,7 +39,7 @@ class Profile extends StatelessWidget {
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black.withOpacity(0.4),
-                                      blurRadius: 4,
+                                      blurRadius: 2,
                                       offset: Offset(0, 2),
                                     ),
                                   ],
@@ -47,20 +47,23 @@ class Profile extends StatelessWidget {
                                 child: Stack(
                                   children: [
                                     Positioned.fill(
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          gradient: RadialGradient(
-                                              center: Alignment.bottomRight,
-                                              radius: 2,
-                                              colors: [
-                                                Color.fromARGB(255, 255, 0, 0),
-                                                Color.fromARGB(
-                                                    255, 255, 255, 255),
-                                              ]),
-                                        ),
-                                      ),
+                                      child: Opacity(
+                                          opacity: 0.8,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              gradient: RadialGradient(
+                                                  center: Alignment.bottomRight,
+                                                  radius: 2,
+                                                  colors: [
+                                                    Color.fromARGB(
+                                                        255, 255, 0, 0),
+                                                    Color.fromARGB(
+                                                        255, 255, 255, 255),
+                                                  ]),
+                                            ),
+                                          )),
                                     ),
                                     ElevatedButton(
                                       onPressed: () {
@@ -76,8 +79,14 @@ class Profile extends StatelessWidget {
                                         ),
                                       ),
                                       child: Center(
-                                        child: Text('Injuries',
-                                            style: TextStyle(fontSize: 24)),
+                                        child: Text(
+                                          'Injuries',
+                                          style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight
+                                                .bold, // Add this line to make the text bold
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -89,11 +98,11 @@ class Profile extends StatelessWidget {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Colors.yellow,
+                                  color: Colors.orange,
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black.withOpacity(0.4),
-                                      blurRadius: 4,
+                                      blurRadius: 2,
                                       offset: Offset(0, 2),
                                     ),
                                   ],
@@ -111,7 +120,8 @@ class Profile extends StatelessWidget {
                                                 center: Alignment.bottomLeft,
                                                 radius: 2,
                                                 colors: [
-                                                  Color.fromARGB(255, 255, 255, 0),
+                                                  Color.fromARGB(
+                                                      255, 255, 145, 0),
                                                   Color.fromARGB(
                                                       255, 255, 255, 255),
                                                 ]),
@@ -133,8 +143,14 @@ class Profile extends StatelessWidget {
                                         ),
                                       ),
                                       child: Center(
-                                        child: Text('Muscle',
-                                            style: TextStyle(fontSize: 24)),
+                                        child: Text(
+                                          'Muscle',
+                                          style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight
+                                                .bold, // Add this line to make the text bold
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -157,7 +173,7 @@ class Profile extends StatelessWidget {
                                   boxShadow: [
                                     BoxShadow(
                                       color: Colors.black.withOpacity(0.4),
-                                      blurRadius: 4,
+                                      blurRadius: 2,
                                       offset: Offset(0, 2),
                                     ),
                                   ],
@@ -175,7 +191,8 @@ class Profile extends StatelessWidget {
                                                 center: Alignment.topRight,
                                                 radius: 1.75,
                                                 colors: [
-                                                  Color.fromARGB(255, 0, 255, 0),
+                                                  Color.fromARGB(
+                                                      255, 0, 255, 0),
                                                   Color.fromARGB(
                                                       255, 255, 255, 255),
                                                 ]),
@@ -198,8 +215,14 @@ class Profile extends StatelessWidget {
                                         ),
                                       ),
                                       child: Center(
-                                        child: Text('Equipment',
-                                            style: TextStyle(fontSize: 24)),
+                                        child: Text(
+                                          'Equipment',
+                                          style: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight
+                                                .bold, // Add this line to make the text bold
+                                          ),
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -215,7 +238,7 @@ class Profile extends StatelessWidget {
                                       boxShadow: [
                                         BoxShadow(
                                           color: Colors.black.withOpacity(0.4),
-                                          blurRadius: 4,
+                                          blurRadius: 2,
                                           offset: Offset(0, 2),
                                         ),
                                       ],
@@ -229,12 +252,14 @@ class Profile extends StatelessWidget {
                                               borderRadius:
                                                   BorderRadius.circular(10),
                                               gradient: RadialGradient(
-                                                center: Alignment.topLeft,
-                                              radius: 2,
-                                              colors: [
-                                                Color.fromARGB(255, 255, 0, 255),
-                                                Color.fromARGB(255, 255, 255, 255),
-                                              ]),
+                                                  center: Alignment.topLeft,
+                                                  radius: 2,
+                                                  colors: [
+                                                    Color.fromARGB(
+                                                        255, 255, 0, 255),
+                                                    Color.fromARGB(
+                                                        255, 255, 255, 255),
+                                                  ]),
                                             ),
                                           ),
                                         ),
@@ -254,8 +279,14 @@ class Profile extends StatelessWidget {
                                           ),
                                         ),
                                         child: Center(
-                                          child: Text('Banned',
-                                              style: TextStyle(fontSize: 24)),
+                                          child: Text(
+                                            'Banned',
+                                            style: TextStyle(
+                                              fontSize: 24,
+                                              fontWeight: FontWeight
+                                                  .bold, // Add this line to make the text bold
+                                            ),
+                                          ),
                                         ),
                                       )
                                     ])))
