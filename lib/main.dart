@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'profile.dart';
 import 'banned.dart';
 import 'gymtype.dart';
+import 'history.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           '/workout': (context) => WorkoutGenerator(),
           '/banned': (context) => Banned(),
           '/gymtype': (context) => GymType(),
+          '/history': (context) => HistoryScreen()
         });
   }
 }
@@ -153,7 +155,7 @@ class HomePageState extends State<HomePage> {
               color: Colors.white,
             ),
             onPressed: () {
-              print("Not working yet");
+              Navigator.pushNamed(context, '/history');
             },
           ),
         ],
@@ -511,4 +513,3 @@ class HomePageState extends State<HomePage> {
                     ]))));
   }
 }
-

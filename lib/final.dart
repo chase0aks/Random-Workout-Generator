@@ -7,6 +7,11 @@ class ExerciseSet {
 
   ExerciseSet({this.reps = 0, this.weight = 0});
 
+  Map<String, dynamic> toJson() => {'reps': reps, 'weight': weight};
+
+  factory ExerciseSet.fromJson(Map<String, dynamic> json) =>
+      ExerciseSet(reps: json['reps'], weight: json['weight']);
+
   @override
   String toString() {
     return 'Reps: $reps, Weight: $weight';

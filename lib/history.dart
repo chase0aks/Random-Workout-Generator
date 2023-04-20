@@ -1,26 +1,40 @@
 import 'package:flutter/material.dart';
 import 'workout_preferences.dart';
+import 'final.dart';
 
-class HistoryPage extends StatefulWidget {
+class HistoryScreen extends StatefulWidget {
   @override
-  _HistoryPageState createState() => _HistoryPageState();
+  _HistoryScreenState createState() => _HistoryScreenState();
 }
 
-class _HistoryPageState extends State<HistoryPage> {
-  List<Map<String, dynamic>> _workoutHistory = [];
+class _HistoryScreenState extends State<HistoryScreen> {
+  List<Map<String, dynamic>> _workouts = [];
 
   @override
   void initState() {
     super.initState();
-    _loadWorkoutHistory();
+    _loadWorkouts();
   }
 
-  Future<void> _loadWorkoutHistory() async {
-    final List<Map<String, dynamic>> prefs = await StorageManager.getWorkouts();
-    final workoutString = jsonDecode(prefs); // <-- Change this line
-
+  Future<void> _loadWorkouts() async {
+    final List<Map<String, dynamic>> workouts =
+        await StorageManager.getWorkouts();
     setState(() {
-      _workoutHistory = (jsonDecode(workoutString) as List<dynamic>).toList();
+      _workouts = workouts;
+    });
+  }
+
+  Future<void> _deleteWorkout(int index) async {
+    final workout = _workouts[index];
+    final workouts = await StorageManager.getWorkouts();
+    workouts.remove(workout);
+    Map<String, dynamic> workoutsMap = {};
+    for (int i = 0; i < workouts.length; i++) {
+      workoutsMap['workout_$i'] = workouts[i];
+    }
+    await StorageManager.saveWorkout(workoutsMap);
+    setState(() {
+      _workouts.removeAt(index);
     });
   }
 
@@ -30,57 +44,98 @@ class _HistoryPageState extends State<HistoryPage> {
       appBar: AppBar(
         title: Text('Workout History'),
       ),
-      body: _buildWorkoutHistoryList(),
-    );
-  }
+      body: _workouts.isEmpty
+          ? Center(
+              child: Text('No workouts found.'),
+            )
+          : ListView.builder(
+              itemCount: _workouts.length,
+              itemBuilder: (BuildContext context, int index) {
+                final workoutData = _workouts[index];
+                final String workoutTime = workoutData.keys.first;
+                final Map<String, dynamic> exercisesData =
+                    workoutData.values.first;
 
-  Widget _buildWorkoutHistoryList() {
-    if (_workoutHistory.isEmpty) {
-      return Center(
-        child: Text('No workout history found.'),
-      );
-    }
-
-    return ListView.builder(
-      itemCount: _workoutHistory.length,
-      itemBuilder: (context, index) {
-        final workoutData = _workoutHistory[index];
-        final workoutDate = workoutData.keys.first;
-        final exercisesData = workoutData.values.first;
-
-        return Card(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Workout on $workoutDate',
-                style: Theme.of(context).textTheme.headline6,
-              ),
-              SizedBox(height: 10),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: exercisesData.keys.map((exerciseName) {
-                  final exerciseSets = exercisesData[exerciseName];
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                return Card(
+                  margin: EdgeInsets.all(8),
+                  child: ExpansionTile(
+                    title: Text(
+                      '$workoutTime',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     children: [
-                      Text(exerciseName,
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                      ...exerciseSets.map(
-                        (set) => Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          child: Text('${set.reps} reps, ${set.weight} lbs'),
+                      ListView.builder(
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemCount: exercisesData.length,
+                        itemBuilder: (BuildContext context, int i) {
+                          final exerciseName = exercisesData.keys.toList()[i];
+                          final List<dynamic> setsData =
+                              exercisesData.values.toList()[i];
+
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  exerciseName,
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                ListView.builder(
+                                  shrinkWrap: true,
+                                  physics: NeverScrollableScrollPhysics(),
+                                  itemCount: setsData.length,
+                                  itemBuilder: (BuildContext context, int j) {
+                                    final set = ExerciseSet.fromJson(
+                                        setsData[j] as Map<String, dynamic>);
+                                    return Text(
+                                      'Set ${j + 1}: ${set.toString()}',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black,
+                            ),
+                          ],
+                        ),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        child: TextButton(
+                          child: const Text(
+                            'Delete Workout',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          onPressed: () => _deleteWorkout(index),
                         ),
                       ),
-                      SizedBox(height: 10),
                     ],
-                  );
-                }).toList(),
-              ),
-            ],
-          ),
-        );
-      },
+                  ),
+                );
+              },
+            ),
     );
   }
 }

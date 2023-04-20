@@ -34,10 +34,6 @@ class _BannedState extends State<Banned> {
     });
   }
 
-  Future<void> _showUnbanConfirmationDialog(int index) async {
-    _unbanExercise(index);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,17 +105,15 @@ class _BannedState extends State<Banned> {
                           padding:
                               EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                           child: TextButton(
-                            child: const Text(
-                              'Unban',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
+                              child: const Text(
+                                'Unban',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            onPressed: () =>
-                                _showUnbanConfirmationDialog(index),
-                          ),
+                              onPressed: () => _unbanExercise(index)),
                         ),
                       ],
                     ),
