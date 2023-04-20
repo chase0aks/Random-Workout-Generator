@@ -1,10 +1,16 @@
+import 'workout_preferences.dart';
 import 'package:flutter/material.dart';
 
 class ExerciseSet {
   int reps;
   double weight;
 
-  ExerciseSet({required this.reps, required this.weight});
+  ExerciseSet({this.reps = 0, this.weight = 0});
+
+  @override
+  String toString() {
+    return 'Reps: $reps, Weight: $weight';
+  }
 }
 
 class FinalScreen extends StatefulWidget {
@@ -162,14 +168,18 @@ class _FinalScreenState extends State<FinalScreen> {
                 },
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  print(DateTime.now().toString());
-                },
-                child: Text('Complete Workout'),
-              ),
+            ElevatedButton(
+              onPressed: () async {
+                final time = DateTime.now().toString();
+                final Map<String, List<ExerciseSet>> workoutData = {};
+                for (int i = 0; i < widget.exercises.length; i++) {
+                  workoutData[widget.exercises[i]] = exerciseSets[i];
+                }
+                final Map<String, dynamic> data = {time: workoutData};
+                await StorageManager.saveWorkout(data);
+                print(data);
+              },
+              child: Text('Complete Workout'),
             ),
           ],
         ),
