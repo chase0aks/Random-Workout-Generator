@@ -182,7 +182,7 @@ class _FinalScreenState extends State<FinalScreen> {
                 }
                 final Map<String, dynamic> data = {time: workoutData};
                 await StorageManager.saveWorkout(data);
-                print(data);
+                Navigator.pushNamed(context, '/');
               },
               child: Text('Complete Workout'),
             ),
