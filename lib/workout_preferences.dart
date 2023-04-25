@@ -69,4 +69,9 @@ class StorageManager {
     final List<dynamic> workoutsJson = jsonDecode(workoutsString);
     return List<Map<String, dynamic>>.from(workoutsJson);
   }
+
+  static Future<void> clearWorkouts() async {
+    await _initPrefs();
+    await _prefs!.remove(_workoutsKey);
+  }
 }
