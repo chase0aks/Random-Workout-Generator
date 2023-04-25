@@ -1,4 +1,4 @@
-import 'package:app_project/gymtype.dart';
+import 'gymtype.dart';
 import 'package:flutter/material.dart';
 import 'injury_selection.dart';
 import 'muscle_selection.dart';

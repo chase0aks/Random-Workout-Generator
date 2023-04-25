@@ -184,7 +184,13 @@ class _FinalScreenState extends State<FinalScreen> {
                 await StorageManager.saveWorkout(data);
                 Navigator.pushNamed(context, '/');
               },
-              child: Text('Complete Workout'),
+              child: Text(
+                'Complete Workout',
+                style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ],
         ),

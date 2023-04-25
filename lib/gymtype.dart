@@ -80,7 +80,7 @@ class GymType extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            'Randome().Exercise',
+            'Choose Your Equipment',
             style: TextStyle(color: Colors.white),
           ),
           backgroundColor: Theme.of(context).primaryColor,

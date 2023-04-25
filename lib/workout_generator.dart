@@ -322,7 +322,13 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                             ),
                           );
                         },
-                        child: Text('Finalize Workout'),
+                        child: Text(
+                          'Start Workout---->',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                              fontSize: 50,
+                              fontStyle: FontStyle.italic),
+                        ),
                       )
                     ],
                   ),
