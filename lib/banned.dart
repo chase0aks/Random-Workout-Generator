@@ -86,6 +86,7 @@ class _BannedState extends State<Banned> {
                       children: [
                         Text(
                           exercise,
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,

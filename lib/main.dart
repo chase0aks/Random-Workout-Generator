@@ -135,7 +135,7 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Random().Exercise',
+          'Random.Exercise()',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Theme.of(context).primaryColor,
@@ -360,9 +360,8 @@ class HomePageState extends State<HomePage> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF5D5FEF),
-              Color(0xFF3AA4F4),
-              Color(0xFF00FFFF),
+              Color.fromARGB(255, 255, 0, 255),
+              Color.fromARGB(255, 0, 255, 255),
             ],
           ),
         ),
@@ -370,18 +369,18 @@ class HomePageState extends State<HomePage> {
             child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
-                    mainAxisSize: MainAxisSize.min, // Set mainAxisSize to min
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      SizedBox(height: 20),
-                      Text(
-                        'Select Number of Exercises',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontFamily: 'Montserrat',
+                      Center(
+                        child: Text(
+                          'Select Number of Exercises',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontFamily: 'Montserrat',
+                          ),
                         ),
                       ),
                       SizedBox(height: 10),
@@ -503,6 +502,33 @@ class HomePageState extends State<HomePage> {
                                   ),
                                 ),
                                 child: Text('Leg Day',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                      fontFamily: 'Montserrat',
+                                    ))),
+                            SizedBox(height: 20),
+                            ElevatedButton(
+                                onPressed: () {
+                                  pull();
+                                  Navigator.pushNamed(
+                                    context,
+                                    '/workout',
+                                    arguments: {
+                                      'numberOfExercises': _numberOfExercises
+                                    },
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.black,
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: 20, horizontal: 40),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                ),
+                                child: Text('Your Own Muscle Day',
                                     style: TextStyle(
                                       fontSize: 24,
                                       fontWeight: FontWeight.bold,
