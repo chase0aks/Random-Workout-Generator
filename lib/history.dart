@@ -18,12 +18,18 @@ class _HistoryScreenState extends State<HistoryScreen> {
   }
 
   Future<void> _loadWorkouts() async {
-    final List<Map<String, dynamic>> workouts =
-        await StorageManager.getWorkouts();
-    setState(() {
-      _workouts = workouts;
-    });
-  }
+  final List<Map<String, dynamic>> workouts =
+      await StorageManager.getWorkouts();
+  workouts.sort((a, b) {
+    final DateTime dateA = DateTime.parse(a.keys.first);
+    final DateTime dateB = DateTime.parse(b.keys.first);
+    return dateB.compareTo(dateA);
+  });
+  setState(() {
+    _workouts = workouts;
+  });
+}
+
 
   Future<void> _deleteWorkout(int index) async {
     final workout = _workouts[index];
@@ -78,7 +84,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                        color: Color.fromARGB(255, 40, 30, 30)),
                   ),
                 )
               : ListView.builder(
@@ -117,13 +123,15 @@ class _HistoryScreenState extends State<HistoryScreen> {
                               return Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      exerciseName,
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
+                                    Center(
+                                      child: Text(
+                                        exerciseName,
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
                                     ListView.builder(
@@ -135,10 +143,12 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                         final set = ExerciseSet.fromJson(
                                             setsData[j]
                                                 as Map<String, dynamic>);
-                                        return Text(
-                                          'Set ${j + 1}: ${set.toString()}',
-                                          style: TextStyle(
-                                            fontSize: 16,
+                                        return Center(
+                                          child: Text(
+                                            'Set ${j + 1}: ${set.toString()}',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                            ),
                                           ),
                                         );
                                       },

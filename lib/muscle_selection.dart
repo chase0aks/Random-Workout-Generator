@@ -98,19 +98,26 @@ class MuscleSelectionState extends State<MuscleSelection> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-              Color.fromARGB(255, 255, 0, 255),
-              Color.fromARGB(255, 0, 255, 255),
+                Color.fromARGB(255, 255, 0, 255),
+                Color.fromARGB(255, 0, 255, 255),
               ],
             ),
           ),
           child: GridView.builder(
             padding: EdgeInsets.all(8),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              childAspectRatio: 3,
-              crossAxisSpacing: 8,
-              mainAxisSpacing: 8,
-            ),
+            gridDelegate: MediaQuery.of(context).size.width < 600
+                ? SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 2,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 20,
+                  )
+                : SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    childAspectRatio: 3,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 8,
+                  ),
             itemCount: allMuscleGroups.length,
             itemBuilder: (BuildContext context, int index) {
               return InkWell(

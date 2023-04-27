@@ -184,11 +184,21 @@ class _FinalScreenState extends State<FinalScreen> {
                 await StorageManager.saveWorkout(data);
                 Navigator.pushNamed(context, '/');
               },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue, // set the background color of the button
+                padding: EdgeInsets.symmetric(
+                    vertical: 16,
+                    horizontal: 24), // set the padding of the button
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        16)), // set the border radius of the button
+              ),
               child: Text(
                 'Complete Workout',
                 style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 20, // reduce the font size
                   fontWeight: FontWeight.bold,
+                  color: Colors.white, // set the text color
                 ),
               ),
             ),
