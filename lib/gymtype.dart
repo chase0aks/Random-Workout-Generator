@@ -91,8 +91,8 @@ class GymType extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-              Color.fromARGB(255, 255, 0, 255),
-              Color.fromARGB(255, 0, 255, 255),
+                Color.fromARGB(255, 255, 0, 255),
+                Color.fromARGB(255, 0, 255, 255),
               ],
             ),
           ),
@@ -126,6 +126,16 @@ class GymType extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),
                             ),
+                          ).copyWith(
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                                    (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.pressed)) {
+                                return Colors
+                                    .green; // change to green when pressed
+                              }
+                              return Colors.black; // default color
+                            }),
                           ),
                           child: Text(
                             'Full Gym',
@@ -147,6 +157,16 @@ class GymType extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),
                             ),
+                          ).copyWith(
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                                    (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.pressed)) {
+                                return Colors
+                                    .green; // change to green when pressed
+                              }
+                              return Colors.black; // default color
+                            }),
                           ),
                           child: Text(
                             'Home Gym',
@@ -168,6 +188,16 @@ class GymType extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),
                             ),
+                          ).copyWith(
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                                    (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.pressed)) {
+                                return Colors
+                                    .green; // change to green when pressed
+                              }
+                              return Colors.black; // default color
+                            }),
                           ),
                           child: Text(
                             'No Equipment',
@@ -189,6 +219,16 @@ class GymType extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30),
                             ),
+                          ).copyWith(
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                                    (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.pressed)) {
+                                return Colors
+                                    .green; // change to green when pressed
+                              }
+                              return Colors.black; // default color
+                            }),
                           ),
                           child: Text(
                             'Select for Yourself',

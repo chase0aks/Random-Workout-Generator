@@ -239,7 +239,7 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            'Random().Exercise',
+            'Random.Exercise()',
             style: TextStyle(color: Colors.white),
           ),
           backgroundColor: Theme.of(context).primaryColor,
@@ -323,7 +323,8 @@ class WorkoutGeneratorState extends State<WorkoutGenerator> {
                           );
                         },
                         child: Text(
-                          'Start Workout---->',
+                          'Start',
+                          textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Color.fromARGB(255, 255, 255, 255),
                               fontSize: 50,

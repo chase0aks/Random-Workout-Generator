@@ -20,7 +20,6 @@ class _HistoryScreenState extends State<HistoryScreen> {
   Future<void> _loadWorkouts() async {
     final List<Map<String, dynamic>> workouts =
         await StorageManager.getWorkouts();
-    print(workouts);
     workouts.sort((a, b) {
       final DateTime dateA = DateTime.parse(a.keys.first);
       final DateTime dateB = DateTime.parse(b.keys.first);
@@ -77,7 +76,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 40, 30, 30)),
+                        color: Colors.white),
                   ),
                 )
               : ListView.builder(

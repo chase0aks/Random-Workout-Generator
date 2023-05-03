@@ -44,7 +44,7 @@ class _FinalScreenState extends State<FinalScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Random().Exercise'),
+        title: Text('Random.Exercise()'),
       ),
       body: Container(
         decoration: BoxDecoration(
