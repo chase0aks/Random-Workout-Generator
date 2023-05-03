@@ -70,6 +70,15 @@ class StorageManager {
     return List<Map<String, dynamic>>.from(workoutsJson);
   }
 
+  static Future<void> removeWorkout(int index) async {
+  await _initPrefs();
+  final workouts = await getWorkouts();
+  if (index >= 0 && index < workouts.length) {
+    workouts.removeAt(index);
+    await _prefs!.setString(_workoutsKey, jsonEncode(workouts));
+  }
+}
+
   static Future<void> clearWorkouts() async {
     await _initPrefs();
     await _prefs!.remove(_workoutsKey);

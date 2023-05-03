@@ -18,28 +18,21 @@ class _HistoryScreenState extends State<HistoryScreen> {
   }
 
   Future<void> _loadWorkouts() async {
-  final List<Map<String, dynamic>> workouts =
-      await StorageManager.getWorkouts();
-  workouts.sort((a, b) {
-    final DateTime dateA = DateTime.parse(a.keys.first);
-    final DateTime dateB = DateTime.parse(b.keys.first);
-    return dateB.compareTo(dateA);
-  });
-  setState(() {
-    _workouts = workouts;
-  });
-}
-
+    final List<Map<String, dynamic>> workouts =
+        await StorageManager.getWorkouts();
+    print(workouts);
+    workouts.sort((a, b) {
+      final DateTime dateA = DateTime.parse(a.keys.first);
+      final DateTime dateB = DateTime.parse(b.keys.first);
+      return dateB.compareTo(dateA);
+    });
+    setState(() {
+      _workouts = workouts;
+    });
+  }
 
   Future<void> _deleteWorkout(int index) async {
-    final workout = _workouts[index];
-    final workouts = await StorageManager.getWorkouts();
-    workouts.remove(workout);
-    Map<String, dynamic> workoutsMap = {};
-    for (int i = 0; i < workouts.length; i++) {
-      workoutsMap['workout_$i'] = workouts[i];
-    }
-    await StorageManager.saveWorkout(workoutsMap);
+    await StorageManager.removeWorkout(index);
     setState(() {
       _workouts.removeAt(index);
     });
