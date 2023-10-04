@@ -1,4 +1,4 @@
-# Exercise-Based Workout Generator
+# Random Workout Generator
 
 ## Overview
 
