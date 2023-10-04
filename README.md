@@ -31,13 +31,30 @@ The Exercise-Based Workout Generator is a dynamic mobile application developed u
    - Record your performance by inputting reps and weights for each exercise.
    - Track your workout history and view your progress within the app.
 
-## Local Data Storage
+3. **Local Data Storage**:
 
-The app stores user preferences, workout history, and generated workout plans locally. Data will persist as long as the app remains installed on your device.
+   - The app stores user preferences, workout history, and generated workout plans locally. Data will persist as long as the app remains installed on your device.
 
-## Privacy
+4. **Privacy**:
 
-This app operates offline and does not connect to the internet. It does not collect or transmit user data.
+   - This app operates offline and does not connect to the internet. It does not collect or transmit user data.
+
+## App Structure
+
+The Exercise-Based Workout Generator app consists of the following Dart files:
+
+- `main.dart`: The main entry point for the app.
+- `banned.dart`: Manages banned exercises.
+- `exercise_data.dart`: Contains exercise data and details.
+- `equipment_selection.dart`: Handles equipment selection.
+- `final.dart`: Provides the final workout screen.
+- `history.dart`: Manages workout history.
+- `gymtype.dart`: Allows users to select gym types.
+- `injury_selection.dart`: Manages injury selection.
+- `muscle_selection.dart`: Handles muscle group selection.
+- `profile.dart`: Manages user profiles.
+- `workout_generator.dart`: Generates random workouts based on preferences.
+- `workout_preferences.dart`: Manages user preferences and local data storage.
 
 ## Dependencies
 
