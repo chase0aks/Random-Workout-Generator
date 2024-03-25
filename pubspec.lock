@@ -101,10 +101,10 @@ packages:
     dependency: "direct main"
     description:
       name: dice_icons
-      sha256: "3c62cafff3e27285b9074bc43a2d468d37bf2b70c80dd7a4eb63e21238a2e49a"
+      sha256: "5a36d4ef86a94c3cb1c1596696e71746001cb6a1ffcfb235add45f6751d211e0"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.5"
+    version: "0.1.7"
   english_words:
     dependency: "direct main"
     description:
